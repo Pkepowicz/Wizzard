@@ -9,7 +9,8 @@ public class Fighter : Collidable
     // TODO: discuss if we need immunity frames
     public float immunityTime = 0;
     private float lastImmune;
-
+    
+    // TODO: THERE IS TYPO WE HAVE TO CHANGE EVERYTHING XDD
     protected virtual void ReciveDamage(int dmg)
     {
         if (Time.time - lastImmune > immunityTime)
