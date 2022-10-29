@@ -28,6 +28,7 @@ public class Projectile : Collidable
         if (coll.tag == "Enemy")
         {
             Destroy(gameObject);
+            coll.SendMessage("ReciveDamage", damage);
         }
     }
 }

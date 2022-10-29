@@ -12,20 +12,6 @@ public class MeleeEnemy : Fighter
     public int damage = 1;
     public float speed = 5.0f;
     // *public float step = 1.0f;
-    public Transform target;
-    [SerializeField] public int life = 3;
-    private void Start()
-    {
-        target = GameObject.Find("Player").transform;
-    }
-
-    private void FixedUpdate()
-    {
-        // *transform.up = Vector3.Lerp(transform.up, target.transform.position - transform.position, step);
-        // basic chasing mechanic
-        transform.up = target.transform.position - transform.position;
-        transform.Translate(Vector3.up * Time.deltaTime * speed);
-    }
 
     protected override void Death()
     {
@@ -34,15 +20,6 @@ public class MeleeEnemy : Fighter
 
     protected override void OnCollide(Collider2D coll)
     {
-        if (coll.tag == "bullet")
-        {
-            life = life - 1;
-            
-            if (life == 0)
-            {
-                Death();
-            }
-        }
         // Deal damage only if target has player tag
         // TODO: Knokcback mechanic needed!
         if (coll.tag == "Player")
