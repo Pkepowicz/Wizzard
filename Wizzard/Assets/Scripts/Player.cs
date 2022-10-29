@@ -7,10 +7,11 @@ public class Player : Fighter
     public float speed = 0.8f;
     public float maxVelocity = 1.6f;
     public Vector3 velocity;
+    protected RaycastHit2D hit;
 
-    // references TODO: Change it to private
     public Transform textureManager;
     public Camera mainCam;
+    public Rigidbody2D rb;
 
     private void FixedUpdate()
     {
@@ -23,33 +24,13 @@ public class Player : Fighter
         Vector3 toTarget = mainCam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         textureManager.transform.up = new Vector3(toTarget.x, toTarget.y, 0);
 
-        UpdateMotor(new Vector3(x, y, 0).normalized);
+        UpdateMotor(new Vector2(x, y).normalized);
     }
 
     // Maybe change it to simpler version without sliding?
-    private void UpdateMotor(Vector3 moveDelta)
+    private void UpdateMotor(Vector2 moveDelta)
     {
-        // acceleration
-        if (Mathf.Abs(velocity.x) <= maxVelocity)
-        {
-            velocity.x += moveDelta.x * speed;
-            velocity.x = Mathf.Clamp(velocity.x, -maxVelocity, maxVelocity);
-        }
-        if (Mathf.Abs(velocity.y) <= maxVelocity)
-        {
-            velocity.y += moveDelta.y * speed;
-            velocity.y = Mathf.Clamp(velocity.y, -maxVelocity, maxVelocity);
-        }
-        // slowing
-        if (velocity != Vector3.zero)
-        {
-            if (moveDelta.x == 0)
-                velocity.x = Vector3.MoveTowards(velocity, Vector3.zero, speed).x;
-            if (moveDelta.y == 0)
-                velocity.y = Vector3.MoveTowards(velocity, Vector3.zero, speed).y;
-        }
-        // move
-        transform.Translate(velocity * Time.deltaTime);
+        rb.MovePosition(rb.position + moveDelta * speed * Time.deltaTime);
     }
 
     protected override void Death()

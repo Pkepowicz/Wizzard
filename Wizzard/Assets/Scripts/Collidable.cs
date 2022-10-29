@@ -27,7 +27,7 @@ public class Collidable : MonoBehaviour
     {
         if (coll.tag == "Structure")
         {
-            Debug.Log("Jeb w scienae jak w babke na pasach ");
+            //Debug.Log("Jeb w scienae jak w babke na pasach ");
             
         }
 
