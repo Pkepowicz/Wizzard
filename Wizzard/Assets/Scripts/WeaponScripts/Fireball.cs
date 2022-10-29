@@ -7,10 +7,12 @@ public class Fireball : Projectile
     // possible modifications to basic fireball
     private bool explodeAtDeath = false;
     private bool pullEnemies = false;
-    
+
     // variables for pulling enemies
     public float pullRadius = 3f;
     public float pullForce = 1f;
+    
+    
 
     public void PassParameters(bool explode, bool pull)
     {
@@ -19,7 +21,7 @@ public class Fireball : Projectile
         Debug.Log(explodeAtDeath);
     }
 
-    private void Update()
+    protected override void Update()
     {
         base.Update();
         if (pullEnemies is true)

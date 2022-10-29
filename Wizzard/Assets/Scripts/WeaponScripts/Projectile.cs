@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : Collidable
 {
-    public float speed = 20.0f;
+    protected float speed = 5f;
     public float lifetime = 5f; // Not sure if needed
     public int damage = 1;
     private float startTime;

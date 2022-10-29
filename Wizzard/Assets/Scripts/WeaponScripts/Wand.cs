@@ -31,7 +31,7 @@ public class Wand : MonoBehaviour
 
     protected virtual void Shoot()
     {
-        currentBullet = Instantiate(bulletPrefab, projectileSpawnPoint.position, Quaternion.identity);
+        currentBullet = Instantiate(bulletPrefab, projectileSpawnPoint.position, transform.rotation);
         
     }
 }
