@@ -24,11 +24,12 @@ public class Projectile : Collidable
 
     protected override void OnCollide(Collider2D coll)
     {
-        // Deal damage only to objects with enemy tag, and destroy itself
+        // interact with enemy, and destroy itself
         if (coll.CompareTag("Enemy"))
         {
             OnProjectileFinish();
         }
+        
         else if (coll.CompareTag("Structure"))
         {
             OnProjectileWallHit();

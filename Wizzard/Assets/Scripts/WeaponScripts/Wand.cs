@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Wand : MonoBehaviour
 {
-    // modifiers applied to bullet e.g track enemies
-    protected List<string> modifiers = new List<string>();
     
     public GameObject bulletPrefab;
 
+    // assign instanciated bullet to this variable to be used in derived classes, might be better way to do this
     protected GameObject currentBullet;
     
     protected int damage = 5;
