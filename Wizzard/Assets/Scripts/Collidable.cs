@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Collidable : MonoBehaviour
 {
     public Collider2D Collider;
     private Collider2D[] hits = new Collider2D[5];
     public ContactFilter2D filter;
-
     protected virtual void Update()
     {
         // Collision engine
@@ -24,6 +25,12 @@ public class Collidable : MonoBehaviour
 
     protected virtual void OnCollide(Collider2D coll)
     {
-        Debug.Log("OnCollide was not implemented in " + this.name);
+        if (coll.tag == "Structure")
+        {
+            Debug.Log("Jeb w scienae jak w babke na pasach ");
+            
+        }
+
+        
     }
 }

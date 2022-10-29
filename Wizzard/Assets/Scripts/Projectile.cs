@@ -27,7 +27,6 @@ public class Projectile : Collidable
         // Deal damage only to objects with enemy tag, and destroy itself
         if (coll.tag == "Enemy")
         {
-            coll.SendMessage("ReciveDamage", damage);
             Destroy(gameObject);
         }
     }

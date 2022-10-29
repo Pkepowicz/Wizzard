@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class MeleeEnemy : Fighter
 {
     // Left there code with (*), might be usefull to make different kind of opponent
@@ -11,7 +13,7 @@ public class MeleeEnemy : Fighter
     public float speed = 5.0f;
     // *public float step = 1.0f;
     public Transform target;
-
+    [SerializeField] public int life = 3;
     private void Start()
     {
         target = GameObject.Find("Player").transform;
@@ -32,6 +34,15 @@ public class MeleeEnemy : Fighter
 
     protected override void OnCollide(Collider2D coll)
     {
+        if (coll.tag == "bullet")
+        {
+            life = life - 1;
+            
+            if (life == 0)
+            {
+                Death();
+            }
+        }
         // Deal damage only if target has player tag
         // TODO: Knokcback mechanic needed!
         if (coll.tag == "Player")
