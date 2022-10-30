@@ -11,7 +11,6 @@ public class Player : Fighter
 
     public Transform textureManager;
     public Camera mainCam;
-    public Rigidbody2D rb;
 
     private void FixedUpdate()
     {
@@ -27,7 +26,7 @@ public class Player : Fighter
         UpdateMotor(new Vector2(x, y).normalized);
     }
 
-    // Maybe change it to simpler version without sliding?
+
     private void UpdateMotor(Vector2 moveDelta)
     {
         rb.MovePosition(rb.position + moveDelta * speed * Time.deltaTime);

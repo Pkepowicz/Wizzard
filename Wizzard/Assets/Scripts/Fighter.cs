@@ -6,12 +6,27 @@ public class Fighter : Collidable
 {
     public int hitPoint = 10;
     public int maxHitPoint = 10;
-    // TODO: discuss if we need immunity frames
     public float immunityTime = 0;
     private float lastImmune;
-    
-    // TODO: THERE IS TYPO WE HAVE TO CHANGE EVERYTHING XDD
-    protected virtual void ReciveDamage(int dmg)
+
+    public Rigidbody2D rb;
+
+    protected virtual void ReceiveDamage(Damage dmg) // knockback function
+    {
+        if (Time.time - lastImmune > immunityTime)
+        {
+            hitPoint -= dmg.damageAmmount;
+            rb.AddForce((transform.position - dmg.origin).normalized * dmg.knockBack, ForceMode2D.Impulse);
+            lastImmune = Time.time;
+            if (hitPoint <= 0)
+            {
+                hitPoint = 0;
+                Death();
+            }
+        }
+    }
+
+    protected virtual void ReceiveDamage(int dmg)
     {
         if (Time.time - lastImmune > immunityTime)
         {

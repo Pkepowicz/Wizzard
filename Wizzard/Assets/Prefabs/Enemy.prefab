@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 1644507368819981263}
   - component: {fileID: 1644507368819981250}
   - component: {fileID: 1644507368819981251}
+  - component: {fileID: 8029894300741427321}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -178,11 +179,11 @@ MonoBehaviour:
   autoRepath:
     mode: 2
     interval: 0.5
-    sensitivity: 10
+    sensitivity: 8
     maximumInterval: 2
     visualizeSensitivity: 0
   targetCompatibility: {fileID: 0}
-  maxAcceleration: -2.5
+  maxAcceleration: 0.5
   rotationSpeed: 360
   slowdownDistance: 0.6
   pickNextWaypointDist: 0.32
@@ -235,6 +236,7 @@ MonoBehaviour:
   hitPoint: 10
   maxHitPoint: 10
   immunityTime: 0.1
+  rb: {fileID: 8029894300741427321}
   damage: 1
   speed: 5
 --- !u!58 &1644507368819981251
@@ -253,3 +255,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.08137146
+--- !u!50 &8029894300741427321
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644507368819981256}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.020801472
+  m_LinearDrag: 0.1
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

@@ -25,12 +25,6 @@ public class Collidable : MonoBehaviour
 
     protected virtual void OnCollide(Collider2D coll)
     {
-        if (coll.tag == "Structure")
-        {
-            //Debug.Log("Jeb w scienae jak w babke na pasach ");
-            
-        }
-
-        
+        Debug.Log("Collide not implemented");
     }
 }
