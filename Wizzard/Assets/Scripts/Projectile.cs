@@ -5,9 +5,8 @@ using UnityEngine;
 public class Projectile : Collidable
 {
     public float speed = 20.0f;
-    public float lifetime = 5f; 
+    public float lifetime = 5f; // Not sure if needed
     public int damage = 1;
-    public float force = 0.1f;
     private float startTime;
 
     private void Start()
@@ -29,13 +28,6 @@ public class Projectile : Collidable
         if (coll.tag == "Enemy")
         {
             Destroy(gameObject);
-            Damage dmg = new Damage
-            {
-                damageAmmount = damage,
-                knockBack = force,
-                origin = transform.position
-            };
-            coll.SendMessage("ReceiveDamage", dmg);
         }
     }
 }
