@@ -26,7 +26,7 @@ public class Fighter : Collidable
         }
     }
 
-    protected virtual void ReceiveDamage(int dmg)
+    protected virtual void ReceiveDamage(int dmg) // to remove
     {
         if (Time.time - lastImmune > immunityTime)
         {

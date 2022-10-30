@@ -8,6 +8,7 @@ public class MeleeEnemy : Fighter
 {
 
     public int damage = 1;
+    public float force = 2.0f; // knockback force
     public float speed = 5.0f;
 
     protected override void Death()
@@ -20,7 +21,14 @@ public class MeleeEnemy : Fighter
         // Deal damage only if target has player tag
         if (coll.tag == "Player")
         {
-            coll.SendMessage("ReceiveDamage", damage);
+            Damage dmg = new Damage
+            {
+                damageAmmount = damage,
+                knockBack = force,
+                origin = transform.position
+            };
+            rb.velocity = Vector2.zero; // after hit slow down to 0
+            coll.SendMessage("ReceiveDamage", dmg);
         }
     }
 }

@@ -32,7 +32,7 @@ public class Player : Fighter
         rb.AddForce(moveDelta * speed * Time.deltaTime, ForceMode2D.Force);
         rb.velocity = (Vector3.ClampMagnitude(rb.velocity, maxVelocity));
     }
-
+    
     protected override void Death()
     {
         Time.timeScale = 0;
