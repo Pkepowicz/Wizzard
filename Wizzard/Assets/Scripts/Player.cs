@@ -29,7 +29,8 @@ public class Player : Fighter
 
     private void UpdateMotor(Vector2 moveDelta)
     {
-        rb.MovePosition(rb.position + moveDelta * speed * Time.deltaTime);
+        rb.AddForce(moveDelta * speed * Time.deltaTime, ForceMode2D.Force);
+        rb.velocity = (Vector3.ClampMagnitude(rb.velocity, maxVelocity));
     }
 
     protected override void Death()
