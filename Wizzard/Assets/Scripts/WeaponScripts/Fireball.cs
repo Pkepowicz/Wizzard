@@ -12,13 +12,21 @@ public class Fireball : Projectile
     public float pullRadius = 3f;
     public float pullForce = 1f;
     
+    // variables for explosion
+    public int explosionDamage = 3;
+    public float explosionRadius = 1f; // 0.3 gets multiplayed by radius, 1 is default value
+    public float explosionKnockbackForce = 2f;
+
+    
+    // prefab to instanciate when projectile explodes
+    public GameObject explosionPrefab;
     
 
+    // when creating projectile, pass parameters abut it
     public void PassParameters(bool explode, bool pull)
     {
         explodeAtDeath = explode;
         pullEnemies = pull;
-        Debug.Log(explodeAtDeath);
     }
 
     protected override void Update()
@@ -26,31 +34,37 @@ public class Fireball : Projectile
         base.Update();
         if (pullEnemies is true)
         {
-            
+            //TODO: add pulling enemies while traveling
         }
-    }
-
-    protected override void OnCollide(Collider2D coll)
-    {
-        base.OnCollide(coll);
-        
     }
 
     protected override void OnProjectileFinish()
     {
         if (explodeAtDeath is true)
         {
-            Debug.Log("Explode");
+            Explode();
         }
-        base.OnProjectileFinish();
+        Destroy(gameObject);
     }
 
     protected override void OnProjectileWallHit()
     {
         if (explodeAtDeath is true)
         {
-            Debug.Log("Explode");
+            Explode();
         }
-        base.OnProjectileFinish();
+        Destroy(gameObject);
+    }
+
+    // create explosion game object and pass parameters
+    private void Explode()
+    {
+        Debug.Log("Exploding");
+        GameObject currentExplosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        FireballExplosion explosionScript = currentExplosion.GetComponent<FireballExplosion>();
+        
+        explosionScript.PassParameters(explosionDamage, explosionRadius, explosionKnockbackForce);
+        
+        Debug.Log("Destroying fireball");
     }
 }

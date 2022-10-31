@@ -78,7 +78,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 10
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -118,6 +118,7 @@ MonoBehaviour:
   immunityTime: 0.1
   rb: {fileID: 781338891125524065}
   damage: 1
+  force: 2
   speed: 5
 --- !u!58 &8316533858528566747
 CircleCollider2D:

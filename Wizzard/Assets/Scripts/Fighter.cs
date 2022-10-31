@@ -32,6 +32,7 @@ public class Fighter : Collidable
         {
             hitPoint -= dmg;
             lastImmune = Time.time;
+            Debug.Log("Got Damage");
             if (hitPoint <= 0)
             {
                 hitPoint = 0;
