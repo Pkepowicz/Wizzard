@@ -114,7 +114,9 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   lifetime: 5
-  damage: 1
+  damage: 5
+  damage: 5
+  knockbackForce: 0
   pullRadius: 3
   pullForce: 1
   explosionDamage: 3

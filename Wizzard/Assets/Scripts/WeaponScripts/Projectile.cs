@@ -6,7 +6,6 @@ public class Projectile : Collidable
 {
     protected float speed = 5f;
     public float lifetime = 5f; // Not sure if needed
-    public int damage = 1;
     private float startTime;
 
     private void Start()
@@ -19,7 +18,7 @@ public class Projectile : Collidable
         // Go forward from launch offset untill you exceed life time
         transform.Translate(Vector3.up * Time.deltaTime * speed);
         if (Time.time - startTime > lifetime)
-            OnProjectileFinish();
+            OnProjectileEnd();
     }
 
     protected override void OnCollide(Collider2D coll)
@@ -27,23 +26,29 @@ public class Projectile : Collidable
         // interact with enemy, and destroy itself
         if (coll.CompareTag("Enemy"))
         {
-            OnProjectileFinish();
+            OnProjectileEnemyHit(coll);
         }
         
         else if (coll.CompareTag("Structure"))
         {
-            OnProjectileWallHit();
+            OnProjectileWallHit(coll);
         }
     }
 
-    // what to do with projectile when it hits enemy or expires, e.g explode
-    protected virtual void OnProjectileFinish()
+    // what to do with projectile when it hits an, e.g explode
+    protected virtual void OnProjectileEnemyHit(Collider2D coll)
+    {
+        Destroy(gameObject);
+    }
+
+    // what to do with projectile when it expires, e.g explode
+    protected virtual void OnProjectileEnd()
     {
         Destroy(gameObject);
     }
 
     // some projectiles may bounce of the walls
-    protected virtual void OnProjectileWallHit()
+    protected virtual void OnProjectileWallHit(Collider2D coll)
     {
         Destroy(gameObject);
     }
