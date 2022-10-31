@@ -4,18 +4,13 @@ using UnityEngine;
 using Pathfinding;
 
 [HelpURL("http://arongranberg.com/astar/docs/class_partial1_1_1_astar_a_i.php")]
-public class EnemyAI : MonoBehaviour
+public class EnemyAI : Fighter
 {
     public Transform targetPosition;
 
     private Seeker seeker;
-    private Rigidbody2D rb;
 
     public Path path;
-
-    public float speed = 2;
-
-    public float maxVelocity = 0.8f;
 
     public float nextWaypointDistance = 3;
 

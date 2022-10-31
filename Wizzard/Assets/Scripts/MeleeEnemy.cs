@@ -9,7 +9,6 @@ public class MeleeEnemy : Fighter
 
     public int damage = 1;
     public float force = 2.0f; // knockback force
-    public float speed = 5.0f;
 
     protected override void Death()
     {
