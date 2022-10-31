@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Fighter : Collidable
 {
+    public Rigidbody2D rb;
+    public Animator anim;
+
     public int hitPoint = 10;
     public int maxHitPoint = 10;
 
@@ -13,7 +16,11 @@ public class Fighter : Collidable
     public float immunityTime = 0;
     private float lastImmune;
 
-    public Rigidbody2D rb;
+    protected virtual void Start()
+    {
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        anim = gameObject.GetComponent<Animator>();
+    }
 
     protected virtual void ReceiveDamage(Damage dmg) // knockback function
     {
@@ -33,6 +40,7 @@ public class Fighter : Collidable
 
     protected virtual void UpdateMotor(Vector2 moveDelta)
     {
+        anim.SetFloat("moveDelta", moveDelta.x);
         if (rb.velocity.magnitude <= 1.1 * maxVelocity)
         {
             rb.AddForce(moveDelta * speed * Time.deltaTime, ForceMode2D.Force);

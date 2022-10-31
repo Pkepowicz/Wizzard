@@ -23,10 +23,9 @@ public class EnemyAI : Fighter
 
     public bool reachedEndOfPath;
 
-    public void Start()
+    protected override void Start()
     {
-        seeker = GetComponent<Seeker>();
-        rb = GetComponent<Rigidbody2D>();
+        base.Start();
 
         // Start a new path to the targetPosition, call the the OnPathComplete function
         // when the path has been calculated (which may take a few frames depending on the complexity)
