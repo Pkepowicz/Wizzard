@@ -80,7 +80,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 10
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -115,13 +115,13 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  rb: {fileID: 8205980743561807270}
+  anim: {fileID: 0}
   hitPoint: 10
   maxHitPoint: 10
   speed: 5
   maxVelocity: 1.6
   immunityTime: 0.1
-  rb: {fileID: 8205980743561807270}
-  anim: {fileID: 0}
   damage: 1
   force: 5
 --- !u!58 &602388258606030364
@@ -167,13 +167,13 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  rb: {fileID: 8205980743561807270}
+  anim: {fileID: 602388258606027241}
   hitPoint: 10
   maxHitPoint: 10
   speed: 400
   maxVelocity: 0.8
-  immunityTime: 0
-  rb: {fileID: 8205980743561807270}
-  anim: {fileID: 602388258606027241}
+  immunityTime: 0.1
   targetPosition: {fileID: 0}
   nextWaypointDistance: 0.2
   repathRate: 0.1
