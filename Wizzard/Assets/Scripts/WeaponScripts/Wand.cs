@@ -22,7 +22,7 @@ public class Wand : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0) && (Time.time - lastShot) > reloadTime)
         {
-            Debug.Log("Ready to shoot");
+            //Debug.Log("Ready to shoot");
             Shoot();
             lastShot = Time.time;
         }

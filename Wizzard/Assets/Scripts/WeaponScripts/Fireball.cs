@@ -62,7 +62,7 @@ public class Fireball : Projectile
     // create explosion game object and pass parameters
     private void Explode()
     {
-        Debug.Log("Exploding");
+        //Debug.Log("Exploding");
         GameObject currentExplosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         
         // pass parameters about explosion to newly created explosion object
