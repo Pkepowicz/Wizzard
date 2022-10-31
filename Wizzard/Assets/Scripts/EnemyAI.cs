@@ -26,6 +26,7 @@ public class EnemyAI : Fighter
     protected override void Start()
     {
         base.Start();
+        seeker = gameObject.GetComponent<Seeker>();
 
         // Start a new path to the targetPosition, call the the OnPathComplete function
         // when the path has been calculated (which may take a few frames depending on the complexity)
