@@ -12,8 +12,6 @@ public class Wand : MonoBehaviour
     public float shootArc = 30; // maximum angle at which additional projectile will be spawned, 
                                 // 30 means 30deg shooting arc, so 15def abberation on each side
 
-    private float bulletAngleDifference; // angle difference between each bullet shot
-
     // what kind of projectile wand will shoot
     public GameObject bulletPrefab;
     
@@ -26,7 +24,7 @@ public class Wand : MonoBehaviour
     protected virtual void Start()
     {
         currentBullets = new List<GameObject>();
-        bulletAngleDifference = CalculateAngles(projectileAmount, shootArc);
+        
     }
 
     // calculate angle difference between each next bullet, might be calculated many times during single game
@@ -72,13 +70,22 @@ public class Wand : MonoBehaviour
             
         else
         {
+            float bulletAngleDifference = CalculateAngles(projectileAmount, shootArc); // angle difference between each bullet shot
+            
             for(int i = 0; i < projectileAmount; i++)
             {
                 GameObject currentBullet = Instantiate(bulletPrefab, projectileSpawnPoint.position, transform.rotation);
-                currentBullet.transform.Rotate(0, 0, (-shootArc / 2) + i * bulletAngleDifference);
+                //currentBullet.transform.Rotate(0, 0, (-shootArc / 2) + i * bulletAngleDifference);
+                // virtual funcion so it may be overwritten e.g random angles for shotgun
+                currentBullet.transform.Rotate(CalculateProjectileRotation(shootArc, i, bulletAngleDifference));
                 currentBullets.Add(currentBullet);
             }
         }
         
+    }
+
+    protected virtual Vector3 CalculateProjectileRotation(float shootArc, int i, float bulletAngleDifference)
+    {
+        return new Vector3(0, 0, (-shootArc / 2) + i * bulletAngleDifference);
     }
 }
