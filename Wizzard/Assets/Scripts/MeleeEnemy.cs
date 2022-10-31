@@ -27,7 +27,7 @@ public class MeleeEnemy : Fighter
                 origin = transform.position
             };
             rb.velocity = Vector2.zero; // after hit slow down to 0
-            coll.SendMessage("ReceiveDamage", dmg);
+            
         }
     }
 }
