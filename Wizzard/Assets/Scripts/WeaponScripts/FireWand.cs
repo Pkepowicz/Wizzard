@@ -7,15 +7,13 @@ public class FireWand : Wand
     public bool explodeAtDeath = false;
     public bool pullEnemies = false;
     
-
-    void Start()
-    {
-
-    }
-
     protected override void Shoot()
     {
         base.Shoot();
-        currentBullet.GetComponent<Fireball>().PassParameters(explodeAtDeath, pullEnemies);
+        foreach (GameObject bullet in currentBullets)
+        {
+            bullet.GetComponent<Fireball>().PassParameters(explodeAtDeath, pullEnemies);
+        }
+        //currentBullet.GetComponent<Fireball>().PassParameters(explodeAtDeath, pullEnemies);
     }
 }
