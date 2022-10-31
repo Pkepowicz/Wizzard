@@ -22,15 +22,6 @@ public class Player : Fighter
 
         UpdateMotor(new Vector2(x, y).normalized);
     }
-
-    /* private void UpdateMotor(Vector2 moveDelta)
-    {
-        rb.AddForce(moveDelta * speed * Time.deltaTime, ForceMode2D.Force);
-        if (rb.velocity.magnitude <= 1.2 * maxVelocity) // Allows to run at much higher speed than normal after hit
-        {
-            rb.velocity = (Vector3.ClampMagnitude(rb.velocity, maxVelocity));
-        } 
-    } */
     
     protected override void Death()
     {

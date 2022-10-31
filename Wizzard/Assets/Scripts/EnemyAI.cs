@@ -19,6 +19,8 @@ public class EnemyAI : Fighter
     public float repathRate = 0.5f;
     private float lastRepath = float.NegativeInfinity;
 
+    public float stopRadius;
+
     public bool reachedEndOfPath;
 
     public void Start()
@@ -96,7 +98,9 @@ public class EnemyAI : Fighter
         // Normalize it so that it has a length of 1 world unit
         Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
 
-        rb.AddForce(dir * speed * Time.deltaTime * speedFactor);
-        rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxVelocity);
+        if (Vector2.Distance(transform.position, targetPosition.position) >= stopRadius)
+        {
+            UpdateMotor(dir * speedFactor);
+        }
     }
 }
