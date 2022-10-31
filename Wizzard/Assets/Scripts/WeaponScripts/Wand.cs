@@ -48,7 +48,7 @@ public class Wand : MonoBehaviour
     protected virtual void Update()
     {
         
-        if (Input.GetMouseButtonDown(0) && (Time.time - lastShot) > reloadTime)
+        if ((Input.GetMouseButtonDown(0) || Input.GetKey(KeyCode.Mouse0)) && (Time.time - lastShot) > reloadTime)
         {
             //Debug.Log("Ready to shoot");
             Shoot();
