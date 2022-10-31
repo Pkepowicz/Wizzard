@@ -4,16 +4,11 @@ using UnityEngine;
 
 
 
-public class MeleeEnemy : Fighter
+public class MeleeEnemy : Collidable
 {
 
     public int damage = 1;
     public float force = 2.0f; // knockback force
-
-    protected override void Death()
-    {
-        Destroy(gameObject);
-    }
 
     protected override void OnCollide(Collider2D coll)
     {
@@ -26,7 +21,7 @@ public class MeleeEnemy : Fighter
                 knockBack = force,
                 origin = transform.position
             };
-            rb.velocity = Vector2.zero; // after hit slow down to 0
+            coll.SendMessage("ReceiveDamage", dmg);
             
         }
     }
