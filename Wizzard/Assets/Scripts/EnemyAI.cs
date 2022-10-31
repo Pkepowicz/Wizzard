@@ -4,18 +4,13 @@ using UnityEngine;
 using Pathfinding;
 
 [HelpURL("http://arongranberg.com/astar/docs/class_partial1_1_1_astar_a_i.php")]
-public class EnemyAI : MonoBehaviour
+public class EnemyAI : Fighter
 {
     public Transform targetPosition;
 
     private Seeker seeker;
-    private Rigidbody2D rb;
 
     public Path path;
-
-    public float speed = 2;
-
-    public float maxVelocity = 0.8f;
 
     public float nextWaypointDistance = 3;
 
@@ -24,14 +19,13 @@ public class EnemyAI : MonoBehaviour
     public float repathRate = 0.5f;
     private float lastRepath = float.NegativeInfinity;
 
+    public float stopRadius;
+
     public bool reachedEndOfPath;
 
-    public void Start()
+    protected override void Start()
     {
-        seeker = GetComponent<Seeker>();
-        // If you are writing a 2D game you should remove this line
-        // and use the alternative way to move sugggested further below.
-        rb = GetComponent<Rigidbody2D>();
+        base.Start();
 
         // Start a new path to the targetPosition, call the the OnPathComplete function
         // when the path has been calculated (which may take a few frames depending on the complexity)
@@ -40,8 +34,6 @@ public class EnemyAI : MonoBehaviour
 
     public void OnPathComplete(Path p)
     {
-       // Debug.Log("A path was calculated. Did it fail with an error? " + p.error);
-
         if (!p.error)
         {
             path = p;
@@ -55,7 +47,6 @@ public class EnemyAI : MonoBehaviour
         if (Time.time > lastRepath + repathRate && seeker.IsDone())
         {
             lastRepath = Time.time;
-
             // Start a new path to the targetPosition, call the the OnPathComplete function
             // when the path has been calculated (which may take a few frames depending on the complexity)
             seeker.StartPath(transform.position, targetPosition.position, OnPathComplete);
@@ -106,9 +97,9 @@ public class EnemyAI : MonoBehaviour
         // Normalize it so that it has a length of 1 world unit
         Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
 
-        rb.AddForce(dir * speed * Time.deltaTime * speedFactor);
-        rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxVelocity);
-        // If you are writing a 2D game you should remove the CharacterController code above and instead move the transform directly by uncommenting the next line
-        // transform.position += velocity * Time.deltaTime;
+        if (Vector2.Distance(transform.position, targetPosition.position) >= stopRadius)
+        {
+            UpdateMotor(dir * speedFactor);
+        }
     }
 }
