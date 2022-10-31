@@ -29,8 +29,6 @@ public class EnemyAI : MonoBehaviour
     public void Start()
     {
         seeker = GetComponent<Seeker>();
-        // If you are writing a 2D game you should remove this line
-        // and use the alternative way to move sugggested further below.
         rb = GetComponent<Rigidbody2D>();
 
         // Start a new path to the targetPosition, call the the OnPathComplete function
@@ -40,8 +38,6 @@ public class EnemyAI : MonoBehaviour
 
     public void OnPathComplete(Path p)
     {
-       // Debug.Log("A path was calculated. Did it fail with an error? " + p.error);
-
         if (!p.error)
         {
             path = p;
@@ -55,7 +51,6 @@ public class EnemyAI : MonoBehaviour
         if (Time.time > lastRepath + repathRate && seeker.IsDone())
         {
             lastRepath = Time.time;
-
             // Start a new path to the targetPosition, call the the OnPathComplete function
             // when the path has been calculated (which may take a few frames depending on the complexity)
             seeker.StartPath(transform.position, targetPosition.position, OnPathComplete);
@@ -108,7 +103,5 @@ public class EnemyAI : MonoBehaviour
 
         rb.AddForce(dir * speed * Time.deltaTime * speedFactor);
         rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxVelocity);
-        // If you are writing a 2D game you should remove the CharacterController code above and instead move the transform directly by uncommenting the next line
-        // transform.position += velocity * Time.deltaTime;
     }
 }

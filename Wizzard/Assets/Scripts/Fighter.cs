@@ -16,6 +16,7 @@ public class Fighter : Collidable
         if (Time.time - lastImmune > immunityTime)
         {
             hitPoint -= dmg.damageAmmount;
+            rb.velocity.Set(0,0);
             rb.AddForce((transform.position - dmg.origin).normalized * dmg.knockBack, ForceMode2D.Impulse);
             lastImmune = Time.time;
             if (hitPoint <= 0)
