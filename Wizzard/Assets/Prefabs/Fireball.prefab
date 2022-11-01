@@ -120,6 +120,8 @@ MonoBehaviour:
   knockbackForce: 0
   pullRadius: 3
   pullForce: 1
+  burn: {fileID: 7899300245987635454, guid: c740d967feb9ecf4eae284a973c251af, type: 3}
+  igniteEfficieny: 0.5
   explosionDamage: 3
   explosionRadius: 1
   explosionKnockbackForce: 2

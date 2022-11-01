@@ -7,7 +7,7 @@ public class Fighter : Collidable
     public Rigidbody2D rb;
     public Animator anim;
 
-    public int hitPoint = 10;
+    public float hitPoint = 10;
     public int maxHitPoint = 10;
 
     public float speed = 0.8f;
@@ -18,10 +18,21 @@ public class Fighter : Collidable
 
     private bool isAlive = true;
 
+
     protected virtual void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
+
+    }
+
+
+    public virtual void Heal(float healAmount)
+    {
+        if (hitPoint + healAmount > maxHitPoint)
+            hitPoint = maxHitPoint;
+        else
+            hitPoint += healAmount;
     }
 
     protected virtual void ReceiveDamage(Damage dmg) // knockback function
@@ -57,7 +68,7 @@ public class Fighter : Collidable
         }
     }
 
-    protected virtual void ReceiveDamage(int dmg) // to remove
+    protected virtual void ReceiveDamage(int dmg) // don't delete, damage over time effects use this function
     {
         if (Time.time - lastImmune > immunityTime)
         {
@@ -68,6 +79,16 @@ public class Fighter : Collidable
             {
                 Death();
             }
+        }
+    }
+
+    protected virtual void TakeDamageFromDot(float damage) // damage taken from dots should bypass immunity frames
+    {
+        hitPoint -= damage;
+        Debug.Log("Got Damage");
+        if (hitPoint <= 0)
+        {
+            Death();
         }
     }
 
