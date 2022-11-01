@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6865421728576679001}
   - component: {fileID: 2533824470464961288}
   - component: {fileID: 4074796362870776346}
+  - component: {fileID: 2564758977844934097}
   m_Layer: 0
   m_Name: Regen
   m_TagString: Untagged
@@ -3830,8 +3831,8 @@ ParticleSystem:
       properties: 0
       emitProbability: 1
   LightsModule:
-    enabled: 0
-    ratio: 0
+    enabled: 1
+    ratio: 1
     light: {fileID: 0}
     randomDistribution: 1
     color: 1
@@ -4779,7 +4780,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9518185fbfeaa814493a3ff7daceccc8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4830,3 +4831,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &2564758977844934097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6865421728576678822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e8c5c117aa621a40ab920474d4ff2af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Prefab: {fileID: 9128987415471838126, guid: 743efed447e668b4eb6bce24d3282185, type: 3}
