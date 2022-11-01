@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Fireball : Projectile
 {
+    // variables for damaging enemies
+    public int damage;
+    public float knockbackForce;
+    
+    
     // possible modifications to basic fireball
     private bool explodeAtDeath = false;
     private bool pullEnemies = false;
@@ -38,8 +43,26 @@ public class Fireball : Projectile
         }
     }
 
-    // what to do with projectile when it's life ends
-    protected override void OnProjectileFinish()
+    // what to do with projectile when it hits an enemy
+    protected override void OnProjectileEnemyHit(Collider2D coll)
+    {
+        Damage dmg = new Damage()
+        {
+            damageAmmount = damage,
+            knockBack = knockbackForce,
+            origin = transform.position
+        };
+        
+        coll.SendMessage("ReceiveDamage", dmg);
+        if (explodeAtDeath is true)
+        {
+            Explode();
+        }
+        Destroy(gameObject);
+    }
+    
+    // what to do with projectile when it's lifetime ends
+    protected override void OnProjectileEnd()
     {
         if (explodeAtDeath is true)
         {
@@ -50,7 +73,7 @@ public class Fireball : Projectile
 
     
     // what to do with projectile when it hits the wall
-    protected override void OnProjectileWallHit()
+    protected override void OnProjectileWallHit(Collider2D coll)
     {
         if (explodeAtDeath is true)
         {
