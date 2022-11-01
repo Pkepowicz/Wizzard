@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f070ff6636bcba54e86913670de09629
+guid: aff0a6146adf5c14baf3dfb532d4e276
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,505 +116,673 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: slimeRightWalk_0
+      name: necromancerRightIdle__0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 4
+        y: 96
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e47922bfb9b6a8429016cfb9d836949
+      internalID: -1307549797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: necromancerRightIdle__1
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 96
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a29279a008b0c443ac4a09be4ac418e
+      internalID: 718431160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: necromancerRightIdle__2
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 96
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 823d8938cccf5b64daadb090b65bc5e3
+      internalID: 1710441838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: necromancerRightIdle__3
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 96
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc7f9f573d2575f42afe922c7d5fa1b5
+      internalID: -690531935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: necromancerLeftIdle__0
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 96
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc05d6d68b76e6247ae2dbfa1dd49c3e
+      internalID: -2130732253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: necromancerLeftIdle__1
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 96
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9b763ebf1844345bf564a3e3005dd4
+      internalID: 1531718888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: necromancerLeftIdle__2
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 96
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4b9e6f3b61ea24ab89e9e4f42c3fcb
+      internalID: -717648166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: necromancerLeftIdle__3
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 96
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbaeb6605bb835347a9999fd0b95ef1b
+      internalID: 1797492330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: necromancerRightWalk__0
+      rect:
+        serializedVersion: 2
+        x: 4
         y: 72
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebde90eb4946952499bf23350dae9630
-      internalID: -1413565785
+      spriteID: 450c1b14bd5c94e4897f9103da638a1b
+      internalID: -1340716638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeRightWalk_1
+      name: necromancerRightWalk__1
       rect:
         serializedVersion: 2
-        x: 29
+        x: 28
         y: 72
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16a363e5189a94e48962f50237539d55
-      internalID: -1618800025
+      spriteID: c924fe0ba6323d74ebbea58b0c29fbb6
+      internalID: 1474292592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeRightWalk_2
+      name: necromancerRightWalk__2
       rect:
         serializedVersion: 2
-        x: 53
+        x: 52
         y: 72
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d1f2bc687ec5e64e9a8aeef6a1c4e9c
-      internalID: -387091306
+      spriteID: 1d3ee7c8572e585409d2b5a11e79ebd4
+      internalID: -875677159
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeRightWalk_3
+      name: necromancerRightWalk__3
       rect:
         serializedVersion: 2
-        x: 77
+        x: 76
         y: 72
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b890a4ab5b4094f49a784717ac026e31
-      internalID: -2136278059
+      spriteID: 7c3e32af9ac40b140954012939373c78
+      internalID: -2003774783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeLeftWalk_0
+      name: necromancerLeftWalk__0
       rect:
         serializedVersion: 2
-        x: 101
+        x: 100
         y: 72
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fda6573a22ee5d4796380ebca1d7206
-      internalID: 569325013
+      spriteID: 229dc01be117022458d151fe7018a61c
+      internalID: -113229286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeLeftWalk_1
+      name: necromancerLeftWalk__1
       rect:
         serializedVersion: 2
-        x: 125
+        x: 124
         y: 72
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 529b133ee6a9223449f57ab4d699ce67
-      internalID: -1302640634
+      spriteID: e7913ce87df86284e8a0cf264381c17f
+      internalID: -1869173789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeLeftWalk_2
+      name: necromancerLeftWalk__2
       rect:
         serializedVersion: 2
-        x: 149
+        x: 148
         y: 72
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af73cbbbbf90a814d98c5f94b810af7e
-      internalID: 1407383811
+      spriteID: d0b4bd5b0477d07418656ec8280ef2a1
+      internalID: -2022419770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeLeftWalk_3
+      name: necromancerLeftWalk__3
       rect:
         serializedVersion: 2
-        x: 173
+        x: 172
         y: 72
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6770a969926c704885022a364ce11a1
-      internalID: 1944058249
+      spriteID: e7260b1dd83fdf34c8f6b32f7216d3f8
+      internalID: -1852250080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeRightHit_0
+      name: necromancerRightHit__0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 4
         y: 24
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad1f76a2839a7f7488cc8b764d8e2460
-      internalID: 1640916598
+      spriteID: 0515ee4aa6a19e84f8f578ae726dc1e2
+      internalID: 612201022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeRightHit_1
+      name: necromancerRightHit__1
       rect:
         serializedVersion: 2
-        x: 29
+        x: 28
         y: 24
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eed80629621939543b388adc8cf9d292
-      internalID: 861626287
+      spriteID: 1bb4049edd731ac4991065894760093a
+      internalID: -1759244399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeRightHit_2
+      name: necromancerRightHit__2
       rect:
         serializedVersion: 2
-        x: 53
+        x: 52
         y: 24
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57adf16e1e34dad40a7b8f506b7a412a
-      internalID: 1467412358
+      spriteID: 52d3b4f569441724cb0401fdef3c013c
+      internalID: 1926207285
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeRightHit_3
+      name: necromancerRightHit__3
       rect:
         serializedVersion: 2
-        x: 77
+        x: 76
         y: 24
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ceee2290216d284689e1e3dc41ae990
-      internalID: -702030758
+      spriteID: 8d53a3c76631962448ec0791856ef5ae
+      internalID: -638379326
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeLeftHit_0
+      name: necromancerLeftHit__0
       rect:
         serializedVersion: 2
-        x: 101
+        x: 100
         y: 24
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e303b7a8e843441408760bf08bef7e29
-      internalID: 1504543184
+      spriteID: a098e5f7632b7964fa81356e8391935e
+      internalID: 615373239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeLeftHit_1
+      name: necromancerLeftHit__1
       rect:
         serializedVersion: 2
-        x: 125
+        x: 124
         y: 24
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 160e187ebadd0a248a54ddd95a43a520
-      internalID: 572246219
+      spriteID: 1c0f2362358ca73479721735c247a874
+      internalID: 416104561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeLeftHit_2
+      name: necromancerLeftHit__2
       rect:
         serializedVersion: 2
-        x: 149
+        x: 148
         y: 24
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 695a4b944fc334948a7a74f658841e95
-      internalID: 1176472519
+      spriteID: a8ea557a107bae34c86525bad17a4180
+      internalID: -158051150
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeLeftHit_3
+      name: necromancerLeftHit__3
       rect:
         serializedVersion: 2
-        x: 173
+        x: 172
         y: 24
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2882e026b1032654cabda63e2aa2da3d
-      internalID: 1512416527
+      spriteID: 6cd190af5ce31cc4494ec8d344537763
+      internalID: 1887336539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeRightDeath_0
+      name: necromancerRightDeath__0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 4
         y: 0
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a4e351e25e341a40b60289512bd646e
-      internalID: -276143175
+      spriteID: 608baae5f18df9548a4a399555398776
+      internalID: -1709706396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeRightDeath_1
+      name: necromancerRightDeath__1
       rect:
         serializedVersion: 2
-        x: 29
+        x: 28
         y: 0
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10bc8a1de111edd4aa2dd8ff3c68d9d9
-      internalID: -1938977542
+      spriteID: d23e94e34ba4f4e408df10ffaf8f0ef4
+      internalID: 2123377919
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeRightDeath_2
+      name: necromancerRightDeath__2
       rect:
         serializedVersion: 2
-        x: 53
+        x: 52
         y: 0
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d965aac9194da0f49a037415dbe198ce
-      internalID: 233525456
+      spriteID: d079f1c13a454bf4791014af736508b7
+      internalID: 1635945766
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeRightDeath_3
+      name: necromancerRightDeath__3
       rect:
         serializedVersion: 2
-        x: 77
+        x: 76
         y: 0
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d9949dbf1683264685cdadb911b0cf0
-      internalID: -103410851
+      spriteID: 745c3b4b5ad7e284e83cebaac07f9a14
+      internalID: -875953660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeLeftDeath_0
+      name: necromancerLeftDeath__0
       rect:
         serializedVersion: 2
-        x: 101
+        x: 100
         y: 0
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc3ccc8b8aee203409e97e69ef143b3a
-      internalID: 1534955345
+      spriteID: 82efc3d2886895047804bfa544c53e51
+      internalID: 1634997919
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeLeftDeath_1
+      name: necromancerLeftDeath__1
       rect:
         serializedVersion: 2
-        x: 125
+        x: 124
         y: 0
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55343d57aafb87442a7e35843fc48d45
-      internalID: 1583396874
+      spriteID: ba3d5ff15fe017840ac18abce897aa54
+      internalID: -667999868
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeLeftDeath_2
+      name: necromancerLeftDeath__2
       rect:
         serializedVersion: 2
-        x: 149
+        x: 148
         y: 0
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64349240ce927354cb9aa1a7065e0746
-      internalID: 1757850094
+      spriteID: 8bdf849c53e9f3b49b13a421a3823d5b
+      internalID: -1183090486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slimeLeftDeath_3
+      name: necromancerLeftDeath__3
       rect:
         serializedVersion: 2
-        x: 173
+        x: 172
         y: 0
         width: 16
-        height: 16
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52a7677d58711a44fbdc9604f8a589a3
-      internalID: 1381988384
+      spriteID: 5d396619e88d8ae428f1098ff7720d3a
+      internalID: -1519276574
       vertices: []
       indices: 
       edges: []
@@ -630,46 +798,46 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      slimeLeftWalk_0: 569325013
-      slimeLeftHit_3: 1512416527
-      slimeLeftDeath_1: 1583396874
-      slimeLeftHit_2: 1176472519
-      slime__3: 2010232198
-      slime__6: -1512660211
-      slime__8: -81517053
-      slimeRightTurn_0: -216369369
-      slimeRightTurn_1: -549801270
-      slime__2: 773959785
-      slimeRightWalk_3: -2136278059
-      slimeRightDeath_2: 233525456
-      slime__4: -1435155451
-      slimeRightTurn_2: 1285816476
-      slimeRightWalk_1: -1618800025
-      slimeLeftWalk_1: -1302640634
-      slimeRightHit_1: 861626287
-      slimeLeftHit_0: 1504543184
-      slimeLeftTurn_0: -1268762725
-      slimeLeftTurn_3: -1080682646
-      slimeLeftWalk_3: 1944058249
-      slimeLeftDeath_2: 1757850094
-      slimeRightDeath_1: -1938977542
-      slimeRightDeath_0: -276143175
-      slimeRightHit_0: 1640916598
-      slimeLeftHit_1: 572246219
-      slime__5: -2100386588
-      slimeRightTurn_3: -1704317306
-      slimeLeftTurn_2: 943687686
-      slimeLeftWalk_2: 1407383811
-      slimeRightWalk_0: -1413565785
-      slime__1: -1940180190
-      slimeRightWalk_2: -387091306
-      slimeLeftDeath_0: 1534955345
-      slimeRightDeath_3: -103410851
-      slimeLeftDeath_3: 1381988384
-      slimeLeftTurn_1: -1470587343
-      slimeRightHit_2: 1467412358
-      slime__7: 653335863
-      slimeRightHit_3: -702030758
+      necromancerLeftHit__1: 416104561
+      necromancerRightHit__1: -1759244399
+      necromancerLeftHit__3: 1887336539
+      necromancer__23: -1939964299
+      necromancer__18: -195575713
+      necromancer__20: -837492086
+      necromancerLeftDeath__1: -667999868
+      necromancerLeftWalk__2: -2022419770
+      necromancerLeftHit__0: 615373239
+      necromancerLeftDeath__3: -1519276574
+      necromancerRightWalk__3: -2003774783
+      necromancerRightHit__0: 612201022
+      necromancerRightHit__3: -638379326
+      necromancerLeftWalk__1: -1869173789
+      necromancerLeftIdle__2: -717648166
+      necromancerLeftHit__2: -158051150
+      necromancerRightDeath__1: 2123377919
+      necromancer__17: 25535182
+      necromancerRightWalk__0: -1340716638
+      necromancerRightWalk__1: 1474292592
+      necromancerRightDeath__0: -1709706396
+      necromancerLeftWalk__3: -1852250080
+      necromancerRightHit__2: 1926207285
+      necromancerRightDeath__3: -875953660
+      necromancerRightDeath__2: 1635945766
+      necromancerRightIdle__1: 718431160
+      necromancerLeftIdle__0: -2130732253
+      necromancerLeftDeath__2: -1183090486
+      necromancerRightWalk__2: -875677159
+      necromancerLeftIdle__3: 1797492330
+      necromancer__22: -1232931735
+      necromancerRightIdle__3: -690531935
+      necromancerLeftDeath__0: 1634997919
+      necromancerRightIdle__0: -1307549797
+      necromancer__21: 665510108
+      necromancer__16: 952275823
+      necromancerRightIdle__2: 1710441838
+      necromancerLeftWalk__0: -113229286
+      necromancerLeftIdle__1: 1531718888
+      necromancer__19: -745130060
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

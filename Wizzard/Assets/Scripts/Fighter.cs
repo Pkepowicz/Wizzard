@@ -16,6 +16,8 @@ public class Fighter : Collidable
     public float immunityTime = 0;
     private float lastImmune;
 
+    private bool isAlive = true;
+
     protected virtual void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -35,18 +37,24 @@ public class Fighter : Collidable
                 hitPoint = 0;
                 Death();
             }
+            if (isAlive)
+            {
+                anim.SetTrigger("hit");
+            }
         }
     }
 
     protected virtual void UpdateMotor(Vector2 moveDelta)
     {
-        anim.SetFloat("moveDelta", moveDelta.x);
-        if (rb.velocity.magnitude <= 1.1 * maxVelocity)
+        if (isAlive)
         {
-            rb.AddForce(moveDelta * speed * Time.deltaTime, ForceMode2D.Force);
-            rb.velocity = (Vector3.ClampMagnitude(rb.velocity, maxVelocity));
+            anim.SetFloat("moveDelta", moveDelta.x);
+            if (rb.velocity.magnitude <= 1.1 * maxVelocity)
+            {
+                rb.AddForce(moveDelta * speed * Time.deltaTime, ForceMode2D.Force);
+                rb.velocity = (Vector3.ClampMagnitude(rb.velocity, maxVelocity));
+            }
         }
-
     }
 
     protected virtual void ReceiveDamage(int dmg) // to remove
@@ -58,13 +66,19 @@ public class Fighter : Collidable
             Debug.Log("Got Damage");
             if (hitPoint <= 0)
             {
-                hitPoint = 0;
                 Death();
             }
         }
     }
 
     protected virtual void Death()
+    {
+        hitPoint = 0;
+        isAlive = false;
+        anim.SetTrigger("death");
+    }
+
+    protected virtual void Destroy()
     {
         Destroy(gameObject);
     }

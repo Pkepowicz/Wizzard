@@ -23,8 +23,4 @@ public class Player : Fighter
         UpdateMotor(new Vector2(x, y).normalized);
     }
     
-    protected override void Death()
-    {
-        Time.timeScale = 0;
-    }
 }
