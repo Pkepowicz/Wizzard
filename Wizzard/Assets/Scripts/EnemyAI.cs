@@ -6,6 +6,8 @@ using Pathfinding;
 [HelpURL("http://arongranberg.com/astar/docs/class_partial1_1_1_astar_a_i.php")]
 public class EnemyAI : Fighter
 {
+    public HealthBar healthBar;
+    
     public Transform targetPosition;
 
     private Seeker seeker;
@@ -89,7 +91,8 @@ public class EnemyAI : Fighter
                 break;
             }
         }
-
+        healthBar.SetMaxHealth(maxHitPoint);
+        healthBar.SetHealth(hitPoint);
         // Slow down smoothly upon approaching the end of the path
         // This value will smoothly go from 1 to 0 as the agent approaches the last waypoint in the path.
         var speedFactor = reachedEndOfPath ? Mathf.Sqrt(distanceToWaypoint / nextWaypointDistance) : 1f;
