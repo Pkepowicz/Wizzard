@@ -51,7 +51,7 @@ public class Fireball : Projectile
 
         if (igniteEnemies)
         {
-            GameObject currentBurn = Instantiate(burn, coll.gameObject.transform);
+            GameObject currentBurn = Instantiate(burn,coll.gameObject.transform.position, Quaternion.identity,  coll.gameObject.transform);
             currentBurn.GetComponent<Burn>().CalculateBurnDamage(damage, igniteEfficieny);
         }
         

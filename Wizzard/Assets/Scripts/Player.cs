@@ -20,7 +20,7 @@ public class Player : Fighter
         // for testing new effects
         if (Input.GetButtonDown("Submit"))
         {
-            Instantiate(regen, gameObject.transform);
+            Instantiate(regen, transform.position, Quaternion.identity, gameObject.transform);
         }
     }
 
