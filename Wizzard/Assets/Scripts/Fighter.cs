@@ -60,6 +60,7 @@ public class Fighter : Collidable
         if (isAlive)
         {
             anim.SetFloat("moveDelta", moveDelta.x);
+            anim.SetBool("moving", Mathf.Abs(moveDelta.magnitude) > 0.1);
             if (rb.velocity.magnitude <= 1.1 * maxVelocity)
             {
                 rb.AddForce(moveDelta * speed * Time.deltaTime, ForceMode2D.Force);

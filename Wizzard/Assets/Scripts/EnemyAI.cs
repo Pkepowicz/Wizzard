@@ -104,6 +104,10 @@ public class EnemyAI : Fighter
         if (Vector2.Distance(transform.position, targetPosition.position) >= stopRadius)
         {
             UpdateMotor(dir * speedFactor);
+        } 
+        else
+        {
+            anim.SetBool("moving", false);
         }
     }
 }
