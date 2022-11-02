@@ -11,6 +11,10 @@ public class Wand : MonoBehaviour
     public int projectileAmount = 1;
     public float shootArc = 30; // maximum angle at which additional projectile will be spawned, 
                                 // 30 means 30deg shooting arc, so 15def abberation on each side
+                    
+    // variables for shooting 
+    public float reloadTime = 1;
+    private float lastShot = 0;
 
     // what kind of projectile wand will shoot
     public GameObject bulletPrefab;
@@ -37,8 +41,7 @@ public class Wand : MonoBehaviour
 
     }
     
-    protected float reloadTime = 1;
-    protected float lastShot = 0;
+    
     
     //protected int projectileCount;
     public Transform projectileSpawnPoint;

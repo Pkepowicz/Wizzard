@@ -5,17 +5,21 @@ using UnityEngine;
 public class Fireball : Projectile
 {
     // variables for damaging enemies
-    public int damage;
+    private int damage;
     public float knockbackForce;
     
     
     // possible modifications to basic fireball
     private bool explodeAtDeath = false;
-    private bool pullEnemies = false;
+    private bool igniteEnemies = false;
 
     // variables for pulling enemies
     public float pullRadius = 3f;
     public float pullForce = 1f;
+    
+    // variables for burning
+    public GameObject burn;
+    public float igniteEfficieny = 0.5f; // what % of impact damage will be dealt as ignite damage during its duration
     
     // variables for explosion
     public int explosionDamage = 3;
@@ -28,21 +32,13 @@ public class Fireball : Projectile
     
 
     // when creating projectile, pass parameters abut it
-    public void PassParameters(bool explode, bool pull)
+    public void PassParameters(int dmg ,bool explode, bool ignite)
     {
+        damage = dmg;
         explodeAtDeath = explode;
-        pullEnemies = pull;
+        igniteEnemies = ignite;
     }
-
-    protected override void Update()
-    {
-        base.Update();
-        if (pullEnemies is true)
-        {
-            //TODO: add pulling enemies while traveling
-        }
-    }
-
+    
     // what to do with projectile when it hits an enemy
     protected override void OnProjectileEnemyHit(Collider2D coll)
     {
@@ -52,6 +48,12 @@ public class Fireball : Projectile
             knockBack = knockbackForce,
             origin = transform.position
         };
+
+        if (igniteEnemies)
+        {
+            GameObject currentBurn = Instantiate(burn,coll.gameObject.transform.position, Quaternion.identity,  coll.gameObject.transform);
+            currentBurn.GetComponent<Burn>().CalculateBurnDamage(damage, igniteEfficieny);
+        }
         
         coll.SendMessage("ReceiveDamage", dmg);
         if (explodeAtDeath is true)

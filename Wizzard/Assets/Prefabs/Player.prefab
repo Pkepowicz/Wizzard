@@ -46,10 +46,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af53f97773367e54bb49f446d41087f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileAmount: 1
+  shootArc: 30
+  reloadTime: 1
   bulletPrefab: {fileID: 1655963679983533926, guid: b33329161b15b9547829fc7253a78e09, type: 3}
   projectileSpawnPoint: {fileID: 6725946785903123881}
   explodeAtDeath: 0
-  pullEnemies: 0
+  shotgun: 0
+  igniteEnemies: 0
+  damage: 1
 --- !u!1 &6725946785177984907
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +107,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -190,7 +195,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -219,7 +224,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &6725946785695983308
@@ -249,15 +254,17 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  rb: {fileID: 6725946785695983311}
+  anim: {fileID: 0}
   hitPoint: 10
   maxHitPoint: 10
-  immunityTime: 0.3
-  rb: {fileID: 6725946785695983311}
   speed: 1000
   maxVelocity: 1
+  immunityTime: 0.3
   velocity: {x: 0, y: 0, z: 0}
   textureManager: {fileID: 6725946784582979073}
   mainCam: {fileID: 0}
+  regen: {fileID: 0}
 --- !u!61 &6725946785695983307
 BoxCollider2D:
   m_ObjectHideFlags: 0
