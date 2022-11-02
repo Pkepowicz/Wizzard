@@ -9,6 +9,21 @@ public class Player : Fighter
     public Transform textureManager;
     public Camera mainCam;
 
+    
+    // for testing new effects
+    public GameObject regen;
+
+    protected override void Update()
+    {
+        base.Update();
+        
+        // for testing new effects
+        if (Input.GetButtonDown("Submit"))
+        {
+            Instantiate(regen, transform.position, Quaternion.identity, gameObject.transform);
+        }
+    }
+
     private void FixedUpdate()
     {
         // getting movement input
