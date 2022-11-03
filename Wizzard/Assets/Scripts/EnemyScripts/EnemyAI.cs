@@ -112,7 +112,7 @@ public class EnemyAI : Fighter
         // Rotate hand into walk/player direction
         if (hand != null)
         {
-            hand.transform.up = Vector2.Lerp(transform.up, targetPosition.transform.position - transform.position, 1.0f);
+            hand.transform.up = Vector2.Lerp(transform.up, targetPosition.transform.position - transform.position, 0.7f);
         }
 
         // Move only if target is outside of desired range

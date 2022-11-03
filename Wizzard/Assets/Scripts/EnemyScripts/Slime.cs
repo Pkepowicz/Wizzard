@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Slime : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public List<Transform> transforms;
+    public GameObject slimePrefab;
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        // ToDo: maybe add knockback after spawning small slimes?
+        Instantiate(slimePrefab, transform.position + new Vector3(0, 0.03f, 0), Quaternion.identity);
+        Instantiate(slimePrefab, transform.position + new Vector3(-0.03f, 0, 0), Quaternion.identity);
+        Instantiate(slimePrefab, transform.position + new Vector3(0, -0.03f, 0), Quaternion.identity);
     }
 }
