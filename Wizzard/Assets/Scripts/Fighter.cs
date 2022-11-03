@@ -7,26 +7,28 @@ public class Fighter : Collidable
     public Rigidbody2D rb;
     public Animator anim;
 
-    public float hitPoint = 10;
-    public int maxHitPoint = 10;
-
+    [Header("Speed Settings")]
     public float speed = 0.8f;
     public float maxVelocity = 1.6f;
 
+    [Header("Health Settings")]
+    public float hitPoint = 10;
+    public int maxHitPoint = 10;
     public float immunityTime = 0;
-    private float lastImmune;
+    private float lastImmune = float.NegativeInfinity;
 
     private bool isAlive = true;
 
 
     protected virtual void Start()
     {
+        // Getting components so you dont need to specify them everytime
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
 
     }
 
-
+    // Healing function
     public virtual void Heal(float healAmount)
     {
         if (hitPoint + healAmount > maxHitPoint)
@@ -34,8 +36,22 @@ public class Fighter : Collidable
         else
             hitPoint += healAmount;
     }
+    // Movement function
+    protected virtual void UpdateMotor(Vector2 moveDelta)
+    {
+        if (isAlive)
+        {
+            anim.SetFloat("moveDelta", moveDelta.x);
+            anim.SetBool("moving", Mathf.Abs(moveDelta.magnitude) > 0.1);
+            if (rb.velocity.magnitude <= 1.1 * maxVelocity)
+            {
+                rb.AddForce(moveDelta * speed * Time.deltaTime, ForceMode2D.Force);
+                rb.velocity = (Vector3.ClampMagnitude(rb.velocity, maxVelocity));
+            }
+        }
+    }
 
-    protected virtual void ReceiveDamage(Damage dmg) // knockback function
+    protected virtual void ReceiveDamage(Damage dmg) // With knockback function
     {
         if (Time.time - lastImmune > immunityTime)
         {
@@ -55,19 +71,7 @@ public class Fighter : Collidable
         }
     }
 
-    protected virtual void UpdateMotor(Vector2 moveDelta)
-    {
-        if (isAlive)
-        {
-            anim.SetFloat("moveDelta", moveDelta.x);
-            anim.SetBool("moving", Mathf.Abs(moveDelta.magnitude) > 0.1);
-            if (rb.velocity.magnitude <= 1.1 * maxVelocity)
-            {
-                rb.AddForce(moveDelta * speed * Time.deltaTime, ForceMode2D.Force);
-                rb.velocity = (Vector3.ClampMagnitude(rb.velocity, maxVelocity));
-            }
-        }
-    }
+
 
     protected virtual void ReceiveDamage(int dmg) // don't delete, damage over time effects use this function
     {
@@ -79,6 +83,10 @@ public class Fighter : Collidable
             if (hitPoint <= 0)
             {
                 Death();
+            }
+            if (isAlive)
+            {
+                anim.SetTrigger("hit");
             }
         }
     }
@@ -93,12 +101,15 @@ public class Fighter : Collidable
         }
     }
 
+    // Destruction of object is handled by animation
+    // Cause of that we need 2 separate functions for death and destruction
     protected virtual void Death()
     {
         hitPoint = 0;
         isAlive = false;
         anim.SetTrigger("death");
     }
+
 
     protected virtual void Destroy()
     {

@@ -7,21 +7,23 @@ using Pathfinding;
 public class EnemyAI : Fighter
 {
     public HealthBar healthBar;
-    
+
+    [Header("AI settings")]
+
     public Transform targetPosition;
 
     private Seeker seeker;
 
     public Path path;
 
-    public float nextWaypointDistance = 3;
+    public float nextWaypointDistance = 3; // Distance from waypoint that allows ai to mark it as reached
 
     private int currentWaypoint = 0;
 
-    public float repathRate = 0.5f;
+    public float repathRate = 0.5f; // How often check for repath
     private float lastRepath = float.NegativeInfinity;
 
-    public float stopRadius;
+    public float stopRadius; // How far from target ai should stop
 
     public bool reachedEndOfPath;
 
@@ -29,6 +31,8 @@ public class EnemyAI : Fighter
     {
         base.Start();
         seeker = gameObject.GetComponent<Seeker>();
+        targetPosition = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        healthBar = gameObject.GetComponent<HealthBar>();
 
         // Start a new path to the targetPosition, call the the OnPathComplete function
         // when the path has been calculated (which may take a few frames depending on the complexity)
@@ -91,8 +95,11 @@ public class EnemyAI : Fighter
                 break;
             }
         }
+
+        // Healthbar portion
         healthBar.SetMaxHealth(maxHitPoint);
         healthBar.SetHealth(hitPoint);
+
         // Slow down smoothly upon approaching the end of the path
         // This value will smoothly go from 1 to 0 as the agent approaches the last waypoint in the path.
         var speedFactor = reachedEndOfPath ? Mathf.Sqrt(distanceToWaypoint / nextWaypointDistance) : 1f;
@@ -101,10 +108,12 @@ public class EnemyAI : Fighter
         // Normalize it so that it has a length of 1 world unit
         Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
 
+        // Move only if target is outside of desired range
         if (Vector2.Distance(transform.position, targetPosition.position) >= stopRadius)
         {
             UpdateMotor(dir * speedFactor);
         } 
+        // Setting animation to idle, setting to walking is done inside update motor
         else
         {
             anim.SetBool("moving", false);

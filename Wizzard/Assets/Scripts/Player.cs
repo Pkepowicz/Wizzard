@@ -8,27 +8,21 @@ public class Player : Fighter
 
     public Transform textureManager;
     public Camera mainCam;
-
     
-    // for testing new effects
+    // For testing new effects
     public GameObject regen;
 
-    protected override void Update()
+    private void FixedUpdate()
     {
-        base.Update();
-        
-        // for testing new effects
+        // Getting movement input on each separate axis
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
+
+        // For testing new effects
         if (Input.GetButtonDown("Submit"))
         {
             Instantiate(regen, transform.position, Quaternion.identity, gameObject.transform);
         }
-    }
-
-    private void FixedUpdate()
-    {
-        // getting movement input
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
 
         // looking at mouse position, TODO: look for better way to do this
         // not sure how it works but it works
