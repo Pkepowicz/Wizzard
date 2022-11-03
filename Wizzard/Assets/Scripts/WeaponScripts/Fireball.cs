@@ -13,19 +13,15 @@ public class Fireball : Projectile
     private bool explodeAtDeath = false;
     private bool igniteEnemies = false;
 
-    // variables for pulling enemies
-    public float pullRadius = 3f;
-    public float pullForce = 1f;
-    
     // variables for burning
     public GameObject burn;
     public float igniteEfficieny = 0.5f; // what % of impact damage will be dealt as ignite damage during its duration
     
     // variables for explosion
+    [Header("Explosion settings")]
     public int explosionDamage = 3;
     public float explosionRadius = 1f; // basic radius gets multiplied by this value 
     public float explosionKnockbackForce = 2f;
-
     
     // prefab to instanciate when projectile explodes
     public GameObject explosionPrefab;
@@ -51,7 +47,10 @@ public class Fireball : Projectile
 
         if (igniteEnemies)
         {
-            GameObject currentBurn = Instantiate(burn,coll.gameObject.transform.position, Quaternion.identity,  coll.gameObject.transform);
+            GameObject enemyHit = coll.gameObject;
+            GameObject currentBurn =
+                Instantiate(burn, enemyHit.transform.position, Quaternion.identity, enemyHit.transform);
+            // pass paremeters to burn added to enemy
             currentBurn.GetComponent<Burn>().CalculateBurnDamage(damage, igniteEfficieny);
         }
         

@@ -209,10 +209,10 @@ MonoBehaviour:
     maxNormalAngle: 0
   rb: {fileID: 5284951444342579965}
   anim: {fileID: 3524761298474415794}
-  hitPoint: 10
-  maxHitPoint: 10
   speed: 400
   maxVelocity: 0.8
+  hitPoint: 10
+  maxHitPoint: 10
   immunityTime: 0.1
   healthBar: {fileID: 4032218503752989198}
   targetPosition: {fileID: 0}
@@ -302,7 +302,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1175713589
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -252144028, guid: 16c9f1e0020cd5e41845772d2bbe64c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -8,19 +8,14 @@ public class Burn : Effect
     
     protected override void Start()
     {
-        // check if object is already burning (contains Burn child), if so, destroy this game object
-        int burnCount = 0;
+        // check effects of this fighter, if burning already exists, delete it and start new burn effect
         Transform[] ts = transform.parent.GetComponentsInChildren<Transform>();
         foreach (Transform t in ts)
         {
-            if (t.name.Equals("Burn(Clone)"))
+            if (t.name.Equals("Burn(Clone)")&& (t.gameObject != this.gameObject))
             {
-                burnCount += 1;
-                if (burnCount >= 2)
-                {
-                    Destroy(gameObject);
-                    return;
-                }
+                Destroy(t.gameObject);
+                return;
             }
         }
         base.Start();
