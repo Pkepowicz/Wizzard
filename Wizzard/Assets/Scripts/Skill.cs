@@ -20,7 +20,11 @@ public class Skill : MonoBehaviour
 
         GetComponent<Image>().color = skillTree.SkillLevels[id] >= skillTree.SkillCaps[id] ? Color.yellow
             : skillTree.SkillPoint >= 1 ? Color.green : Color.white;
-
+        foreach (var connectedSkill in ConnectedSkills)
+        {
+            skillTree.SkillList[connectedSkill].gameObject.SetActive(skillTree.SkillLevels[id]>0);
+            skillTree.ConnectorList[connectedSkill].SetActive(skillTree.SkillLevels[id]>0);
+        }
     }
 
     public void Buy()
