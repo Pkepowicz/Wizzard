@@ -32,7 +32,7 @@ public class EnemyAI : Fighter
         base.Start();
         seeker = gameObject.GetComponent<Seeker>();
         targetPosition = GameObject.FindWithTag("Player").GetComponent<Transform>();
-        healthBar = gameObject.GetComponent<HealthBar>();
+        //healthBar = gameObject.GetComponent<HealthBar>();
 
         // Start a new path to the targetPosition, call the the OnPathComplete function
         // when the path has been calculated (which may take a few frames depending on the complexity)
