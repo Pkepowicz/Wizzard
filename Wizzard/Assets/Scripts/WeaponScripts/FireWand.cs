@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class FireWand : Wand
 {
+    [Header("Possible upgrades")] 
     public bool explodeAtDeath = false;
     public bool shotgun = false;
     public bool igniteEnemies = false;
 
-    public int damage = 1;
+    
     
     protected override void Shoot()
     {
-        
         base.Shoot();
+        
+        // pass parameters like explosion, ignite to each bullet created
         foreach (GameObject bullet in currentBullets)
         {
             bullet.GetComponent<Fireball>().PassParameters(damage, explodeAtDeath, igniteEnemies);

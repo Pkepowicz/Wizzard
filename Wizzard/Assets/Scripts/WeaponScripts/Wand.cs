@@ -6,18 +6,19 @@ using UnityEngine;
 
 public class Wand : MonoBehaviour
 {
+    [Header("Shooting settings")] 
+    public int damage = 1;
+    public float reloadTime = 1;
+    
+    // what kind of projectile wand will shoot
+    public GameObject bulletPrefab;
     
     // variables for shooting multiple projectiles
     public int projectileAmount = 1;
     public float shootArc = 30; // maximum angle at which additional projectile will be spawned, 
-                                // 30 means 30deg shooting arc, so 15def abberation on each side
-                    
-    // variables for shooting 
-    public float reloadTime = 1;
+                                // 30 means 30deg shooting arc, so 15deg deviation on each side
+                                
     private float lastShot = 0;
-
-    // what kind of projectile wand will shoot
-    public GameObject bulletPrefab;
     
     // List of bullets, useful when firing many projectiles
     protected List<GameObject> currentBullets;
@@ -30,25 +31,11 @@ public class Wand : MonoBehaviour
         currentBullets = new List<GameObject>();
         
     }
-
-    // calculate angle difference between each next bullet, might be calculated many times during single game
-    // e.g getting projectile count upgrade during game
-    private float CalculateAngles(int projectileCount, float projectileArc)
-    {
-        if (projectileAmount != 1)
-            return shootArc / (projectileAmount - 1);
-        return 1;
-
-    }
     
-    
-    
-    //protected int projectileCount;
     public Transform projectileSpawnPoint;
     
-    protected virtual void Update()
+    protected virtual void FixedUpdate()
     {
-        
         if ((Input.GetMouseButtonDown(0) || Input.GetKey(KeyCode.Mouse0)) && (Time.time - lastShot) > reloadTime)
         {
             //Debug.Log("Ready to shoot");
@@ -60,11 +47,8 @@ public class Wand : MonoBehaviour
 
     protected virtual void Shoot()
     {
-        // add instanciated bullet to list of bullets to pass information to them in derived classes
-        
-        
-        // niech ktoś to zrobi lepiej bo oczy bolą od samego patrzenia
         currentBullets.Clear();
+        
         if (projectileAmount == 1)
         {
             GameObject currentBullet = Instantiate(bulletPrefab, projectileSpawnPoint.position, transform.rotation);
@@ -73,13 +57,11 @@ public class Wand : MonoBehaviour
             
         else
         {
-            float bulletAngleDifference = CalculateAngles(projectileAmount, shootArc); // angle difference between each bullet shot
+            float bulletAngleDifference = shootArc / (projectileAmount - 1); // angle difference between each bullet shot
             
             for(int i = 0; i < projectileAmount; i++)
             {
                 GameObject currentBullet = Instantiate(bulletPrefab, projectileSpawnPoint.position, transform.rotation);
-                //currentBullet.transform.Rotate(0, 0, (-shootArc / 2) + i * bulletAngleDifference);
-                // virtual funcion so it may be overwritten e.g random angles for shotgun
                 currentBullet.transform.Rotate(CalculateProjectileRotation(shootArc, i, bulletAngleDifference));
                 currentBullets.Add(currentBullet);
             }
@@ -87,6 +69,7 @@ public class Wand : MonoBehaviour
         
     }
 
+    // virtual funcion so it may be overwritten e.g random angles for shotgun
     protected virtual Vector3 CalculateProjectileRotation(float shootArc, int i, float bulletAngleDifference)
     {
         return new Vector3(0, 0, (-shootArc / 2) + i * bulletAngleDifference);
