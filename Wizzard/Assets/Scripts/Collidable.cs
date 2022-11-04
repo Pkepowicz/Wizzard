@@ -10,11 +10,6 @@ public class Collidable : MonoBehaviour
     private Collider2D[] hits = new Collider2D[5];
     public ContactFilter2D filter;
 
-    protected virtual void Start()
-    {
-        Collider = gameObject.GetComponent<Collider2D>();
-    }
-
     protected virtual void Update()
     {
         // Collision engine
