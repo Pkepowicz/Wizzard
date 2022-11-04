@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class Slime : MonoBehaviour
 {
-    public List<Transform> transforms;
     public GameObject slimePrefab;
+    public List<Transform> offsets;
+    public float slimeKnockback = 0.5f;
+
+    private GameObject slime;
 
     private void OnDestroy()
     {
-        // ToDo: maybe add knockback after spawning small slimes?
-        Instantiate(slimePrefab, transform.position + new Vector3(0, 0.03f, 0), Quaternion.identity);
-        Instantiate(slimePrefab, transform.position + new Vector3(-0.03f, 0, 0), Quaternion.identity);
-        Instantiate(slimePrefab, transform.position + new Vector3(0, -0.03f, 0), Quaternion.identity);
+        Damage dmg = new Damage
+        {
+            damageAmmount = 0,
+            knockBack = slimeKnockback,
+            origin = transform.position
+        };
+        for(int i = 0; i < offsets.Count; i++)
+        {
+            slime = Instantiate(slimePrefab, offsets[i].position, Quaternion.identity);
+            slime.SendMessage("ReceiveDamage", dmg);
+        }
     }
 }

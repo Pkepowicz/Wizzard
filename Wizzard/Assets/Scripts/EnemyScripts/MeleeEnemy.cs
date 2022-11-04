@@ -10,6 +10,10 @@ public class MeleeEnemy : Collidable
     public int damage = 1;
     public float force = 2.0f; // knockback force
 
+    [Header("Optional")]
+    [SerializeField] Rigidbody2D rb;
+    [SerializeField] float knockbackAfterHit;
+
     protected override void OnCollide(Collider2D coll)
     {
         // Deal damage only if target has player tag
@@ -22,7 +26,10 @@ public class MeleeEnemy : Collidable
                 origin = transform.position
             };
             coll.SendMessage("ReceiveDamage", dmg);
-            
+            if (rb != null)
+            {
+                rb.AddForce((transform.position - coll.transform.position).normalized * knockbackAfterHit, ForceMode2D.Impulse);
+            }
         }
     }
 }

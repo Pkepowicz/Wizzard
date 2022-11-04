@@ -14,6 +14,8 @@ public class EnemyAI : Fighter
 
     [SerializeField] Transform hand;
 
+    public float maxHandTurnSpeed;
+
     private Seeker seeker;
 
     public Path path;
@@ -112,7 +114,7 @@ public class EnemyAI : Fighter
         // Rotate hand into walk/player direction
         if (hand != null)
         {
-            hand.transform.up = Vector2.Lerp(transform.up, targetPosition.transform.position - transform.position, 0.7f);
+            hand.transform.up = Vector2.Lerp(hand.transform.up, targetPosition.transform.position - transform.position, maxHandTurnSpeed);
         }
 
         // Move only if target is outside of desired range

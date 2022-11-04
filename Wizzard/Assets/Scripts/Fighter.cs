@@ -64,7 +64,7 @@ public class Fighter : Collidable
                 hitPoint = 0;
                 Death();
             }
-            if (isAlive)
+            if (isAlive && dmg.damageAmmount > 0)
             {
                 anim.SetTrigger("hit");
             }
