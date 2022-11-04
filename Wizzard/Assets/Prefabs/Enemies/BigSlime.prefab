@@ -560,7 +560,7 @@ MonoBehaviour:
   maxHandTurnSpeed: 0.5
   nextWaypointDistance: 0.2
   repathRate: 0.1
-  stopRadius: 0.18
+  stopRadius: 0.1
   reachedEndOfPath: 0
 --- !u!114 &3970039955663417361
 MonoBehaviour:
