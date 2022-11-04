@@ -12,6 +12,10 @@ public class EnemyAI : Fighter
 
     public Transform targetPosition;
 
+    [SerializeField] Transform hand;
+
+    public float maxHandTurnSpeed;
+
     private Seeker seeker;
 
     public Path path;
@@ -32,7 +36,6 @@ public class EnemyAI : Fighter
         base.Start();
         seeker = gameObject.GetComponent<Seeker>();
         targetPosition = GameObject.FindWithTag("Player").GetComponent<Transform>();
-        //healthBar = gameObject.GetComponent<HealthBar>();
 
         // Start a new path to the targetPosition, call the the OnPathComplete function
         // when the path has been calculated (which may take a few frames depending on the complexity)
@@ -107,6 +110,12 @@ public class EnemyAI : Fighter
         // Direction to the next waypoint
         // Normalize it so that it has a length of 1 world unit
         Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+
+        // Rotate hand into walk/player direction
+        if (hand != null)
+        {
+            hand.transform.up = Vector2.Lerp(hand.transform.up, targetPosition.transform.position - transform.position, maxHandTurnSpeed);
+        }
 
         // Move only if target is outside of desired range
         if (Vector2.Distance(transform.position, targetPosition.position) >= stopRadius)
