@@ -810,7 +810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bcc69f80b002074bb2cd628fafd026f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slimePrefab: {fileID: 8042667383813365902, guid: de89e0f9b4a36374ba7ec0af77c5e08a, type: 3}
+  slimePrefab: {fileID: 801562753020538249, guid: de89e0f9b4a36374ba7ec0af77c5e08a, type: 3}
   offsets:
   - {fileID: 3970039955607388695}
   - {fileID: 3970039955436042746}
