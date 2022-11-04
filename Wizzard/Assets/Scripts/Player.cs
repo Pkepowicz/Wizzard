@@ -63,7 +63,7 @@ public class Player : Fighter
         Vector3 targetPosition = mainCam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         canDash = false;
         isDashing = true;
-        HandleParticles(startDashParticle);
+        HandleParticles(startDashParticle, false);
         
         rb.velocity = targetPosition * dashingPower;
         yield return new WaitForSeconds(dashingTime);
