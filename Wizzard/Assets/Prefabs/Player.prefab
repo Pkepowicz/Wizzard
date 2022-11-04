@@ -248,15 +248,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af53f97773367e54bb49f446d41087f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileAmount: 1
-  shootArc: 30
+  damage: 1
   reloadTime: 1
   bulletPrefab: {fileID: 1655963679983533926, guid: b33329161b15b9547829fc7253a78e09, type: 3}
+  projectileAmount: 1
+  shootArc: 30
   projectileSpawnPoint: {fileID: 8531277632828162910}
   explodeAtDeath: 0
   shotgun: 0
   igniteEnemies: 1
-  damage: 1
 --- !u!1 &8531277632754169917
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,15 +324,18 @@ MonoBehaviour:
     maxNormalAngle: 0
   rb: {fileID: 8531277632754169912}
   anim: {fileID: 3112676982341256330}
-  hitPoint: 10
-  maxHitPoint: 10
   speed: 600
   maxVelocity: 1
+  hitPoint: 10
+  maxHitPoint: 10
   immunityTime: 0.3
   velocity: {x: 0, y: 0, z: 0}
   textureManager: {fileID: 8531277631707222262}
   mainCam: {fileID: 3112676981346987092}
   regen: {fileID: 6865421728576678822, guid: 254bb5e79aaf6e34c9c2b4026a357620, type: 3}
+  dashingPower: 10
+  dashingTime: 0.05
+  dashingCooldown: 1
 --- !u!61 &8531277632754169916
 BoxCollider2D:
   m_ObjectHideFlags: 0
