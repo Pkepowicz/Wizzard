@@ -135,7 +135,7 @@ MonoBehaviour:
   rb: {fileID: 8260206431221823032}
   anim: {fileID: 801562753020535415}
   speed: 400
-  maxVelocity: 1.2
+  maxVelocity: 1
   hitPoint: 2
   maxHitPoint: 2
   immunityTime: 0.1

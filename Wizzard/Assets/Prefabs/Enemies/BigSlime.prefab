@@ -815,4 +815,4 @@ MonoBehaviour:
   - {fileID: 3970039955607388695}
   - {fileID: 3970039955436042746}
   - {fileID: 3970039955170180433}
-  slimeKnockback: 2
+  slimeKnockback: 0.5
