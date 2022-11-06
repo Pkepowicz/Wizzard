@@ -26,6 +26,10 @@ public class Fireball : Projectile
     // prefab to instanciate when projectile explodes
     public GameObject explosionPrefab;
     
+    // effect when hitting a wall
+    public GameObject hitWallEffect;
+    public Transform effectSpawnPoint;
+    
 
     // when creating projectile, pass parameters abut it
     public void PassParameters(int dmg ,bool explode, bool ignite)
@@ -79,6 +83,14 @@ public class Fireball : Projectile
         if (explodeAtDeath is true)
         {
             Explode();
+            
+        }
+        else
+        {
+            
+            Vector3 offset = effectSpawnPoint.position - transform.position;
+            HandleParticles(hitWallEffect, false, hitWallEffect.GetComponent<ParticleSystem>().main.duration, offset=offset); 
+            
         }
         Destroy(gameObject);
     }
