@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Projectile : Collidable
 {
+
     public float speed = 2.5f;
     public float lifetime = 5f; // Not sure if needed
     private float startTime;
@@ -12,6 +14,7 @@ public class Projectile : Collidable
     {
         startTime = Time.time;
     }
+    
 
     protected virtual void FixedUpdate()
     {
@@ -33,6 +36,11 @@ public class Projectile : Collidable
         {
             OnProjectileWallHit(coll);
         }
+        
+        else if (coll.CompareTag("Player"))
+        {
+            OnProjectilePlayerHit(coll);
+        }
     }
 
     // what to do with projectile when it hits an, e.g explode
@@ -49,6 +57,11 @@ public class Projectile : Collidable
 
     // some projectiles may bounce of the walls
     protected virtual void OnProjectileWallHit(Collider2D coll)
+    {
+        Destroy(gameObject);
+    }
+
+    protected virtual void OnProjectilePlayerHit(Collider2D coll)
     {
         Destroy(gameObject);
     }

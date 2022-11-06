@@ -14,10 +14,11 @@ public class Fighter : Collidable
     [Header("Health Settings")]
     public float hitPoint = 10;
     public int maxHitPoint = 10;
-    public float immunityTime = 0;
+    public float immunityTime = 0.2f;
     private float lastImmune = float.NegativeInfinity;
 
     private bool isAlive = true;
+    private bool isImmune = false;
 
 
     protected virtual void Start()
@@ -51,14 +52,21 @@ public class Fighter : Collidable
         }
     }
 
+    protected IEnumerator StartImmunityPeriod(float time)
+    {
+        isImmune = true;
+        yield return new WaitForSeconds(time);
+        isImmune = false;
+    }
+
     protected virtual void ReceiveDamage(Damage dmg) // With knockback function
     {
-        if (Time.time - lastImmune > immunityTime)
+        if (!isImmune)
         {
             hitPoint -= dmg.damageAmmount;
             rb.velocity.Set(0,0);
             rb.AddForce((transform.position - dmg.origin).normalized * dmg.knockBack, ForceMode2D.Impulse);
-            lastImmune = Time.time;
+            StartCoroutine(StartImmunityPeriod(immunityTime));
             if (hitPoint <= 0)
             {
                 hitPoint = 0;
@@ -73,21 +81,18 @@ public class Fighter : Collidable
 
 
 
-    protected virtual void ReceiveDamage(int dmg) // don't delete, damage over time effects use this function
+    // dot damage can bypass immunity frames
+    protected virtual void ReceiveDamage(float dmg) // don't delete, damage over time effects use this function
     {
-        if (Time.time - lastImmune > immunityTime)
+        hitPoint -= dmg;
+        if (hitPoint <= 0)
         {
-            hitPoint -= dmg;
-            lastImmune = Time.time;
-            Debug.Log("Got Damage");
-            if (hitPoint <= 0)
-            {
-                Death();
-            }
-            if (isAlive)
-            {
-                anim.SetTrigger("hit");
-            }
+            Death();
+        }
+        if (isAlive)
+        {
+            anim.SetTrigger("hit");
+
         }
     }
 

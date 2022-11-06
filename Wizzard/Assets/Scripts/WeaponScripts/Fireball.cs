@@ -5,7 +5,7 @@ using UnityEngine;
 public class Fireball : Projectile
 {
     // variables for damaging enemies
-    private int damage;
+    private float damage;
     public float knockbackForce;
     
     
@@ -32,7 +32,7 @@ public class Fireball : Projectile
     
 
     // when creating projectile, pass parameters abut it
-    public void PassParameters(int dmg ,bool explode, bool ignite)
+    public void PassParameters(float dmg ,bool explode, bool ignite)
     {
         damage = dmg;
         explodeAtDeath = explode;

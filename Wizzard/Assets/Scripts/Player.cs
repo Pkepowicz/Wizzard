@@ -18,6 +18,7 @@ public class Player : Fighter
     public float dashingPower = 20f;
     public float dashingTime = 0.2f;
     public float dashingCooldown = 1f;
+    public float dashImmunityTime = 0.3f;
 
     public GameObject startDashParticle;
     public GameObject endDashParticle;
@@ -63,6 +64,7 @@ public class Player : Fighter
         canDash = false;
         isDashing = true;
         HandleParticles(startDashParticle, false);
+        StartCoroutine(StartImmunityPeriod(dashImmunityTime));
         rb.velocity = targetPosition * dashingPower;
         yield return new WaitForSeconds(dashingTime);
         HandleParticles(endDashParticle);

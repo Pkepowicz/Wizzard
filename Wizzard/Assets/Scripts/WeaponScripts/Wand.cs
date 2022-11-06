@@ -7,7 +7,7 @@ using UnityEngine;
 public class Wand : MonoBehaviour
 {
     [Header("Shooting settings")] 
-    public int damage = 1;
+    public float damage = 1;
     public float reloadTime = 1;
     
     // what kind of projectile wand will shoot
