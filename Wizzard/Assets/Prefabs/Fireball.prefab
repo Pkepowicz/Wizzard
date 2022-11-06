@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1655963679983533920}
   - component: {fileID: 1655963679983533927}
   - component: {fileID: 1655963679983533921}
-  - component: {fileID: 5188941358432844130}
   - component: {fileID: 1875656200649445996}
+  - component: {fileID: 33609921765192598}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3d8c0a82c78fd4a85d90e7305953cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collider: {fileID: 5188941358432844130}
+  Collider: {fileID: 33609921765192598}
   filter:
     useTriggers: 0
     useLayerMask: 0
@@ -117,39 +117,13 @@ MonoBehaviour:
     maxNormalAngle: 0
   speed: 2
   lifetime: 5
-  knockbackForce: 0
+  knockbackForce: 1
   burn: {fileID: 7899300245987635454, guid: c740d967feb9ecf4eae284a973c251af, type: 3}
   igniteEfficieny: 0.5
   explosionDamage: 3
   explosionRadius: 1
   explosionKnockbackForce: 2
   explosionPrefab: {fileID: 3168637059819119676, guid: 09d60184a03bb2c40854ee9493016e0e, type: 3}
---- !u!61 &5188941358432844130
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655963679983533926}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.045386493, y: 0.017523348}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.64}
-    newSize: {x: 0.64, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.38358217, y: 0.21732125}
-  m_EdgeRadius: 0
 --- !u!95 &1875656200649445996
 Animator:
   serializedVersion: 4
@@ -170,6 +144,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &33609921765192598
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655963679983533926}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.013267596, y: 0.12888749}
+  serializedVersion: 2
+  m_Radius: 0.07264892
 --- !u!1 &3021730994079337885
 GameObject:
   m_ObjectHideFlags: 0
