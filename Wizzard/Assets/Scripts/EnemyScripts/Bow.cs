@@ -10,6 +10,8 @@ public class Bow : MonoBehaviour
     public Transform offset;
     public float startAttackRange;
     public float attackRange;
+    public float attackSpeed;
+    private float lastAttack = float.NegativeInfinity;
 
     private void Start()
     {
@@ -19,25 +21,22 @@ public class Bow : MonoBehaviour
 
     private void Update()
     {
-        if ((enemyAi.transform.position - enemyAi.targetPosition.transform.position).magnitude <= startAttackRange)
+        // first checks if is in range then checks attack speed
+        if ((enemyAi.transform.position - enemyAi.targetPosition.transform.position).magnitude <= startAttackRange && (Time.time - lastAttack) > attackSpeed)
         {
             enemyAi.canMove = false;
             anim.SetTrigger("Draw");
+            lastAttack = Time.time;
         }
     }
 
     public void shoot()
     {
+        // checks if target didnt move out of max range if he did, cancels attack, function called by anim
         if ((enemyAi.transform.position - enemyAi.targetPosition.transform.position).magnitude <= attackRange)
         {
-            Instantiate(arrow, offset.position, enemyAi.hand.transform.rotation); // spagetthi :))
-            //anim.SetTrigger("Shoot");
-            enemyAi.canMove = true;
+            Instantiate(arrow, offset.position, enemyAi.hand.transform.rotation);
         }
-        else
-        {
-            //anim.SetTrigger("OutOfRange");
-            enemyAi.canMove = true;
-        }
+        enemyAi.canMove = true;
     }
 }
