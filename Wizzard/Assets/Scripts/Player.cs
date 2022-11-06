@@ -63,7 +63,6 @@ public class Player : Fighter
         canDash = false;
         isDashing = true;
         HandleParticles(startDashParticle, false);
-        
         rb.velocity = targetPosition * dashingPower;
         yield return new WaitForSeconds(dashingTime);
         HandleParticles(endDashParticle);

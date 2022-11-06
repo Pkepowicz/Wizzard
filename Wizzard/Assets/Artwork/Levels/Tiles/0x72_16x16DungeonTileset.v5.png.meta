@@ -384,8 +384,8 @@ TextureImporter:
         y: 92
         width: 10
         height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.51425326, y: 0.4857498}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -406,7 +406,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -430,17 +430,26 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       0x72_16x16DungeonTileset.v5_6: -1901973878
+      Torch_7: 2044498473
       0x72_16x16DungeonTileset.v5_11: -80290062
       0x72_16x16DungeonTileset.v5_1: 603727863
+      Torch_8: -976095634
+      Torch_2: 2113750453
+      Torch_6: 458266676
+      Torch_0: -900157460
       0x72_16x16DungeonTileset.v5_8: 1919921448
       0x72_16x16DungeonTileset.v5_10: 372777893
       0x72_16x16DungeonTileset.v5_2: 1953154213
       0x72_16x16DungeonTileset.v5_0: 656620925
       0x72_16x16DungeonTileset.v5_5: -431390707
+      Torch_5: -2135677676
       0x72_16x16DungeonTileset.v5_3: 1305981993
       0x72_16x16DungeonTileset.v5_14: 484535073
       0x72_16x16DungeonTileset.v5_13: -236086435
+      Torch_4: -75502895
       0x72_16x16DungeonTileset.v5_12: -1247989758
+      Torch_3: 1174440286
+      Torch_1: 843633349
       0x72_16x16DungeonTileset.v5_4: 834150440
       0x72_16x16DungeonTileset.v5_7: -366557078
       0x72_16x16DungeonTileset.v5_9: -1480021775

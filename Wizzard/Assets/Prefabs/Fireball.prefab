@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &170503160272681788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3101844359942965799}
+  m_Layer: 0
+  m_Name: ParticleSPawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3101844359942965799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170503160272681788}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.02, y: 0.21, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1655963679983533920}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1655963679983533926
 GameObject:
   m_ObjectHideFlags: 0
@@ -33,6 +64,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3670043411855163594}
+  - {fileID: 3101844359942965799}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -56,7 +88,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 07868e90a137cdb448dee8dd726c907a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -77,7 +109,7 @@ SpriteRenderer:
   m_SortingLayerID: -1175713589
   m_SortingLayer: 2
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 66e087626bdd4bb4fa3a2284f506318f, type: 3}
+  m_Sprite: {fileID: -1867886202, guid: 8f8b48eaed473c14480d928dca0266b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -115,7 +147,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  speed: 2
+  speed: 1.7
   lifetime: 5
   knockbackForce: 0
   burn: {fileID: 7899300245987635454, guid: c740d967feb9ecf4eae284a973c251af, type: 3}
@@ -124,6 +156,8 @@ MonoBehaviour:
   explosionRadius: 1
   explosionKnockbackForce: 2
   explosionPrefab: {fileID: 3168637059819119676, guid: 09d60184a03bb2c40854ee9493016e0e, type: 3}
+  hitWallEffect: {fileID: 3514729623580635874, guid: 91b6d0b381b4ac34cbcdfc6014ca1ac7, type: 3}
+  effectSpawnPoint: {fileID: 3101844359942965799}
 --- !u!61 &5188941358432844130
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -137,7 +171,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.045386493, y: 0.017523348}
+  m_Offset: {x: -0.0150218755, y: 0.050980367}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -148,7 +182,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.38358217, y: 0.21732125}
+  m_Size: {x: 0.18469849, y: 0.33256215}
   m_EdgeRadius: 0
 --- !u!95 &1875656200649445996
 Animator:
@@ -217,9 +251,9 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 0.735849, g: 0.37236893, b: 0.23255605, a: 1}
-  m_Intensity: 0.2
+  m_FalloffIntensity: 0.74
+  m_Color: {r: 0.8490566, g: 0.2723505, b: 0.1802243, a: 1}
+  m_Intensity: 0.99
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000dd7b4ec3cb08ecb9
