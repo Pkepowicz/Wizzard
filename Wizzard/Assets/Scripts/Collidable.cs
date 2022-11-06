@@ -32,16 +32,16 @@ public class Collidable : MonoBehaviour
     // method for creating particles and deleting them after lifetime ends
     // most particle events should last less than 5 sec
     // if attach to this is true, makes this particle effect child of the target
-    protected virtual void HandleParticles(GameObject prefab, bool attachToThis=true, float lifetime = 5)
+    protected virtual void HandleParticles(GameObject prefab, bool attachToThis=true, float lifetime = 5, Vector3 offset = default(Vector3))
     {
         GameObject currentParticle = null;
         if (attachToThis)
         {
-            currentParticle = Instantiate(prefab, transform.position, Quaternion.identity, transform);
+            currentParticle = Instantiate(prefab, transform.position + offset, Quaternion.identity, transform);
         }
         else
         {
-            currentParticle = Instantiate(prefab, transform.position, Quaternion.identity);
+            currentParticle = Instantiate(prefab, transform.position + offset, Quaternion.identity);
         }
         
         currentParticle.GetComponent<ParticleSystem>().Play();
