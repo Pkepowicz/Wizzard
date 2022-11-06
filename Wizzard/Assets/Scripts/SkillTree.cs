@@ -24,12 +24,12 @@ public class SkillTree : MonoBehaviour
     private void Start()
     {
         SkillPoint = 20;
-        SkillLevels = new int[6];
-        SkillCaps = new[] {1, 5, 5, 2, 10, 10};
-        SkillNames = new[] {"one", "two", "three", "four", "five", "six"};
+        SkillLevels = new int[11];
+        SkillCaps = new[] {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+        SkillNames = new[] {"Fire Magic", "Fire shot", "Tornado of blazes", "Burn", "Fire Beast", "Explosion","Fire Magic", "Fire shot", "Tornado of blazes", "Burn", "Fire Beast"};
         SkillDescriptions = new[]
         {
-             "two", "three", "four", "five", "six","one"
+             "The most destructive magic", "Boost your damage", "Kill everybody around you", "Summon fire elemental", "Be a fire","Your shot explode","The most destructive magic", "Boost your damage", "Kill everybody around you", "Summon fire elemental", "Be a fire",
         };
 
 
@@ -41,6 +41,10 @@ public class SkillTree : MonoBehaviour
 
         SkillList[0].ConnectedSkills = new[] {1, 2, 3};
         SkillList[2].ConnectedSkills = new[] {4, 5};
+        SkillList[4].ConnectedSkills = new[] {6, 7};
+        SkillList[7].ConnectedSkills = new[] {8};
+        SkillList[8].ConnectedSkills = new[] {9, 10};
+
         UpdateAllSkillUI();
     }
 

@@ -4,39 +4,45 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    // WORK IN PROGRESS
-    // for now it spawns enemies in circle around player on set intervals
-    // TODO: Change it to something more fitting
+   [SerializeField] private GameObject minion;
+   [SerializeField] private int numberOfCreatures = 2;
+    int wave=1;
 
-    public Transform target;
-    public GameObject meleeEnemy;
-    public float radius;
-    public float meleeEnemySpawnTime;
-    private float meleeEnemyLastSpawn;
+   
 
-    private void Update()
-    {
-        spawn();
-    }
+   void Update()
+   {
+      
+      
+       int currentNumbersOfCreatures = GameObject.FindGameObjectsWithTag("Enemy").Length;
+       Debug.Log(currentNumbersOfCreatures);
+       
+       if (currentNumbersOfCreatures == 0)
+       {   
+           numberOfCreatures = 2;
+           wave += 1;
+       }
+       
+       
+      if (numberOfCreatures > 0)
+      {   
+          numberOfCreatures -= 1;
+          
+          
+          Spawn(minion);
+      }
+   }
 
-    private void spawn()
-    {
-        if (Time.time - meleeEnemySpawnTime > meleeEnemyLastSpawn)
-        {
-            Vector3 pos = Circle(target.position, radius);
-            Quaternion rot = Quaternion.LookRotation(Vector3.forward, target.position - pos);
-            Instantiate(meleeEnemy, pos, rot);
-            meleeEnemyLastSpawn = Time.time;
-        }
-    }
-
-    Vector3 Circle(Vector3 center, float rad)
-    {
-        float ang = Random.value * 360;
-        Vector3 pos;
-        pos.x = center.x + rad * Mathf.Sin(ang * Mathf.Deg2Rad);
-        pos.y = center.y + rad * Mathf.Cos(ang * Mathf.Deg2Rad);
-        pos.z = center.z;
-        return pos;
-    }
+   public void Spawn( GameObject enemy)
+   {
+      
+      
+      
+         
+         GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-1f, 1), Random.Range(-1f, 1), 0), Quaternion.identity);
+         
+      
+      
+   }
+   
 }

@@ -27,6 +27,7 @@ public class EnemyAI : Fighter
 
     protected override void Start()
     {
+        targetPosition = GameObject.FindWithTag("Player").GetComponent<Transform>();
         base.Start();
         seeker = gameObject.GetComponent<Seeker>();
 
