@@ -12,7 +12,7 @@ public class EnemyAI : Fighter
 
     public Transform targetPosition;
 
-    [SerializeField] Transform hand;
+    [SerializeField] public Transform hand;
 
     public float maxHandTurnSpeed;
 
@@ -30,6 +30,8 @@ public class EnemyAI : Fighter
     public float stopRadius; // How far from target ai should stop
 
     public bool reachedEndOfPath;
+
+    public bool canMove = true;
 
     protected override void Start()
     {
@@ -118,7 +120,7 @@ public class EnemyAI : Fighter
         }
 
         // Move only if target is outside of desired range
-        if (Vector2.Distance(transform.position, targetPosition.position) >= stopRadius)
+        if (Vector2.Distance(transform.position, targetPosition.position) >= stopRadius && canMove)
         {
             UpdateMotor(dir * speedFactor);
         } 
