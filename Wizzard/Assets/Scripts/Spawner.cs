@@ -7,14 +7,16 @@ public class Spawner : MonoBehaviour
    [SerializeField] private GameObject minion;
    [SerializeField] private float interval=10f;
    [SerializeField] private int numberOfCreatures = 2;
+    private bool coroutineStarted = false;
 
 
    void Update()
    {
-      if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+      if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && !coroutineStarted)
       {
-         StartCoroutine(Spawn(interval, minion,numberOfCreatures));
-         numberOfCreatures = numberOfCreatures * 2;
+         StartCoroutine(Spawn(interval, minion, numberOfCreatures));
+            numberOfCreatures = numberOfCreatures * 2;
+            coroutineStarted = true;
       }
   
    }
@@ -27,10 +29,10 @@ public class Spawner : MonoBehaviour
                GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-1f, 1), Random.Range(-1f, 1), 0),
                    Quaternion.identity);
            }
+        coroutineStarted = false;
 
-           
-       
-   }
+
+    }
 
 
    
