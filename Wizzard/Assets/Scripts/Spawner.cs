@@ -5,44 +5,34 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
    [SerializeField] private GameObject minion;
+   [SerializeField] private float interval=10f;
    [SerializeField] private int numberOfCreatures = 2;
-    int wave=1;
 
-   
 
    void Update()
    {
-      
-      
-       int currentNumbersOfCreatures = GameObject.FindGameObjectsWithTag("Enemy").Length;
-       Debug.Log(currentNumbersOfCreatures);
-       
-       if (currentNumbersOfCreatures == 0)
-       {   
-           numberOfCreatures = 2;
-           wave += 1;
-       }
-       
-       
-      if (numberOfCreatures > 0)
-      {   
-          numberOfCreatures -= 1;
-          
-          
-          Spawn(minion);
+      if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+      {
+         StartCoroutine(Spawn(interval, minion,numberOfCreatures));
+         numberOfCreatures = numberOfCreatures * 2;
       }
+  
+   }
+//int currentNumbersOfCreatures = GameObject.FindGameObjectsWithTag("Enemy").Length;
+   private IEnumerator Spawn(float interval, GameObject enemy, int creaturesNumber)
+   {
+       yield return new WaitForSeconds(interval);
+           for (int i = 0; i <= creaturesNumber; i++)
+           {
+               GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-1f, 1), Random.Range(-1f, 1), 0),
+                   Quaternion.identity);
+           }
+
+           
+       
    }
 
-   public void Spawn( GameObject enemy)
-   {
-      
-      
-      
-         
-         GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-1f, 1), Random.Range(-1f, 1), 0), Quaternion.identity);
-         
-      
-      
-   }
+
+   
    
 }
