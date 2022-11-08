@@ -23,14 +23,14 @@ public class Spear : MonoBehaviour
         if ((enemyAi.transform.position - enemyAi.targetPosition.transform.position).magnitude <= attackRange && (Time.time - lastAttack) > attackSpeed)
         {
             enemyAi.canMove = false;
-            anim.SetTrigger("Draw");
+            anim.SetTrigger("Charge");
             lastAttack = Time.time;
         }
     }
 
     public void addForce()
     {
-        enemyAi.rb.AddForce((enemyAi.transform.position - enemyAi.targetPosition.transform.position).normalized * chargeForce);
+        enemyAi.rb.AddForce((enemyAi.targetPosition.transform.position - enemyAi.transform.position).normalized * chargeForce);
         enemyAi.canMove = true;
     }
 }
