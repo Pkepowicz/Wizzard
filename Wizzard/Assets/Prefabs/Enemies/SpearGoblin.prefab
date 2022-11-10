@@ -120,6 +120,8 @@ GameObject:
   - component: {fileID: 3637894530789958915}
   - component: {fileID: 3637894530789958916}
   - component: {fileID: 3637894530789958914}
+  - component: {fileID: 8837634072916547640}
+  - component: {fileID: 4964662281003719218}
   m_Layer: 0
   m_Name: Spear
   m_TagString: Untagged
@@ -230,7 +232,54 @@ MonoBehaviour:
   anim: {fileID: 3637894530789958916}
   attackSpeed: 0
   attackRange: 1
-  chargeForce: 500
+  chargeForce: 300
+--- !u!58 &8837634072916547640
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3637894530789958918}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0039228797, y: 0.058795214}
+  serializedVersion: 2
+  m_Radius: 0.022858934
+--- !u!114 &4964662281003719218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3637894530789958918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 318116a4a0871fd428ac948caec8a8b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collider: {fileID: 8837634072916547640}
+  filter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  damage: 1
+  force: 2
+  rb: {fileID: 0}
+  knockbackAfterHit: 0
 --- !u!1 &6402544192650572163
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +372,7 @@ GameObject:
   - component: {fileID: 1434065873091462965}
   - component: {fileID: 6957094039793856057}
   - component: {fileID: 6957094039793856056}
+  - component: {fileID: 3615441870609436346}
   m_Layer: 0
   m_Name: SpearGoblin
   m_TagString: Enemy
@@ -443,8 +493,8 @@ MonoBehaviour:
   anim: {fileID: 6957094039793856057}
   speed: 400
   maxVelocity: 0.8
-  hitPoint: 10
-  maxHitPoint: 10
+  hitPoint: 5
+  maxHitPoint: 5
   immunityTime: 0.1
   healthBar: {fileID: 7463510009596273285}
   targetPosition: {fileID: 0}
@@ -549,6 +599,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3615441870609436346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6957094039793852871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 318116a4a0871fd428ac948caec8a8b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collider: {fileID: 6957094039793852876}
+  filter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  damage: 1
+  force: 2
+  rb: {fileID: 1815246163180321398}
+  knockbackAfterHit: 2
 --- !u!1 &7136772944876104464
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ public class Spear : MonoBehaviour
 
     public void addForce()
     {
-        enemyAi.rb.AddForce((enemyAi.targetPosition.transform.position - enemyAi.transform.position).normalized * chargeForce);
+        enemyAi.rb.AddForce(transform.up * chargeForce);
         enemyAi.canMove = true;
     }
 }
