@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: club
+      name: weapons__0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 12
-        height: 24
+        x: 12
+        y: 24
+        width: 13
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db8854aa9bb2a9b45aacb31bfb4ab286
-      internalID: -609374466
+      spriteID: e46d0d1865d3d314ea9bd5e3cfcc0a52
+      internalID: -777490742
       vertices: []
       indices: 
       edges: []
@@ -148,6 +148,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       club: -609374466
+      weapons__0: -777490742
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
