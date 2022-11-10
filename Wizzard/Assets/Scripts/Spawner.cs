@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
+
 {
-   [SerializeField] private GameObject minion;
+   public List<Enemy> enemies = new List<Enemy>();
    [SerializeField] private float interval=10f;
    [SerializeField] private int numberOfCreatures = 2;
     private bool coroutineStarted = false;
@@ -14,30 +15,29 @@ public class Spawner : MonoBehaviour
    {
       if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && !coroutineStarted)
       {
-         StartCoroutine(Spawn(interval, minion, numberOfCreatures));
+         StartCoroutine(Spawn(interval, enemies, numberOfCreatures));
             numberOfCreatures = numberOfCreatures * 2;
             coroutineStarted = true;
       }
   
    }
-//int currentNumbersOfCreatures = GameObject.FindGameObjectsWithTag("Enemy").Length;
-   private IEnumerator Spawn(float interval, GameObject enemy, int creaturesNumber)
+
+   private IEnumerator Spawn(float interval, List<Enemy> enemiesPossibleToSpawn, int creaturesNumber)
    {
        yield return new WaitForSeconds(interval);
            while ( creaturesNumber>0)
            {
-              int value = Random.Range(1, 2);
+              int value = Random.Range(1, enemiesPossibleToSpawn.Count);
                
                    
-               if(value==1)
-               {GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-1f, 1), Random.Range(-1f, 1), 0),
-                   Quaternion.identity);
-                  creaturesNumber = creaturesNumber - 1;
-               }
-               else
+               if(creaturesNumber - enemiesPossibleToSpawn[value].cost>=0)
                {
+                  GameObject newEnemy = Instantiate(enemiesPossibleToSpawn[value].enemyPrefab, new Vector3(Random.Range(-1f, 1), Random.Range(-1f, 1), 0),
+                   Quaternion.identity);
+                  creaturesNumber = creaturesNumber - enemiesPossibleToSpawn[value].cost;
                   
                }
+              
            }
         coroutineStarted = false;
 
@@ -47,4 +47,10 @@ public class Spawner : MonoBehaviour
 
    
    
+}
+[System.Serializable]
+public class Enemy
+{
+   public GameObject enemyPrefab;
+   public int cost;
 }
