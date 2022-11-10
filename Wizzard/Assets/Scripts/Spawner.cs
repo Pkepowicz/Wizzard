@@ -27,7 +27,7 @@ public class Spawner : MonoBehaviour
        yield return new WaitForSeconds(interval);
            while ( creaturesNumber>0)
            {
-              int value = Random.Range(1, enemiesPossibleToSpawn.Count);
+              int value = Random.Range(0, enemiesPossibleToSpawn.Count);
                
                    
                if(creaturesNumber - enemiesPossibleToSpawn[value].cost>=0)
