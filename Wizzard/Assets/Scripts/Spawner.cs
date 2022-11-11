@@ -3,40 +3,54 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
+
 {
-    // WORK IN PROGRESS
-    // for now it spawns enemies in circle around player on set intervals
-    // TODO: Change it to something more fitting
+   public List<Enemy> enemies = new List<Enemy>();
+   [SerializeField] private float interval=10f;
+   [SerializeField] private int numberOfCreatures = 2;
+    private bool coroutineStarted = false;
 
-    public Transform target;
-    public GameObject meleeEnemy;
-    public float radius;
-    public float meleeEnemySpawnTime;
-    private float meleeEnemyLastSpawn;
 
-    private void Update()
-    {
-        spawn();
+   void Update()
+   {
+      if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && !coroutineStarted)
+      {
+         StartCoroutine(Spawn(interval, enemies, numberOfCreatures));
+            numberOfCreatures = numberOfCreatures * 2;
+            coroutineStarted = true;
+      }
+  
+   }
+
+   private IEnumerator Spawn(float interval, List<Enemy> enemiesPossibleToSpawn, int creaturesNumber)
+   {
+       yield return new WaitForSeconds(interval);
+           while ( creaturesNumber>0)
+           {
+              int value = Random.Range(0, enemiesPossibleToSpawn.Count);
+               
+                   
+               if(creaturesNumber - enemiesPossibleToSpawn[value].cost>=0)
+               {
+                  GameObject newEnemy = Instantiate(enemiesPossibleToSpawn[value].enemyPrefab, new Vector3(Random.Range(-1f, 1), Random.Range(-1f, 1), 0),
+                   Quaternion.identity);
+                  creaturesNumber = creaturesNumber - enemiesPossibleToSpawn[value].cost;
+                  
+               }
+              
+           }
+        coroutineStarted = false;
+
+
     }
 
-    private void spawn()
-    {
-        if (Time.time - meleeEnemySpawnTime > meleeEnemyLastSpawn)
-        {
-            Vector3 pos = Circle(target.position, radius);
-            Quaternion rot = Quaternion.LookRotation(Vector3.forward, target.position - pos);
-            Instantiate(meleeEnemy, pos, rot);
-            meleeEnemyLastSpawn = Time.time;
-        }
-    }
 
-    Vector3 Circle(Vector3 center, float rad)
-    {
-        float ang = Random.value * 360;
-        Vector3 pos;
-        pos.x = center.x + rad * Mathf.Sin(ang * Mathf.Deg2Rad);
-        pos.y = center.y + rad * Mathf.Cos(ang * Mathf.Deg2Rad);
-        pos.z = center.z;
-        return pos;
-    }
+   
+   
+}
+[System.Serializable]
+public class Enemy
+{
+   public GameObject enemyPrefab;
+   public int cost;
 }

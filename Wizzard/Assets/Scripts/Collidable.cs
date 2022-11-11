@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Collidable : MonoBehaviour
 {
     public Collider2D Collider;
@@ -24,6 +26,25 @@ public class Collidable : MonoBehaviour
 
     protected virtual void OnCollide(Collider2D coll)
     {
-        Debug.Log("OnCollide was not implemented in " + this.name);
+
+    }
+
+    // method for creating particles and deleting them after lifetime ends
+    // most particle events should last less than 5 sec
+    // if attach to this is true, makes this particle effect child of the target
+    protected virtual void HandleParticles(GameObject prefab, bool attachToThis=true, float lifetime = 5, Vector3 offset = default(Vector3))
+    {
+        GameObject currentParticle = null;
+        if (attachToThis)
+        {
+            currentParticle = Instantiate(prefab, transform.position + offset, Quaternion.identity, transform);
+        }
+        else
+        {
+            currentParticle = Instantiate(prefab, transform.position + offset, Quaternion.identity);
+        }
+        
+        currentParticle.GetComponent<ParticleSystem>().Play();
+        Destroy(currentParticle, lifetime);
     }
 }

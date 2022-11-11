@@ -4,56 +4,74 @@ using UnityEngine;
 
 public class Player : Fighter
 {
-    public float speed = 0.8f;
-    public float maxVelocity = 1.6f;
     public Vector3 velocity;
 
-    // references TODO: Change it to private
     public Transform textureManager;
     public Camera mainCam;
+    
+    // For testing new effects
+    public GameObject regen;
+
+    [Header("Dash settings")] 
+    private bool canDash = true;
+    private bool isDashing = false;
+    public float dashingPower = 20f;
+    public float dashingTime = 0.2f;
+    public float dashingCooldown = 1f;
+    public float dashImmunityTime = 0.3f;
+
+    public GameObject startDashParticle;
+    public GameObject endDashParticle;
+
+    protected override void Update()
+    {
+        base.Update();
+        if (Input.GetKeyDown(KeyCode.Space) && canDash)
+        {
+            StartCoroutine(Dash());
+        }
+    }
 
     private void FixedUpdate()
     {
-        // getting movement input
+        // if the player is already dashing, he can't do anything
+        if (isDashing || !canMove)
+        {
+            return;
+        }
+        // Getting movement input on each separate axis
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
-        // looking at mouse position, TODO: look for better way to do this
-        // not sure how it works but it works
-        Vector3 toTarget = mainCam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        textureManager.transform.up = new Vector3(toTarget.x, toTarget.y, 0);
+        // For testing new effects
+        /*if (Input.GetButtonDown("Submit"))
+        {
+            Instantiate(regen, transform.position, Quaternion.identity, gameObject.transform);
+        }*/
 
-        UpdateMotor(new Vector3(x, y, 0).normalized);
+        
+
+        // looking at mouse position 
+        Vector2 toTarget = mainCam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        textureManager.transform.up = toTarget;
+
+        UpdateMotor(new Vector2(x, y).normalized);
     }
 
-    // Maybe change it to simpler version without sliding?
-    private void UpdateMotor(Vector3 moveDelta)
+    private IEnumerator Dash()
     {
-        // acceleration
-        if (Mathf.Abs(velocity.x) <= maxVelocity)
-        {
-            velocity.x += moveDelta.x * speed;
-            velocity.x = Mathf.Clamp(velocity.x, -maxVelocity, maxVelocity);
-        }
-        if (Mathf.Abs(velocity.y) <= maxVelocity)
-        {
-            velocity.y += moveDelta.y * speed;
-            velocity.y = Mathf.Clamp(velocity.y, -maxVelocity, maxVelocity);
-        }
-        // slowing
-        if (velocity != Vector3.zero)
-        {
-            if (moveDelta.x == 0)
-                velocity.x = Vector3.MoveTowards(velocity, Vector3.zero, speed).x;
-            if (moveDelta.y == 0)
-                velocity.y = Vector3.MoveTowards(velocity, Vector3.zero, speed).y;
-        }
-        // move
-        transform.Translate(velocity * Time.deltaTime);
+        Vector3 targetPosition = mainCam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        canDash = false;
+        isDashing = true;
+        HandleParticles(startDashParticle, false);
+        StartCoroutine(StartImmunityPeriod(dashImmunityTime));
+        rb.velocity = targetPosition * dashingPower;
+        yield return new WaitForSeconds(dashingTime);
+        HandleParticles(endDashParticle);
+        rb.velocity = Vector3.zero;
+        isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
     }
-
-    protected override void Death()
-    {
-        Time.timeScale = 0;
-    }
+    
 }
