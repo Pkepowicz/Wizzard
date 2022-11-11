@@ -35,7 +35,7 @@ public class Player : Fighter
     private void FixedUpdate()
     {
         // if the player is already dashing, he can't do anything
-        if (isDashing)
+        if (isDashing || !canMove)
         {
             return;
         }

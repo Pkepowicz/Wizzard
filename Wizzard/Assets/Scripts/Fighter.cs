@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,9 @@ public class Fighter : Collidable
 
     private bool isAlive = true;
     private bool isImmune = false;
+    public bool canMove = true;
+    
+    public HealthBar healthBar;
 
 
     protected virtual void Start()
@@ -26,21 +30,31 @@ public class Fighter : Collidable
         // Getting components so you dont need to specify them everytime
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
-
+        healthBar.SetMaxHealth(maxHitPoint);
     }
+
 
     // Healing function
     public virtual void Heal(float healAmount)
     {
         if (hitPoint + healAmount > maxHitPoint)
+        {
             hitPoint = maxHitPoint;
+            healthBar.SetHealth(hitPoint);
+        }
+            
+        
         else
+        {
             hitPoint += healAmount;
+            healthBar.SetHealth(hitPoint);
+        }
+            
     }
     // Movement function
     protected virtual void UpdateMotor(Vector2 moveDelta)
     {
-        if (isAlive)
+        if (isAlive && canMove)
         {
             anim.SetFloat("moveDelta", moveDelta.x);
             anim.SetBool("moving", Mathf.Abs(moveDelta.magnitude) > 0.1);
@@ -72,6 +86,7 @@ public class Fighter : Collidable
                 hitPoint = 0;
                 Death();
             }
+            healthBar.SetHealth(hitPoint);
             if (isAlive && dmg.damageAmmount > 0)
             {
                 anim.SetTrigger("hit");
@@ -89,6 +104,7 @@ public class Fighter : Collidable
         {
             Death();
         }
+        healthBar.SetHealth(hitPoint);
         if (isAlive)
         {
             anim.SetTrigger("hit");
@@ -99,7 +115,7 @@ public class Fighter : Collidable
     protected virtual void TakeDamageFromDot(float damage) // damage taken from dots should bypass immunity frames
     {
         hitPoint -= damage;
-        Debug.Log("Got Damage");
+        healthBar.SetHealth(hitPoint);
         if (hitPoint <= 0)
         {
             Death();

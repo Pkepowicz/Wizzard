@@ -27,6 +27,7 @@ public class Effect : MonoBehaviour
         
         Invoke("EndEffect", duration);
         
+        
         Debug.Log("started effect " + effectName);
 
     }
@@ -42,4 +43,8 @@ public class Effect : MonoBehaviour
         Destroy(gameObject);
     }
 
+    protected virtual void OnDestroy()
+    {
+        CancelInvoke();
+    }
 }

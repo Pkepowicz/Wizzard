@@ -2,14 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireballExplosion : Explosion
+public class GhostExplosion : Explosion
 {
-    // animation clip of explosion
-
     protected override void OnCollide(Collider2D coll)
     {
-        // send damage to enemy if hit by explosion
-        if (coll.CompareTag("Enemy"))
+        if (coll.CompareTag("Player"))
         {
             Damage dmg = new Damage()
             {
