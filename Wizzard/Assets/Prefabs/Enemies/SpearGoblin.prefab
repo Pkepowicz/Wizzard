@@ -496,6 +496,7 @@ MonoBehaviour:
   hitPoint: 5
   maxHitPoint: 5
   immunityTime: 0.1
+  canMove: 1
   healthBar: {fileID: 7463510009596273285}
   targetPosition: {fileID: 0}
   hand: {fileID: 3637894530627707350}
@@ -504,7 +505,6 @@ MonoBehaviour:
   repathRate: 0.1
   stopRadius: 0.32
   reachedEndOfPath: 0
-  canMove: 1
 --- !u!114 &1434065873091462965
 MonoBehaviour:
   m_ObjectHideFlags: 0

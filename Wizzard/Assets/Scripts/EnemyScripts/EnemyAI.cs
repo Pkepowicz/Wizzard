@@ -30,6 +30,7 @@ public class EnemyAI : Fighter
 
     public bool reachedEndOfPath;
 
+    public Vector3 dir;
 
     protected override void Start()
     {
@@ -107,7 +108,7 @@ public class EnemyAI : Fighter
 
         // Direction to the next waypoint
         // Normalize it so that it has a length of 1 world unit
-        Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+        dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
 
         // Rotate hand into walk/player direction
         if (hand != null)
