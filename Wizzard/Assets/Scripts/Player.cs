@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Fighter
 {
@@ -22,6 +23,8 @@ public class Player : Fighter
 
     public GameObject startDashParticle;
     public GameObject endDashParticle;
+
+    public DashCooldown dashCDManager;
 
     protected override void Update()
     {
@@ -48,9 +51,7 @@ public class Player : Fighter
         {
             Instantiate(regen, transform.position, Quaternion.identity, gameObject.transform);
         }*/
-
         
-
         // looking at mouse position 
         Vector2 toTarget = mainCam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         textureManager.transform.up = toTarget;
@@ -66,12 +67,16 @@ public class Player : Fighter
         HandleParticles(startDashParticle, false);
         StartCoroutine(StartImmunityPeriod(dashImmunityTime));
         rb.velocity = targetPosition * dashingPower;
+        dashCDManager.StartDashCooldown(dashingCooldown);
         yield return new WaitForSeconds(dashingTime);
+        
         HandleParticles(endDashParticle);
         rb.velocity = Vector3.zero;
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
+
+
     
 }
