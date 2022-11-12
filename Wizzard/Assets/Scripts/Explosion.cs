@@ -13,7 +13,7 @@ public class Explosion : Collidable
 
    
     
-    protected void Start()
+    protected virtual void Start()
     {
         // destroy this gameObject at the end of its animation
         Destroy(gameObject, animClip.length);
