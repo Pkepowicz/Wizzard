@@ -134,7 +134,7 @@ MonoBehaviour:
   originalSize: {x: 0, y: 0, z: 0}
   anim: {fileID: 835424165}
   attackPrefab: {fileID: 3382580173366670704, guid: 002bd7043d54dd34783989266bc01f7f, type: 3}
-  attackRange: 1
+  attackRange: 1.5
   attackSpeed: 2
 --- !u!95 &835424165
 Animator:
@@ -378,7 +378,7 @@ MonoBehaviour:
   maxHandTurnSpeed: 0
   nextWaypointDistance: 0.2
   repathRate: 0.1
-  stopRadius: 0.32
+  stopRadius: 1.2
   reachedEndOfPath: 0
   dir: {x: 0, y: 0, z: 0}
 --- !u!114 &4863945608095489982
