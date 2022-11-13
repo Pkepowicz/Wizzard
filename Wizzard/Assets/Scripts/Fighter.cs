@@ -61,9 +61,10 @@ public class Fighter : Collidable
         if (isAlive && canMove)
         {
             // changing sprite direction
-            if (moveDelta.x > 0)
+            // changing sprite direction
+            if (moveDelta.x > 0.15)
                 sprite.transform.localScale = localScale;
-            else if (moveDelta.x < 0)
+            else if (moveDelta.x < -0.15)
                 sprite.transform.localScale = new Vector3(localScale.x * -1, localScale.y, localScale.z);
 
             anim.SetBool("moving", Mathf.Abs(moveDelta.magnitude) > 0.1);
