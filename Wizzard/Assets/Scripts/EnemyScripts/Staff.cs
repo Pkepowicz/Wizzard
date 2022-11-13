@@ -20,10 +20,6 @@ public class Staff : MonoBehaviour
 
     private void Update()
     {
-        if (enemyAI.dir.x > 0)
-            transform.localScale = originalSize;
-        else if (enemyAI.dir.x < 0)
-            transform.localScale = new Vector3(originalSize.x * -1, originalSize.y, originalSize.z);
         if ((transform.position - enemyAI.targetPosition.position).magnitude <= attackRange && canAttack)
         {
             StartCoroutine(Attack());
