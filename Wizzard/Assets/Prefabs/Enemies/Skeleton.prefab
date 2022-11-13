@@ -590,11 +590,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyAi: {fileID: 786094244658795527}
   anim: {fileID: 786094244131796871}
-  arrow: {fileID: 6217438178683426616, guid: b81cd6df4fea0504e82aa2694288f301, type: 3}
+  arrow: {fileID: 2648695857083818069, guid: 191a5654bf8f5384ba961fdad6c59061, type: 3}
   offset: {fileID: 786094243963421122}
   startAttackRange: 1
   attackRange: 1.4
   attackSpeed: 2
+  damage: 1
 --- !u!1 &786094244281971445
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,7 +687,6 @@ GameObject:
   - component: {fileID: 786094244658795527}
   - component: {fileID: 786094244658795520}
   - component: {fileID: 786094244658795521}
-  - component: {fileID: 786094244658795522}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Enemy
@@ -708,6 +708,7 @@ Transform:
   m_Children:
   - {fileID: 786094243562128865}
   - {fileID: 786094243040799308}
+  - {fileID: 911109764480822358}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -805,11 +806,13 @@ MonoBehaviour:
     maxNormalAngle: 0
   rb: {fileID: 786094244658795525}
   anim: {fileID: 786094244658795521}
+  sprite: {fileID: 0}
   speed: 400
   maxVelocity: 0.8
   hitPoint: 10
   maxHitPoint: 10
   immunityTime: 0.1
+  canMove: 1
   healthBar: {fileID: 786094243562128867}
   targetPosition: {fileID: 0}
   hand: {fileID: 786094243040799308}
@@ -818,7 +821,7 @@ MonoBehaviour:
   repathRate: 0.1
   stopRadius: 1
   reachedEndOfPath: 0
-  canMove: 1
+  dir: {x: 0, y: 0, z: 0}
 --- !u!114 &786094244658795520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,13 +864,45 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!212 &786094244658795522
+--- !u!1 &5249788805708317574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 911109764480822358}
+  - component: {fileID: 8728863793606333983}
+  m_Layer: 0
+  m_Name: Sprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &911109764480822358
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5249788805708317574}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 786094244658795531}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &8728863793606333983
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786094244658795523}
+  m_GameObject: {fileID: 5249788805708317574}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -902,12 +937,12 @@ SpriteRenderer:
   m_SortingLayerID: -1175713589
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1694568172, guid: 44dd4ac851a98b049a5769533e616f8c, type: 3}
+  m_Sprite: {fileID: 1638773080, guid: 44dd4ac851a98b049a5769533e616f8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.17}
+  m_Size: {x: 0.12, y: 0.18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
