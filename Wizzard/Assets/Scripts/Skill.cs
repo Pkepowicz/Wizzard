@@ -11,10 +11,7 @@ public class Skill : MonoBehaviour
     public int id;
     public TMP_Text TitleText;
     public TMP_Text CostText;
-    public float knockbackForce = 0;
-    public float explosionForce = 0;
-    public float DamageForce = 0;
-    public float shootAmount = 0;
+    
 
     public int[] ConnectedSkills;
 
@@ -32,29 +29,29 @@ public class Skill : MonoBehaviour
         }
     }
 
-    public void Buy()
+    public void Buy(Damage dmg)
     {
         if (skillTree.SkillPoint < 1 || skillTree.SkillLevels[id] >= skillTree.SkillCaps[id]) return;
         if (id == 1 || id == 2 || id == 3)
         {
-            knockbackForce = knockbackForce + 0.5f;
+            dmg.knockBack += 1.5f;
         }
 
         if (id == 4 || id == 5 || id == 6)
         {
 
-            explosionForce = explosionForce + 0.5f;
+            dmg.explosionForce+=0.5f;
 
         }
         if (id == 7 || id == 8 || id == 9|| id == 10 || id == 11)
         {
 
-            DamageForce = DamageForce + 2;
+            dmg.damageAmmount += 2;
         }
 
         if (id == 12 || id == 13)
         {
-            shootAmount = shootAmount + 1;
+            dmg.shootAmount += 1;
         }
         skillTree.SkillPoint -= 10;
         skillTree.SkillLevels[id]++;

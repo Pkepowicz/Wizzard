@@ -6,5 +6,7 @@ public struct Damage
 {
     public int damageAmmount;
     public float knockBack;
+    public int shootAmount;
+    public float explosionForce;
     public Vector3 origin;
 };
