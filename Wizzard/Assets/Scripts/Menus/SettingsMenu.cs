@@ -12,5 +12,10 @@ public class SettingsMenu : Menu
     {
         audioMixer.SetFloat("volume", volume);
     }
+
+    public void SetFullscreen(bool isFullscreen)
+    {
+        Screen.fullScreen = isFullscreen;
+    }
     
 }
