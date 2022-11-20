@@ -4,7 +4,7 @@ using UnityEngine;
 
 public struct Damage 
 {
-    public int damageAmmount;
+    public float damageAmmount;
     public float knockBack;
     public int shootAmount;
     public float explosionForce;
