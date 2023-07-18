@@ -7,6 +7,8 @@ public class Fighter : Collidable
 {
     public Rigidbody2D rb;
     public Animator anim;
+    public Transform sprite;
+    private Vector3 localScale;
 
     [Header("Speed Settings")]
     public float speed = 0.8f;
@@ -29,6 +31,8 @@ public class Fighter : Collidable
     {
         // Getting components so you dont need to specify them everytime
         rb = gameObject.GetComponent<Rigidbody2D>();
+        sprite = transform.Find("Sprite").transform;
+        localScale = sprite.transform.localScale;
         anim = gameObject.GetComponent<Animator>();
         healthBar.SetMaxHealth(maxHitPoint);
     }
@@ -56,7 +60,13 @@ public class Fighter : Collidable
     {
         if (isAlive && canMove)
         {
-            anim.SetFloat("moveDelta", moveDelta.x);
+            // changing sprite direction
+            // changing sprite direction
+            if (moveDelta.x > 0.15)
+                sprite.transform.localScale = localScale;
+            else if (moveDelta.x < -0.15)
+                sprite.transform.localScale = new Vector3(localScale.x * -1, localScale.y, localScale.z);
+
             anim.SetBool("moving", Mathf.Abs(moveDelta.magnitude) > 0.1);
             if (rb.velocity.magnitude <= 1.1 * maxVelocity)
             {

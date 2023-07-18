@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 3001366155537317480}
   - component: {fileID: 3001366155537317481}
   m_Layer: 0
-  m_Name: Centaur
+  m_Name: Centaur (old)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -379,11 +379,13 @@ MonoBehaviour:
     maxNormalAngle: 0
   rb: {fileID: 5772315591235398183}
   anim: {fileID: 3001366155537317480}
+  sprite: {fileID: 0}
   speed: 400
   maxVelocity: 0.8
   hitPoint: 10
   maxHitPoint: 10
   immunityTime: 0.1
+  canMove: 1
   healthBar: {fileID: 3366960213201973972}
   targetPosition: {fileID: 0}
   hand: {fileID: 0}
@@ -392,6 +394,7 @@ MonoBehaviour:
   repathRate: 0.1
   stopRadius: 0.32
   reachedEndOfPath: 0
+  dir: {x: 0, y: 0, z: 0}
 --- !u!114 &6542813157111928676
 MonoBehaviour:
   m_ObjectHideFlags: 0
