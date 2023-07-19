@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundClips
+public class SoundClips : MonoBehaviour
 {
     public SoundAudioClip[] SoundAudioClips;
 

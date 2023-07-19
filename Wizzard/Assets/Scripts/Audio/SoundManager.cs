@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SoundManager 
+public class SoundManager : MonoBehaviour
 {
     public enum Sound
     {
@@ -12,25 +12,37 @@ public class SoundManager
         Hit,
         Die
     }
-    
-    public static SoundClips soundClipsInstance;
 
-    public static void PlaySound(Sound sound)
+    [SerializeField]
+    public SoundAudioClip[] soundAudioClips;
+
+    [System.Serializable]
+    public class SoundAudioClip
+    {
+        public Sound sound;
+        public AudioClip audioClip;
+    }
+
+    public void PlaySound(Sound sound)
     {
         GameObject soundGameObject = new GameObject("Sound");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+        audioSource.clip = GetAudioClip(sound);
         audioSource.Play();
+        
+        Object.Destroy(soundGameObject, audioSource.clip.length);
     }
     
-    private static AudioClip GetAudioClip(Sound sound)
+    private AudioClip GetAudioClip(Sound sound)
     {
-        foreach (SoundClips.SoundAudioClip soundAudioClip in soundClipsInstance.SoundAudioClips)
+        foreach (SoundAudioClip soundAudioClip in soundAudioClips)
         {
             if (soundAudioClip.sound == sound)
             {
                 return soundAudioClip.audioClip;
             }
         }
+        Debug.Log("Sound not specified");
         return null;
     }
 }
