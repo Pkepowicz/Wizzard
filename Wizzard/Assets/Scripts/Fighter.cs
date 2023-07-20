@@ -83,7 +83,7 @@ public class Fighter : Collidable
         isImmune = false;
     }
 
-    protected virtual bool ReceiveDamage(Damage dmg) // With knockback function, return indicates if you should play hit sound or not
+    protected virtual void ReceiveDamage(Damage dmg) // With knockback function, return indicates if you should play hit sound or not
     {
         if (!isImmune)
         {
@@ -100,10 +100,9 @@ public class Fighter : Collidable
             if (isAlive && dmg.damageAmmount > 0)
             {
                 anim.SetTrigger("hit");
-                return true;
+                HitSound();
             }
         }
-        return false;
     }
 
 
@@ -147,5 +146,10 @@ public class Fighter : Collidable
     protected virtual void Destroy()
     {
         Destroy(gameObject);
+    }
+    
+    protected virtual void HitSound()
+    {
+        SoundManager.PlaySound("EnemyTakeDamage");
     }
 }

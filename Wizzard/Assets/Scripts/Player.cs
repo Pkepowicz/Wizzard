@@ -77,13 +77,9 @@ public class Player : Fighter
         canDash = true;
     }
 
-    protected override bool ReceiveDamage(Damage dmg)
+    protected override void HitSound()
     {
-        if (base.ReceiveDamage(dmg))
-        {
-            SoundManager.PlaySound("PlayerTakeDamage");
-        }
-        return false;
+        SoundManager.PlaySound("PlayerTakeDamage");
     }
 
     protected override void Death()
