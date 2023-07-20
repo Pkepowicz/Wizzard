@@ -20,8 +20,8 @@ public class Fighter : Collidable
     public float immunityTime = 0.2f;
     private float lastImmune = float.NegativeInfinity;
 
-    private bool isAlive = true;
-    private bool isImmune = false;
+    protected bool isAlive = true;
+    protected bool isImmune = false;
     public bool canMove = true;
     
     public HealthBar healthBar;
@@ -83,7 +83,7 @@ public class Fighter : Collidable
         isImmune = false;
     }
 
-    protected virtual void ReceiveDamage(Damage dmg) // With knockback function
+    protected virtual bool ReceiveDamage(Damage dmg) // With knockback function, return indicates if you should play hit sound or not
     {
         if (!isImmune)
         {
@@ -100,8 +100,10 @@ public class Fighter : Collidable
             if (isAlive && dmg.damageAmmount > 0)
             {
                 anim.SetTrigger("hit");
+                return true;
             }
         }
+        return false;
     }
 
 

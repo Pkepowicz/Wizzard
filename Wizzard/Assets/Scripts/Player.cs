@@ -77,6 +77,19 @@ public class Player : Fighter
         canDash = true;
     }
 
+    protected override bool ReceiveDamage(Damage dmg)
+    {
+        if (base.ReceiveDamage(dmg))
+        {
+            SoundManager.PlaySound("PlayerTakeDamage");
+        }
+        return false;
+    }
 
-    
+    protected override void Death()
+    {
+        base.Death();
+        SoundManager.PlaySound("PlayerDeath");
+    }
+
 }

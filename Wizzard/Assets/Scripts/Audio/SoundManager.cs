@@ -12,7 +12,7 @@ public static class SoundManager
         audioSource.clip = GetAudioClip(sound);
         audioSource.Play();
         
-        Object.Destroy(soundGameObject, audioSource.clip.length);
+        //Object.Destroy(soundGameObject, audioSource.clip.length);
     }
     
     private static AudioClip GetAudioClip(string sound)
