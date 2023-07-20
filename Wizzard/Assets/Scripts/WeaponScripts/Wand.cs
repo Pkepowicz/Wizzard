@@ -9,8 +9,6 @@ public class Wand : MonoBehaviour
     [Header("Shooting settings")] 
     public float damage = 1;
     public float reloadTime = 1;
-
-    public SoundManager soundManager;
     
     // what kind of projectile wand will shoot
     public GameObject bulletPrefab;
@@ -43,7 +41,7 @@ public class Wand : MonoBehaviour
             //Debug.Log("Ready to shoot");
             Shoot();
             lastShot = Time.time;
-            soundManager.PlaySound(SoundManager.Sound.Attack);
+            SoundManager.PlaySound("Attack");
         }
         
     }

@@ -3,27 +3,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour
+public class SoundManager
 {
-    public enum Sound
-    {
-        Move,
-        Attack,
-        Hit,
-        Die
-    }
-
-    [SerializeField]
-    public SoundAudioClip[] soundAudioClips;
-
-    [System.Serializable]
-    public class SoundAudioClip
-    {
-        public Sound sound;
-        public AudioClip audioClip;
-    }
-
-    public void PlaySound(Sound sound)
+    public static void PlaySound(string sound)
     {
         GameObject soundGameObject = new GameObject("Sound");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
@@ -33,16 +15,16 @@ public class SoundManager : MonoBehaviour
         Object.Destroy(soundGameObject, audioSource.clip.length);
     }
     
-    private AudioClip GetAudioClip(Sound sound)
+    private static AudioClip GetAudioClip(string sound)
     {
-        foreach (SoundAudioClip soundAudioClip in soundAudioClips)
+        foreach (SoundClips.SoundAudioClip soundAudioClip in SoundClips.instance.SoundAudioClips)
         {
             if (soundAudioClip.sound == sound)
             {
                 return soundAudioClip.audioClip;
             }
         }
-        Debug.Log("Sound not specified");
+        Debug.Log($"Variable '{ sound }' not specified");
         return null;
     }
 }
