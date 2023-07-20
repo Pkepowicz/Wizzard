@@ -5,14 +5,18 @@ using UnityEngine;
 
 public static class SoundManager
 {
-    public static void PlaySound(string sound)
+    public static void PlaySound(string sound, Vector3 source)
     {
         GameObject soundGameObject = new GameObject("Sound");
+        soundGameObject.transform.position = source;
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
         audioSource.clip = GetAudioClip(sound);
+        audioSource.maxDistance = 16f;
+        audioSource.spatialBlend = 1f;
+        audioSource.rolloffMode = AudioRolloffMode.Logarithmic;
+        audioSource.dopplerLevel = 0f;
         audioSource.Play();
-        
-        //Object.Destroy(soundGameObject, audioSource.clip.length);
+        Object.Destroy(soundGameObject, audioSource.clip.length);
     }
     
     private static AudioClip GetAudioClip(string sound)

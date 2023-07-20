@@ -151,11 +151,11 @@ public class Fighter : Collidable
     
     protected virtual void HitSound()
     {
-        SoundManager.PlaySound("EnemyTakeDamage");
+        SoundManager.PlaySound("EnemyTakeDamage", transform.position);
     }
 
     protected virtual void DeathSound()
     {
-        SoundManager.PlaySound("EnemyDeath");
+        SoundManager.PlaySound("EnemyDeath", transform.position);
     }
 }

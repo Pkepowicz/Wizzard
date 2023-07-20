@@ -79,11 +79,11 @@ public class Player : Fighter
 
     protected override void HitSound()
     {
-        SoundManager.PlaySound("PlayerTakeDamage");
+        SoundManager.PlaySound("PlayerTakeDamage", transform.position);
     }
 
     protected override void DeathSound()
     {
-         SoundManager.PlaySound("PlayerDeath");
+         SoundManager.PlaySound("PlayerDeath", transform.position);
     }
 }

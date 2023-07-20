@@ -41,7 +41,7 @@ public class Wand : MonoBehaviour
             //Debug.Log("Ready to shoot");
             Shoot();
             lastShot = Time.time;
-            SoundManager.PlaySound("PlayerAttack");
+            SoundManager.PlaySound("PlayerAttack", projectileSpawnPoint.position);
         }
         
     }

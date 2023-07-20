@@ -45,6 +45,6 @@ public class Staff : MonoBehaviour
 
     protected void AttackSound()
     {
-        SoundManager.PlaySound("SatyrAttack");
+        SoundManager.PlaySound("SatyrAttack", transform.position);
     }
 }
