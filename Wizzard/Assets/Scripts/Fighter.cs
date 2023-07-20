@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static Unity.VisualScripting.Member;
 
 public class Fighter : Collidable
 {
@@ -23,6 +25,7 @@ public class Fighter : Collidable
     protected bool isAlive = true;
     protected bool isImmune = false;
     public bool canMove = true;
+    private bool isSoundPlayed = false;
     
     public HealthBar healthBar;
 
@@ -61,7 +64,6 @@ public class Fighter : Collidable
         if (isAlive && canMove)
         {
             // changing sprite direction
-            // changing sprite direction
             if (moveDelta.x > 0.15)
                 sprite.transform.localScale = localScale;
             else if (moveDelta.x < -0.15)
@@ -73,6 +75,10 @@ public class Fighter : Collidable
                 rb.AddForce(moveDelta * speed * Time.deltaTime, ForceMode2D.Force);
                 rb.velocity = (Vector3.ClampMagnitude(rb.velocity, maxVelocity));
             }
+        }
+        if (!isSoundPlayed && Mathf.Abs(moveDelta.magnitude) > 0)
+        {
+            StartCoroutine(FootstepSound("Footstep", transform.position));
         }
     }
 
@@ -157,5 +163,13 @@ public class Fighter : Collidable
     protected virtual void DeathSound()
     {
         SoundManager.PlaySound("EnemyDeath", transform.position);
+    }
+
+    protected virtual IEnumerator FootstepSound(string sound, Vector3 source)
+    {
+        isSoundPlayed = true;
+        SoundManager.PlaySound(sound, source);
+        yield return new WaitForSeconds(0.5f);
+        isSoundPlayed = false;
     }
 }

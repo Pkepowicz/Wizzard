@@ -59,3 +59,5 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: faabc8f0bddb2fd40833cbe84eba4870, type: 3}
   - sound: SlimeDeath
     audioClip: {fileID: 8300000, guid: b6bcdb29b2436d74989d26f81dd1e191, type: 3}
+  - sound: Footstep
+    audioClip: {fileID: 8300000, guid: 05c6213b404a394458d84dd6efe234f8, type: 3}
