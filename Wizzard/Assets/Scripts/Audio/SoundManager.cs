@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SoundManager
+public static class SoundManager
 {
     public static void PlaySound(string sound)
     {
