@@ -139,6 +139,7 @@ public class Fighter : Collidable
     {
         hitPoint = 0;
         isAlive = false;
+        DeathSound();
         anim.SetTrigger("death");
     }
 
@@ -151,5 +152,10 @@ public class Fighter : Collidable
     protected virtual void HitSound()
     {
         SoundManager.PlaySound("EnemyTakeDamage");
+    }
+
+    protected virtual void DeathSound()
+    {
+        SoundManager.PlaySound("EnemyDeath");
     }
 }

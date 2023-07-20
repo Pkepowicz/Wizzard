@@ -82,10 +82,8 @@ public class Player : Fighter
         SoundManager.PlaySound("PlayerTakeDamage");
     }
 
-    protected override void Death()
+    protected override void DeathSound()
     {
-        base.Death();
-        SoundManager.PlaySound("PlayerDeath");
+         SoundManager.PlaySound("PlayerDeath");
     }
-
 }

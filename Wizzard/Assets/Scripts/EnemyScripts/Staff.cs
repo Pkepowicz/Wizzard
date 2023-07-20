@@ -42,4 +42,9 @@ public class Staff : MonoBehaviour
         Instantiate(attackPrefab, enemyAI.targetPosition.position, Quaternion.identity);
         enemyAI.canMove = true;
     }
+
+    protected void AttackSound()
+    {
+        SoundManager.PlaySound("SatyrAttack");
+    }
 }
