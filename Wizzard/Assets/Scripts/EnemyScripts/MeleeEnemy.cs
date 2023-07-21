@@ -25,7 +25,7 @@ public class MeleeEnemy : Collidable
                 knockBack = force,
                 origin = transform.position
             };
-            coll.SendMessage("ReceiveDamage", dmg);
+            coll.SendMessage("ReceiveDamage", dmg); // Knockback after attack
             if (rb != null)
             {
                 rb.AddForce((transform.position - coll.transform.position).normalized * knockbackAfterHit, ForceMode2D.Impulse);
