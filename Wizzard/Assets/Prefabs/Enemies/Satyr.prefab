@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 8916866646018212910}
   - component: {fileID: 1382182968823440691}
   - component: {fileID: 3064899957620823599}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -625,7 +625,7 @@ GameObject:
   - component: {fileID: 2753952292056299481}
   - component: {fileID: 4863945608095489982}
   - component: {fileID: 3524761298474415794}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Satyr
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -812,7 +812,7 @@ GameObject:
   - component: {fileID: 8891594885279491439}
   - component: {fileID: 214752709946940797}
   - component: {fileID: 1289390344570463104}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -891,7 +891,7 @@ GameObject:
   - component: {fileID: 9126410314926619174}
   - component: {fileID: 3836393825725745283}
   - component: {fileID: 4032218503752989198}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1204,7 +1204,7 @@ GameObject:
   - component: {fileID: 1688311201975296748}
   - component: {fileID: 6169565085475249488}
   - component: {fileID: 7182486123708925353}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

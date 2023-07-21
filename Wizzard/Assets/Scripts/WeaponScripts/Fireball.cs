@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Fireball : Projectile
 {
-    // variables for damaging enemies
-    private float damage;
-    public float knockbackForce;
+    
     
     
     // possible modifications to basic fireball
@@ -42,12 +40,7 @@ public class Fireball : Projectile
     // what to do with projectile when it hits an enemy
     protected override void OnProjectileEnemyHit(Collider2D coll)
     {
-        Damage dmg = new Damage()
-        {
-            damageAmmount = damage,
-            knockBack = knockbackForce,
-            origin = transform.position
-        };
+        base.OnProjectileEnemyHit(coll);
 
         if (igniteEnemies)
         {
@@ -58,7 +51,7 @@ public class Fireball : Projectile
             currentBurn.GetComponent<Burn>().CalculateBurnDamage(damage, igniteEfficieny);
         }
         
-        coll.SendMessage("ReceiveDamage", dmg);
+        
         if (explodeAtDeath is true)
         {
             Explode();
