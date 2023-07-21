@@ -59,6 +59,7 @@ public class Fireball : Projectile
         }
         
         coll.SendMessage("ReceiveDamage", dmg);
+        SoundManager.PlaySound("FireballHit", transform.position);
         if (explodeAtDeath is true)
         {
             Explode();
@@ -92,6 +93,7 @@ public class Fireball : Projectile
             HandleParticles(hitWallEffect, false, hitWallEffect.GetComponent<ParticleSystem>().main.duration, offset=offset); 
             
         }
+        SoundManager.PlaySound("FireballHit", transform.position);
         Destroy(gameObject);
     }
 
