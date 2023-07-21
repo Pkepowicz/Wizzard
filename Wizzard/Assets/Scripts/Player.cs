@@ -61,8 +61,6 @@ public class Player : Fighter
 
     private IEnumerator Dash()
     {
-        //Vector3 targetPosition = mainCam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-
         Vector2 targetPosition = rb.velocity.normalized != Vector2.zero ? rb.velocity.normalized : mainCam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         canDash = false;
         isDashing = true;
