@@ -76,14 +76,4 @@ public class Player : Fighter
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
-
-    protected override void HitSound()
-    {
-        SoundManager.PlaySound("PlayerTakeDamage", transform.position);
-    }
-
-    protected override void DeathSound()
-    {
-         SoundManager.PlaySound("PlayerDeath", transform.position);
-    }
 }

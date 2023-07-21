@@ -493,7 +493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318116a4a0871fd428ac948caec8a8b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collider: {fileID: 0}
+  Collider: {fileID: 5976547075058405249}
   filter:
     useTriggers: 0
     useLayerMask: 0
@@ -510,7 +510,7 @@ MonoBehaviour:
     maxNormalAngle: 0
   damage: 1
   force: 2
-  rb: {fileID: 0}
+  rb: {fileID: 3120265608489800763}
   knockbackAfterHit: 1
 --- !u!1 &6348283875942787991
 GameObject:

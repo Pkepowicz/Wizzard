@@ -15,19 +15,23 @@ public class Fighter : Collidable
     [Header("Speed Settings")]
     public float speed = 0.8f;
     public float maxVelocity = 1.6f;
+    public bool canMove = true;
 
     [Header("Health Settings")]
     public float hitPoint = 10;
     public int maxHitPoint = 10;
     public float immunityTime = 0.2f;
     private float lastImmune = float.NegativeInfinity;
+    public HealthBar healthBar;
+
+    [Header("Sound Settings")]
+    public string hitSound = "EnemyTakeDamage";
+    public string deathSound = "EnemyDeath";
+    public bool footstep = false;
 
     protected bool isAlive = true;
     protected bool isImmune = false;
-    public bool canMove = true;
     private bool isSoundPlayed = false;
-    
-    public HealthBar healthBar;
 
 
     protected virtual void Start()
@@ -76,7 +80,7 @@ public class Fighter : Collidable
                 rb.velocity = (Vector3.ClampMagnitude(rb.velocity, maxVelocity));
             }
         }
-        if (!isSoundPlayed && Mathf.Abs(moveDelta.magnitude) > 0)
+        if (!isSoundPlayed && footstep && Mathf.Abs(moveDelta.magnitude) > 0)
         {
             StartCoroutine(FootstepSound("Footstep", transform.position));
         }
@@ -88,7 +92,7 @@ public class Fighter : Collidable
         yield return new WaitForSeconds(time);
         isImmune = false;
     }
-
+    
     protected virtual void ReceiveDamage(Damage dmg) // With knockback function, return indicates if you should play hit sound or not
     {
         if (!isImmune)
@@ -106,7 +110,7 @@ public class Fighter : Collidable
             if (isAlive && dmg.damageAmmount > 0)
             {
                 anim.SetTrigger("hit");
-                HitSound();
+                SoundManager.PlaySound(hitSound, transform.position);
             }
         }
     }
@@ -145,7 +149,7 @@ public class Fighter : Collidable
     {
         hitPoint = 0;
         isAlive = false;
-        DeathSound();
+        SoundManager.PlaySound(deathSound, transform.position);
         anim.SetTrigger("death");
     }
 
@@ -154,22 +158,12 @@ public class Fighter : Collidable
     {
         Destroy(gameObject);
     }
-    
-    protected virtual void HitSound()
-    {
-        SoundManager.PlaySound("EnemyTakeDamage", transform.position);
-    }
-
-    protected virtual void DeathSound()
-    {
-        SoundManager.PlaySound("EnemyDeath", transform.position);
-    }
 
     protected virtual IEnumerator FootstepSound(string sound, Vector3 source)
     {
         isSoundPlayed = true;
         SoundManager.PlaySound(sound, source);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         isSoundPlayed = false;
     }
 }
