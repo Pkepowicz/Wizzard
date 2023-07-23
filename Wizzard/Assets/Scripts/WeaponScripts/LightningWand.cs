@@ -16,13 +16,18 @@ public class LightningWand : Wand
         target = GetClosestEnemy(position);
         if (target != null)
         {
+            GameObject wandTip = Instantiate(chainLightningEffect, projectileSpawnPoint.transform.position, Quaternion.identity);
+            ChainLightning wandTipScript = wandTip.GetComponent<ChainLightning>();
+            wandTipScript.Initialize();
+            wandTipScript.HitTarget(target);
+            /*
             GameObject chainLightning = Instantiate(chainLightningEffect, position, Quaternion.identity);
             
             GameObject wandTip = Instantiate(chainLightningEffect, projectileSpawnPoint.transform.position, Quaternion.identity);
-            ChainLightning chainLightningScript = wandTip.GetComponent<ChainLightning>();
-            chainLightningScript.DisableSeeking();
+            ChainLightning wandTipScript = wandTip.GetComponent<ChainLightning>();
+            wandTipScript.DisableSeeking();
 
-            chainLightningScript.PlayEffects(chainLightning.transform.position);
+            wandTipScript.PlayEffects(chainLightning.transform.position);*/
         }
     }
     
