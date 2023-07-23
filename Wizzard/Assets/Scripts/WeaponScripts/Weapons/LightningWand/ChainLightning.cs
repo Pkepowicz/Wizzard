@@ -15,6 +15,8 @@ public class ChainLightning : MonoBehaviour
     public float stunDuration;
     public float pointsInLightning = 10;
 
+    public GameObject struckByLightningEffect;
+    
     public GameObject chainLightningEffect;
 
     public GameObject beenStruct;
@@ -36,7 +38,7 @@ public class ChainLightning : MonoBehaviour
         
         if(amountToChain <= 0)
             Destroy(gameObject);
-        Destroy(gameObject, .7f);
+        Destroy(gameObject, 1f);
         
         coll = GetComponent<CircleCollider2D>();
         
@@ -58,6 +60,8 @@ public class ChainLightning : MonoBehaviour
             if (singleSpawns != 0)
             {
                 endObject = collision.gameObject;
+
+                amountToChain -= 1;
                 Instantiate(chainLightningEffect, collision.gameObject.transform.position, Quaternion.identity);
 
                 Instantiate(beenStruct, collision.gameObject.transform);
@@ -74,20 +78,10 @@ public class ChainLightning : MonoBehaviour
                 parti.Play();
 
                 var emitParams = new ParticleSystem.EmitParams();
+
                 
-                /*emitParams.position = startObject.transform.position;
-                
-                parti.Emit(emitParams, 1);
-                
-                emitParams.position = (startObject.transform.position + endObject.transform.position) / 2;
-                
-                parti.Emit(emitParams, 1);
-                
-                emitParams.position = endObject.transform.position;
-                
-                parti.Emit(emitParams, 1);*/
-                
-                for(int i = 0; i < pointsInLightning; i++)
+                // TODO: Maybe implement a way to make lightning travel by many paths
+                for(int i = 0; i < pointsInLightning + 1; i++)
                 {
                     // add random deviation to each point
                     Vector3 randomDeviation = new Vector3(UnityEngine.Random.Range(-.025f, .025f), UnityEngine.Random.Range(-.025f, .025f), 0);
@@ -95,11 +89,6 @@ public class ChainLightning : MonoBehaviour
                     parti.Emit(emitParams, 1);
                 }
                 
-                emitParams.position = endObject.transform.position;
-                parti.Emit(emitParams, 1);
-                
-                
-            
                 Destroy(gameObject, .1f);
             }
             

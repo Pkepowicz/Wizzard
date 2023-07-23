@@ -82,7 +82,7 @@ public class Fireball : Projectile
         {
             
             Vector3 offset = effectSpawnPoint.position - transform.position;
-            HandleParticles(hitWallEffect, false, hitWallEffect.GetComponent<ParticleSystem>().main.duration, offset=offset); 
+            HandleParticles(hitWallEffect, null, hitWallEffect.GetComponent<ParticleSystem>().main.duration, offset=offset); 
             
         }
         Destroy(gameObject);
