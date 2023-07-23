@@ -6,25 +6,22 @@ using UnityEngine;
 
 public class ChainLightning : MonoBehaviour
 {
- 
-    private CircleCollider2D coll;
-    
-    public LayerMask enemyLayer;
-    
     public float damage;
     public float stunDuration;
     public float pointsInLightning;
     public int amountToChain;
-
-    public GameObject chainLightningEffect;
-
-    public GameObject beenStruct;
-
-    private Animator ani;
-
-    public ParticleSystem parti;
-
     private int singleSpawns;
+    
+    public LayerMask enemyLayer;
+    private CircleCollider2D coll;
+    private Animator ani;
+    public ParticleSystem parti;
+    
+    public GameObject chainLightningEffect;
+    public GameObject beenStruct;
+    public GameObject lightningHitEffect;
+
+
     
     // Start is called before the first frame update
     void Start()
@@ -86,6 +83,9 @@ public class ChainLightning : MonoBehaviour
         parti.Play();
 
         PlayEffects(target.transform.position);
+        GameObject particles = Instantiate(lightningHitEffect, target.transform.position, Quaternion.identity, target.transform);
+        particles.GetComponent<ParticleSystem>().Play();
+        Destroy(particles, 2f);
              
         Destroy(gameObject, .1f);
     }

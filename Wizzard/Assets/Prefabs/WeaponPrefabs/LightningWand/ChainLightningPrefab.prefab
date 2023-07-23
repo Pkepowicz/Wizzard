@@ -84,17 +84,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7302379fdc3d9634cbee7bc211c28020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 1024
   damage: 1
   stunDuration: 1
   pointsInLightning: 5
-  struckByLightningEffect: {fileID: 0}
+  amountToChain: 3
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  parti: {fileID: 484594047698971601}
   chainLightningEffect: {fileID: 6787774124076390188}
   beenStruct: {fileID: 3918921893013138153, guid: 12bd8667b8ec01241a0dcd91900506e8, type: 3}
-  amountToChain: 3
-  parti: {fileID: 484594047698971601}
+  lightningHitEffect: {fileID: 8866115611066431991, guid: add8bc4b0a3d3184c9ca027a9c92e8cd, type: 3}
 --- !u!198 &484594047698971601
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4114,7 +4114,7 @@ ParticleSystem:
     inheritParticleColor: 1
     generateLightingData: 0
     splitSubEmitterRibbons: 0
-    attachRibbonsToTransform: 0
+    attachRibbonsToTransform: 1
     colorOverLifetime:
       serializedVersion: 2
       minMaxState: 0
