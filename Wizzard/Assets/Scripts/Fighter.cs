@@ -132,6 +132,20 @@ public class Fighter : Collidable
         }
     }
 
+    
+    // Made with function and coroutine so it can be easily called from other scripts
+    public void Stun(float duration)
+    {
+        StartCoroutine(StunCoroutine(duration));
+    }
+    
+    private IEnumerator StunCoroutine(float duration)
+    {
+        canMove = false;
+        yield return new WaitForSeconds(duration);
+        canMove = true;
+    }
+
     // Destruction of object is handled by animation
     // Cause of that we need 2 separate functions for death and destruction
     protected virtual void Death()

@@ -4926,6 +4926,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   damage: 1
+  stunDuration: 1
   chainLightningEffect: {fileID: 6787774124076390188}
   beenStruct: {fileID: 3918921893013138153, guid: 12bd8667b8ec01241a0dcd91900506e8, type: 3}
   amountToChain: 3

@@ -12,6 +12,8 @@ public class ChainLightning : MonoBehaviour
     
     public LayerMask enemyLayer;
     public float damage;
+    public float stunDuration;
+    public float pointsInLightning = 10;
 
     public GameObject chainLightningEffect;
 
@@ -34,7 +36,7 @@ public class ChainLightning : MonoBehaviour
         
         if(amountToChain <= 0)
             Destroy(gameObject);
-        Destroy(gameObject, .4f);
+        Destroy(gameObject, .7f);
         
         coll = GetComponent<CircleCollider2D>();
         
@@ -61,6 +63,7 @@ public class ChainLightning : MonoBehaviour
                 Instantiate(beenStruct, collision.gameObject.transform);
 
                 collision.SendMessage("ReceiveDamage", damage);
+                collision.SendMessage("Stun", stunDuration);
             
                 ani.StopPlayback();
 
@@ -72,7 +75,7 @@ public class ChainLightning : MonoBehaviour
 
                 var emitParams = new ParticleSystem.EmitParams();
                 
-                emitParams.position = startObject.transform.position;
+                /*emitParams.position = startObject.transform.position;
                 
                 parti.Emit(emitParams, 1);
                 
@@ -82,6 +85,17 @@ public class ChainLightning : MonoBehaviour
                 
                 emitParams.position = endObject.transform.position;
                 
+                parti.Emit(emitParams, 1);*/
+                
+                for(int i = 0; i < pointsInLightning; i++)
+                {
+                    // add random deviation to each point
+                    Vector3 randomDeviation = new Vector3(UnityEngine.Random.Range(-.025f, .025f), UnityEngine.Random.Range(-.025f, .025f), 0);
+                    emitParams.position = startObject.transform.position + i/pointsInLightning * (endObject.transform.position - startObject.transform.position) + randomDeviation;
+                    parti.Emit(emitParams, 1);
+                }
+                
+                emitParams.position = endObject.transform.position;
                 parti.Emit(emitParams, 1);
                 
                 

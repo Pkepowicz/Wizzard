@@ -10,6 +10,7 @@ public class LightningBolt : Projectile
     protected override void OnProjectileEnemyHit(Collider2D coll)
     {
         base.OnProjectileEnemyHit(coll);
+        coll.SendMessage("Stun", 0.5f);
         Instantiate(chainLightningEffect, coll.transform.position, Quaternion.identity, coll.gameObject.transform);
         Instantiate(beenStruck, coll.transform.position, Quaternion.identity, coll.gameObject.transform);
     }
