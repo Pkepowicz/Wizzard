@@ -17,9 +17,12 @@ public class LightningWand : Wand
         if (target != null)
         {
             GameObject chainLightning = Instantiate(chainLightningEffect, position, Quaternion.identity);
-            ChainLightning chainLightningScript = chainLightning.GetComponent<ChainLightning>();
             
-            chainLightningScript.PlayEffects(projectileSpawnPoint.position, true);
+            GameObject wandTip = Instantiate(chainLightningEffect, projectileSpawnPoint.transform.position, Quaternion.identity);
+            ChainLightning chainLightningScript = wandTip.GetComponent<ChainLightning>();
+            chainLightningScript.DisableSeeking();
+
+            chainLightningScript.PlayEffects(chainLightning.transform.position);
         }
     }
     

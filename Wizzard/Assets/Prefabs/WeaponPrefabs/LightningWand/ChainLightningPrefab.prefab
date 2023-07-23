@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7874798414709574943}
   - component: {fileID: -324011257832593985}
-  - component: {fileID: 7540908375842149290}
   - component: {fileID: 2950797335976565508}
-  - component: {fileID: 3824208241013848540}
   - component: {fileID: 3180592100167062740}
+  - component: {fileID: 484594047698971601}
+  - component: {fileID: 4740500878881690507}
   m_Layer: 0
   m_Name: ChainLightningPrefab
   m_TagString: Untagged
@@ -52,7 +52,50 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5
---- !u!198 &7540908375842149290
+--- !u!95 &2950797335976565508
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6787774124076390188}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ba345109e56e72f4ca267a7ed3c92fca, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3180592100167062740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6787774124076390188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7302379fdc3d9634cbee7bc211c28020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  damage: 1
+  stunDuration: 1
+  pointsInLightning: 5
+  struckByLightningEffect: {fileID: 0}
+  chainLightningEffect: {fileID: 6787774124076390188}
+  beenStruct: {fileID: 3918921893013138153, guid: 12bd8667b8ec01241a0dcd91900506e8, type: 3}
+  amountToChain: 3
+  parti: {fileID: 484594047698971601}
+--- !u!198 &484594047698971601
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4817,27 +4860,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!95 &2950797335976565508
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6787774124076390188}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ba345109e56e72f4ca267a7ed3c92fca, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!199 &3824208241013848540
+--- !u!199 &4740500878881690507
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -4910,26 +4933,3 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &3180592100167062740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6787774124076390188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7302379fdc3d9634cbee7bc211c28020, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  damage: 1
-  stunDuration: 1
-  pointsInLightning: 5
-  struckByLightningEffect: {fileID: 0}
-  chainLightningEffect: {fileID: 6787774124076390188}
-  beenStruct: {fileID: 3918921893013138153, guid: 12bd8667b8ec01241a0dcd91900506e8, type: 3}
-  amountToChain: 3
-  parti: {fileID: 7540908375842149290}

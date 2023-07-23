@@ -48,6 +48,7 @@ public class ChainLightning : MonoBehaviour
 
     }
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (enemyLayer == (enemyLayer | (1 << collision.gameObject.layer)) &&
@@ -106,6 +107,15 @@ public class ChainLightning : MonoBehaviour
             parti.Emit(emitParams, 1);
         }
         parti.Play();
+    }
+
+    public void DisableSeeking()
+    {
+        ani = GetComponent<Animator>();
+        coll = GetComponent<CircleCollider2D>();
+        singleSpawns = 0;
+        ani.StopPlayback();
+        coll.enabled = false;
     }
     
 }
