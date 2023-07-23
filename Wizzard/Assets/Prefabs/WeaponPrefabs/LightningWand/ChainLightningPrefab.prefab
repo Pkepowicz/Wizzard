@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7874798414709574943}
   - component: {fileID: -324011257832593985}
   - component: {fileID: 2950797335976565508}
-  - component: {fileID: 3180592100167062740}
   - component: {fileID: 484594047698971601}
+  - component: {fileID: 3180592100167062740}
   - component: {fileID: 4740500878881690507}
   m_Layer: 0
   m_Name: ChainLightningPrefab
@@ -72,29 +72,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3180592100167062740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6787774124076390188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7302379fdc3d9634cbee7bc211c28020, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  stunDuration: 1
-  pointsInLightning: 5
-  amountToChain: 3
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  parti: {fileID: 484594047698971601}
-  chainLightningEffect: {fileID: 6787774124076390188}
-  beenStruct: {fileID: 3918921893013138153, guid: 12bd8667b8ec01241a0dcd91900506e8, type: 3}
-  lightningHitEffect: {fileID: 8866115611066431991, guid: add8bc4b0a3d3184c9ca027a9c92e8cd, type: 3}
 --- !u!198 &484594047698971601
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4114,7 +4091,7 @@ ParticleSystem:
     inheritParticleColor: 1
     generateLightingData: 0
     splitSubEmitterRibbons: 0
-    attachRibbonsToTransform: 1
+    attachRibbonsToTransform: 0
     colorOverLifetime:
       serializedVersion: 2
       minMaxState: 0
@@ -4860,6 +4837,29 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &3180592100167062740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6787774124076390188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7302379fdc3d9634cbee7bc211c28020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  stunDuration: 1
+  pointsInLightning: 5
+  amountToChain: 3
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  parti: {fileID: 484594047698971601}
+  chainLightningEffect: {fileID: 6787774124076390188}
+  beenStruct: {fileID: 3918921893013138153, guid: 12bd8667b8ec01241a0dcd91900506e8, type: 3}
+  lightningHitEffect: {fileID: 8866115611066431991, guid: add8bc4b0a3d3184c9ca027a9c92e8cd, type: 3}
 --- !u!199 &4740500878881690507
 ParticleSystemRenderer:
   serializedVersion: 6
