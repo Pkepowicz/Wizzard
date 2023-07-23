@@ -96,4 +96,10 @@ public class ChainLightning : MonoBehaviour
         
         
     }
+
+    public void PlayEffects(Vector2 target)
+    {
+        
+    }
+    
 }
