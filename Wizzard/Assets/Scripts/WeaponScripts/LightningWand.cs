@@ -17,6 +17,9 @@ public class LightningWand : Wand
         if (target != null)
         {
             GameObject chainLightning = Instantiate(chainLightningEffect, position, Quaternion.identity);
+            ChainLightning chainLightningScript = chainLightning.GetComponent<ChainLightning>();
+            
+            chainLightningScript.PlayEffects(projectileSpawnPoint.position, true);
         }
     }
     

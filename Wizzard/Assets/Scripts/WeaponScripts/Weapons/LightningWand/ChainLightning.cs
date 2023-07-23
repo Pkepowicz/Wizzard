@@ -44,10 +44,6 @@ public class ChainLightning : MonoBehaviour
         
         ani = GetComponent<Animator>();
         
-        parti = GetComponent<ParticleSystem>();
-
-        startObject = gameObject;
-
         singleSpawns = 1;
 
     }
@@ -77,17 +73,10 @@ public class ChainLightning : MonoBehaviour
                 
                 parti.Play();
 
-                var emitParams = new ParticleSystem.EmitParams();
+                PlayEffects(endObject.transform.position);
 
                 
-                // TODO: Maybe implement a way to make lightning travel by many paths
-                for(int i = 0; i < pointsInLightning + 1; i++)
-                {
-                    // add random deviation to each point
-                    Vector3 randomDeviation = new Vector3(UnityEngine.Random.Range(-.025f, .025f), UnityEngine.Random.Range(-.025f, .025f), 0);
-                    emitParams.position = startObject.transform.position + i/pointsInLightning * (endObject.transform.position - startObject.transform.position) + randomDeviation;
-                    parti.Emit(emitParams, 1);
-                }
+                
                 
                 Destroy(gameObject, .1f);
             }
@@ -97,9 +86,26 @@ public class ChainLightning : MonoBehaviour
         
     }
 
-    public void PlayEffects(Vector2 target)
+    public void PlayEffects(Vector3 target, bool fromPlayer = false)
     {
-        
+        var emitParams = new ParticleSystem.EmitParams();
+
+        Vector3 source = gameObject.transform.position;
+
+        // TODO: Maybe implement a way to make lightning travel by many paths
+        for (int i = 0; i < pointsInLightning + 1; i++)
+        {
+            // add random deviation to each point
+            Vector3 randomDeviation = new Vector3(UnityEngine.Random.Range(-.025f, .025f), UnityEngine.Random.Range(-.025f, .025f), 0);
+            if (i == 0 || i == pointsInLightning - 1)
+                randomDeviation = Vector3.zero;
+            if (fromPlayer)
+                emitParams.position = target + i / pointsInLightning * (source - target) + randomDeviation;
+            else
+                emitParams.position = source + i / pointsInLightning * (target - source) + randomDeviation;
+            parti.Emit(emitParams, 1);
+        }
+        parti.Play();
     }
     
 }
