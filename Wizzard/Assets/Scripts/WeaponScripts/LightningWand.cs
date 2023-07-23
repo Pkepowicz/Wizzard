@@ -5,30 +5,28 @@ using UnityEngine;
 public class LightningWand : Wand
 {
     public float radius = 3f;
+    public float stunDuration;
+    public float pointsInLightning;
+    public int amountToChain;
+    
     public LayerMask enemyLayer;
     public GameObject chainLightningEffect;
-
     private GameObject target = null;
     
     protected override void Shoot()
     {
         Vector2 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
         target = GetClosestEnemy(position);
+        GameObject wandTip = Instantiate(chainLightningEffect, projectileSpawnPoint.transform.position, Quaternion.identity);
+        ChainLightning wandTipScript = wandTip.GetComponent<ChainLightning>();
+        wandTipScript.Initialize();
+        wandTipScript.DisableSeeking();
+        
         if (target != null)
         {
-            GameObject wandTip = Instantiate(chainLightningEffect, projectileSpawnPoint.transform.position, Quaternion.identity);
-            ChainLightning wandTipScript = wandTip.GetComponent<ChainLightning>();
-            wandTipScript.Initialize();
+            wandTipScript.PassParameters(damage, stunDuration, amountToChain, pointsInLightning);
             wandTipScript.HitTarget(target);
-            return;
-            /*
-            GameObject chainLightning = Instantiate(chainLightningEffect, position, Quaternion.identity);
-            
-            GameObject wandTip = Instantiate(chainLightningEffect, projectileSpawnPoint.transform.position, Quaternion.identity);
-            ChainLightning wandTipScript = wandTip.GetComponent<ChainLightning>();
-            wandTipScript.DisableSeeking();
-
-            wandTipScript.PlayEffects(chainLightning.transform.position);*/
         }
         else
         {
@@ -37,10 +35,6 @@ public class LightningWand : Wand
             chain.Initialize();
             chain.DisableSeeking();
             
-            GameObject wandTip = Instantiate(chainLightningEffect, projectileSpawnPoint.transform.position, Quaternion.identity);
-            ChainLightning wandTipScript = wandTip.GetComponent<ChainLightning>();
-            wandTipScript.Initialize();
-            wandTipScript.DisableSeeking();
             wandTipScript.PlayEffects(chainLightning.transform.position);
         }
         

@@ -10,15 +10,15 @@ public class ChainLightning : MonoBehaviour
     private CircleCollider2D coll;
     
     public LayerMask enemyLayer;
+    
     public float damage;
     public float stunDuration;
-    public float pointsInLightning = 10;
+    public float pointsInLightning;
+    public int amountToChain;
 
     public GameObject chainLightningEffect;
 
     public GameObject beenStruct;
-
-    public int amountToChain;
 
     private Animator ani;
 
@@ -42,6 +42,15 @@ public class ChainLightning : MonoBehaviour
         ani = GetComponent<Animator>();
         singleSpawns = 1;
     }
+
+    public void PassParameters(float damage, float stunDuration, int amountToChain, float pointsInLightning)
+    {
+        this.damage = damage;
+        this.stunDuration = stunDuration;
+        this.amountToChain = amountToChain;
+        this.pointsInLightning = pointsInLightning;
+    }
+
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -59,6 +68,7 @@ public class ChainLightning : MonoBehaviour
     public void HitTarget(GameObject target)
     {
         amountToChain -= 1;
+        ani.enabled = true;
         Instantiate(chainLightningEffect, target.transform.position, Quaternion.identity);
 
         Instantiate(beenStruct, target.transform);
@@ -101,11 +111,8 @@ public class ChainLightning : MonoBehaviour
 
     public void DisableSeeking()
     {
-        ani = GetComponent<Animator>();
-        coll = GetComponent<CircleCollider2D>();
+        ani.enabled = false;
         singleSpawns = 0;
-        ani.StopPlayback();
-        coll.enabled = false;
     }
     
 }
