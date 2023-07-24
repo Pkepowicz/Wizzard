@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 826752482}
   - component: {fileID: 826752483}
   m_Layer: 0
-  m_Name: DanzaKuduro
+  m_Name: BGMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -410,7 +410,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fcdfe58e6a71cdf4bb637fd923d156a8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1030c3b11b670b441b73a043953803c1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.089
   m_Pitch: 1
@@ -1325,6 +1325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af53f97773367e54bb49f446d41087f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackSound: FireballAttack
   damage: 1
   reloadTime: 1
   bulletPrefab: {fileID: 1655963679983533926, guid: b33329161b15b9547829fc7253a78e09, type: 3}
@@ -1346,6 +1347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c027f700e6817a45af5a898b5a95fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackSound: LightningAttack
   damage: 1
   reloadTime: 1
   bulletPrefab: {fileID: 6217438178683426616, guid: 83c00c23a4bd5294fa9f1bb78ea968ae, type: 3}

@@ -129,7 +129,7 @@ public class Fighter : Collidable
         if (isAlive)
         {
             anim.SetTrigger("hit");
-
+            SoundManager.PlaySound(hitSound, transform.position);
         }
     }
 
