@@ -14,6 +14,7 @@ public class Bow : MonoBehaviour
     private float lastAttack = float.NegativeInfinity;
 
     public float damage = 1f;
+    public float knockback = 0.5f;
     private GameObject currentArrow = null;
 
     private void Start()
@@ -38,8 +39,9 @@ public class Bow : MonoBehaviour
         // checks if target didnt move out of max range if he did, cancels attack, function called by anim
         if ((enemyAi.transform.position - enemyAi.targetPosition.transform.position).magnitude <= attackRange)
         {
+            SoundManager.PlaySound("BowAttack", transform.position);
             currentArrow = Instantiate(arrow, offset.position, enemyAi.hand.transform.rotation);
-            currentArrow.GetComponent<Arrow>().PassParameters(damage);
+            currentArrow.GetComponent<Arrow>().PassParameters(damage, knockback);
         }
         enemyAi.canMove = true;
     }

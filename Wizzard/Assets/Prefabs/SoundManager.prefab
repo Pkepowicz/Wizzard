@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6986230158827357206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6986230158827357204}
+  - component: {fileID: 6986230158827357207}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6986230158827357204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6986230158827357206}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.6922154, y: 0.81648403, z: 0.083307385}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6986230158827357207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6986230158827357206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e2fca54843c1644cb781734e62fa3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SoundAudioClips:
+  - sound: PlayerAttack
+    audioClip: {fileID: 8300000, guid: c62e2eb966872574388f133087f5a9fc, type: 3}
+  - sound: FireballHit
+    audioClip: {fileID: 8300000, guid: 96963b93a5da14b4ea822033b0fc344b, type: 3}
+  - sound: PlayerTakeDamage
+    audioClip: {fileID: 8300000, guid: af8348a88011f8f469ae2cfd4cea72ce, type: 3}
+  - sound: PlayerDeath
+    audioClip: {fileID: 8300000, guid: 973e4734575930c49b3c367ad0dc3044, type: 3}
+  - sound: Dash
+    audioClip: {fileID: 8300000, guid: 13465c1b23528cf42aa3d35b2ae96962, type: 3}
+  - sound: EnemyTakeDamage
+    audioClip: {fileID: 8300000, guid: cef97163ae827f3419fe8ffec49041ae, type: 3}
+  - sound: SatyrAttack
+    audioClip: {fileID: 8300000, guid: 674ce8d17c767df4987cb66ee29d537d, type: 3}
+  - sound: EnemyDeath
+    audioClip: {fileID: 8300000, guid: faabc8f0bddb2fd40833cbe84eba4870, type: 3}
+  - sound: SlimeTakeDamage
+    audioClip: {fileID: 8300000, guid: b6bcdb29b2436d74989d26f81dd1e191, type: 3}
+  - sound: SlimeDeath
+    audioClip: {fileID: 8300000, guid: cd9be335cacd8214783c36a347bcee8d, type: 3}
+  - sound: Footstep
+    audioClip: {fileID: 8300000, guid: 05c6213b404a394458d84dd6efe234f8, type: 3}
+  - sound: SlimeDeathFast
+    audioClip: {fileID: 8300000, guid: d9f1abfb638f63a4a8d1f8c559318d2c, type: 3}
+  - sound: BowAttack
+    audioClip: {fileID: 8300000, guid: dc7d6e3c492b32542856faba310a50dc, type: 3}
+  - sound: SpearAttack
+    audioClip: {fileID: 8300000, guid: 5623668bc32d533459f2eb09b55808e4, type: 3}

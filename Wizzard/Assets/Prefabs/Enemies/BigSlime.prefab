@@ -552,11 +552,14 @@ MonoBehaviour:
   sprite: {fileID: 0}
   speed: 400
   maxVelocity: 0.8
+  canMove: 1
   hitPoint: 10
   maxHitPoint: 10
   immunityTime: 0.1
-  canMove: 1
   healthBar: {fileID: 3970039955176748387}
+  hitSound: SlimeTakeDamage
+  deathSound: SlimeDeath
+  footstep: 0
   targetPosition: {fileID: 0}
   hand: {fileID: 3970039956135312175}
   maxHandTurnSpeed: 0.5

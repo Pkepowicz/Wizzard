@@ -384,7 +384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &826752482
 Transform:
   m_ObjectHideFlags: 0
@@ -1433,11 +1433,14 @@ MonoBehaviour:
   sprite: {fileID: 0}
   speed: 600
   maxVelocity: 1
+  canMove: 1
   hitPoint: 10
   maxHitPoint: 10
   immunityTime: 0.3
-  canMove: 1
   healthBar: {fileID: 1862513268}
+  hitSound: PlayerTakeDamage
+  deathSound: PlayerDeath
+  footstep: 1
   velocity: {x: 0, y: 0, z: 0}
   textureManager: {fileID: 8531277631707222262}
   mainCam: {fileID: 3112676981346987092}

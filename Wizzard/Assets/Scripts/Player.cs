@@ -61,13 +61,14 @@ public class Player : Fighter
 
     private IEnumerator Dash()
     {
-        Vector3 targetPosition = mainCam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector2 targetPosition = rb.velocity.normalized != Vector2.zero ? rb.velocity.normalized : mainCam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         canDash = false;
         isDashing = true;
         HandleParticles(startDashParticle);
         StartCoroutine(StartImmunityPeriod(dashImmunityTime));
         rb.velocity = targetPosition * dashingPower;
         dashCDManager.StartDashCooldown(dashingCooldown);
+        SoundManager.PlaySound("Dash", transform.position);
         yield return new WaitForSeconds(dashingTime);
         
         HandleParticles(endDashParticle, gameObject);
@@ -76,7 +77,4 @@ public class Player : Fighter
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
-
-
-    
 }

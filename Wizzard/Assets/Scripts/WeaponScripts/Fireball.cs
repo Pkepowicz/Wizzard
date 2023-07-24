@@ -85,6 +85,7 @@ public class Fireball : Projectile
             HandleParticles(hitWallEffect, null, hitWallEffect.GetComponent<ParticleSystem>().main.duration, offset=offset); 
             
         }
+        SoundManager.PlaySound("FireballHit", transform.position);
         Destroy(gameObject);
     }
 
