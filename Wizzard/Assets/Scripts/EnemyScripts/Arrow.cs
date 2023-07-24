@@ -5,15 +5,24 @@ using UnityEngine;
 public class Arrow : Projectile
 {
     private float damage;
-    
-    public void PassParameters(float dmg)
+    private float knockback;
+
+    public void PassParameters(float dmg, float knb)
     {
         damage = dmg;
+        knockback = knb;
     }
 
     protected override void OnProjectilePlayerHit(Collider2D coll)
     {
-        coll.SendMessage("ReceiveDamage", damage);
+        Damage dmg = new Damage()
+        {
+            damageAmmount = damage,
+            knockBack = knockback,
+            origin = transform.position
+        };
+
+        coll.SendMessage("ReceiveDamage", dmg);
         Destroy(gameObject);
     }
 

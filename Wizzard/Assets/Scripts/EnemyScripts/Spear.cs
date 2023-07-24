@@ -30,6 +30,7 @@ public class Spear : MonoBehaviour
 
     public void addForce()
     {
+        SoundManager.PlaySound("SpearAttack", transform.position);
         enemyAi.rb.AddForce(transform.up * chargeForce);
         enemyAi.canMove = true;
     }

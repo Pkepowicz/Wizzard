@@ -68,6 +68,7 @@ public class Player : Fighter
         StartCoroutine(StartImmunityPeriod(dashImmunityTime));
         rb.velocity = targetPosition * dashingPower;
         dashCDManager.StartDashCooldown(dashingCooldown);
+        SoundManager.PlaySound("Dash", transform.position);
         yield return new WaitForSeconds(dashingTime);
         
         HandleParticles(endDashParticle);
@@ -76,7 +77,4 @@ public class Player : Fighter
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }
-
-
-    
 }

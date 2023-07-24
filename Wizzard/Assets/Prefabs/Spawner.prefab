@@ -48,8 +48,12 @@ MonoBehaviour:
   - enemyPrefab: {fileID: 6957094039793852871, guid: 8912c405033568f409e30aacef93abb4, type: 3}
     cost: 2
   - enemyPrefab: {fileID: 3970039955663417576, guid: 5fa6a812ede02014e83ee078957377aa, type: 3}
-    cost: 1
+    cost: 3
   - enemyPrefab: {fileID: 5976547075058405258, guid: 32b9264fbd7aa7b43ac9843b2b9034dd, type: 3}
-    cost: 4
+    cost: 1
+  - enemyPrefab: {fileID: 3524761298474416460, guid: 8060f6e1529fac046a7bd8e6fa66f238, type: 3}
+    cost: 3
+  - enemyPrefab: {fileID: 786094244658795523, guid: 0759e9ddb4eeeab49971dbd44827e6d8, type: 3}
+    cost: 1
   interval: 10
   numberOfCreatures: 2
