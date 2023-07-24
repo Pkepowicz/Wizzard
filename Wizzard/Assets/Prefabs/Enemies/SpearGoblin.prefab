@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5118606531104225895}
   - component: {fileID: 430187579604551131}
   - component: {fileID: 3732277384874630434}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 3159826451172891813}
   - component: {fileID: 4848238818184805816}
   - component: {fileID: 8858107501906988708}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 1434065873091462965}
   - component: {fileID: 6957094039793856057}
   - component: {fileID: 3615441870609436346}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpearGoblin
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 3099512158371282404}
   - component: {fileID: 5952654665799321078}
   - component: {fileID: 4720390598078118667}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -754,7 +754,7 @@ GameObject:
   - component: {fileID: 3369082028515631789}
   - component: {fileID: 7303567874350141448}
   - component: {fileID: 7463510009596273285}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

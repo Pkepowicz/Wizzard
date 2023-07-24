@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8463552638067266602}
   - component: {fileID: 4000375825847987094}
   - component: {fileID: 123799841335341935}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 1837407280234927017}
   - component: {fileID: 6980709354432211899}
   - component: {fileID: 8358214648111945030}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,8 +252,7 @@ GameObject:
   - component: {fileID: 2421448535771146616}
   - component: {fileID: 5976547075058401396}
   - component: {fileID: 5976547075058401397}
-  - component: {fileID: 3238279863072814780}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Goblin
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -526,7 +525,7 @@ GameObject:
   - component: {fileID: 2070819702987574496}
   - component: {fileID: 6280016261346737733}
   - component: {fileID: 6192400018690346184}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,7 +691,7 @@ GameObject:
   - component: {fileID: 1848042269453382376}
   - component: {fileID: 8157147341096080373}
   - component: {fileID: 5229299405076848873}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

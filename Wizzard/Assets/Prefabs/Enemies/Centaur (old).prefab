@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7130214006891154676}
   - component: {fileID: 748170599714663913}
   - component: {fileID: 3730176080740065013}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 7488093063980233468}
   - component: {fileID: 3202361699899293785}
   - component: {fileID: 3366960213201973972}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 6542813157111928676}
   - component: {fileID: 3001366155537317480}
   - component: {fileID: 3001366155537317481}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Centaur (old)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -500,7 +500,7 @@ GameObject:
   - component: {fileID: 7073399456178204085}
   - component: {fileID: 1996921300131665319}
   - component: {fileID: 623850304030518106}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 4569224933720733733}
   - component: {fileID: 758238211574878152}
   - component: {fileID: 3332037839048428080}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -652,7 +652,7 @@ GameObject:
   - component: {fileID: 1018551510692145718}
   - component: {fileID: 5535552750589662602}
   - component: {fileID: 8854596074126773619}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

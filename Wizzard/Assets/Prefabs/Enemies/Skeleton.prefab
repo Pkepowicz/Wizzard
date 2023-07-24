@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 786094243062779114}
   - component: {fileID: 786094243062779112}
   - component: {fileID: 786094243062779113}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 786094243562128864}
   - component: {fileID: 786094243562128866}
   - component: {fileID: 786094243562128867}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 786094243654191798}
   - component: {fileID: 786094243654191796}
   - component: {fileID: 786094243654191797}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -607,7 +607,7 @@ GameObject:
   - component: {fileID: 786094244281971444}
   - component: {fileID: 786094244281971450}
   - component: {fileID: 786094244281971451}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -687,7 +687,7 @@ GameObject:
   - component: {fileID: 786094244658795527}
   - component: {fileID: 786094244658795520}
   - component: {fileID: 786094244658795521}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Skeleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}

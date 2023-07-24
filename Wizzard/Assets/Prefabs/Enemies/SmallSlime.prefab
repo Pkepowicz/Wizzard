@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 8680119184870329211}
   - component: {fileID: 801562753020535368}
   - component: {fileID: 801562753020535415}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SmallSlime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 6840777144138010204}
   - component: {fileID: 6840777144138010206}
   - component: {fileID: 6840777144138010205}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +397,7 @@ GameObject:
   - component: {fileID: 6840777144708006089}
   - component: {fileID: 6840777144708006091}
   - component: {fileID: 6840777144708006090}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 6840777145189290659}
   - component: {fileID: 6840777145189290661}
   - component: {fileID: 6840777145189290660}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,7 +552,7 @@ GameObject:
   - component: {fileID: 6840777145517709859}
   - component: {fileID: 6840777145517709857}
   - component: {fileID: 6840777145517709856}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

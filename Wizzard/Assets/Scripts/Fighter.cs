@@ -129,7 +129,7 @@ public class Fighter : Collidable
         if (isAlive)
         {
             anim.SetTrigger("hit");
-
+            SoundManager.PlaySound(hitSound, transform.position);
         }
     }
 
@@ -141,6 +141,20 @@ public class Fighter : Collidable
         {
             Death();
         }
+    }
+
+    
+    // Made with function and coroutine so it can be easily called from other scripts
+    public void Stun(float duration)
+    {
+        StartCoroutine(StunCoroutine(duration));
+    }
+    
+    private IEnumerator StunCoroutine(float duration)
+    {
+        canMove = false;
+        yield return new WaitForSeconds(duration);
+        canMove = true;
     }
 
     // Destruction of object is handled by animation

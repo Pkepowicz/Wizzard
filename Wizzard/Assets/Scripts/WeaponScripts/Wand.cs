@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class Wand : MonoBehaviour
 {
+    [Header("Sound Settings")]
+    public string AttackSound;
+
     [Header("Shooting settings")] 
     public float damage = 1;
     public float reloadTime = 1;
@@ -41,7 +44,7 @@ public class Wand : MonoBehaviour
             //Debug.Log("Ready to shoot");
             Shoot();
             lastShot = Time.time;
-            SoundManager.PlaySound("PlayerAttack", projectileSpawnPoint.position);
+            SoundManager.PlaySound(AttackSound, projectileSpawnPoint.position);
         }
         
     }

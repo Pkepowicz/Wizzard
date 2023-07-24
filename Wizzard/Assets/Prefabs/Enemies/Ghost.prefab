@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8468760027710889918}
   - component: {fileID: 8944444000826538731}
   - component: {fileID: 1007874959525382628}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 2001117787998205735}
   - component: {fileID: 6685056619242013560}
   - component: {fileID: 2574036044976598431}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: 'Canvas '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 3094001391086750726}
   - component: {fileID: 8684824548519022413}
   - component: {fileID: 1996049241897351132}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6607997562057129611}
   - component: {fileID: 6568909089345589716}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 2832704312479023958}
   - component: {fileID: 2287880756722190023}
   - component: {fileID: 9190908572888534487}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 7055255848764813907}
   - component: {fileID: 5400696322686459907}
   - component: {fileID: 7055255848764813906}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Ghost
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -682,7 +682,7 @@ GameObject:
   - component: {fileID: 681203101083236890}
   - component: {fileID: 3455088088490739210}
   - component: {fileID: 4157886825188906730}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

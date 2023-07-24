@@ -64,14 +64,14 @@ public class Player : Fighter
         Vector2 targetPosition = rb.velocity.normalized != Vector2.zero ? rb.velocity.normalized : mainCam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         canDash = false;
         isDashing = true;
-        HandleParticles(startDashParticle, false);
+        HandleParticles(startDashParticle);
         StartCoroutine(StartImmunityPeriod(dashImmunityTime));
         rb.velocity = targetPosition * dashingPower;
         dashCDManager.StartDashCooldown(dashingCooldown);
         SoundManager.PlaySound("Dash", transform.position);
         yield return new WaitForSeconds(dashingTime);
         
-        HandleParticles(endDashParticle);
+        HandleParticles(endDashParticle, gameObject);
         rb.velocity = Vector3.zero;
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
