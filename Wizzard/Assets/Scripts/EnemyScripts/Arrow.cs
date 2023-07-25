@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Arrow : Projectile
 {
-    private float damage;
     private float knockback;
 
     public void PassParameters(float dmg, float knb)
