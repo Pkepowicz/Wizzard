@@ -34,8 +34,9 @@ public class Spawner : MonoBehaviour
 
             if (creaturesNumber - enemiesPossibleToSpawn[value].cost >= 0)
             {
+                Vector3 offset = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
                 GameObject newEnemy = Instantiate(enemiesPossibleToSpawn[value].enemyPrefab, spawnPoints[Random.Range(0, spawnPoints.Count)].position
-                    + new Vector3(Random.Range(-1f, 1), Random.Range(-1f, 1), 0), Quaternion.identity);
+                    + offset, Quaternion.identity);
                 creaturesNumber = creaturesNumber - enemiesPossibleToSpawn[value].cost;
             }
 
