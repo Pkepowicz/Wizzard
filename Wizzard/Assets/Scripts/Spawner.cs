@@ -14,7 +14,7 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 2 && !coroutineStarted)
+        if (!coroutineStarted && GameObject.FindGameObjectsWithTag("Enemy").Length <= 2)
         {
             // logarythmic enemy number scaling, first wave 6 enemies, 2nd 18, 5th 33, 10th 46 which is softcap
             numberOfCreatures = (int)Mathf.Ceil(40 * Mathf.Log10(((waveNumber + 1) / 2))) + 15;
