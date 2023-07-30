@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
+using UnityEngine.Rendering.Universal;
 
 public class Destructable : Collidable
 {
@@ -17,7 +18,9 @@ public class Destructable : Collidable
     
     
     public void TakeDamage(float dmg){
-        HP =- dmg;
+        HP = HP-dmg;
+        Debug.Log(dmg);
+        Debug.Log(HP);
         ChangeSprite();
         if(HP <= 0){
             DestroyThis();
@@ -25,16 +28,17 @@ public class Destructable : Collidable
     }
 
     public void ChangeSprite(){
-        switch(HP){
-            case  1 when HP< 0.9 * MaxHP:
-                spriteRenderer.sprite = statusList[0];
-                break;
-            case 2 when HP < 0.5 * MaxHP:
-                spriteRenderer.sprite = statusList[1];
-                break;
-            case 3 when HP < 0.3 * MaxHP:
-                spriteRenderer.sprite = statusList[2];
-                break;
+        if (HP <= 0.8 * MaxHP && HP > 0.5 * MaxHP )
+        {
+            spriteRenderer.sprite = statusList[0];
+        }
+        else if( HP <= 0.5 * MaxHP && HP > 0.3 * MaxHP)
+        {
+            spriteRenderer.sprite = statusList[1];
+        }
+        else if( HP <= 0.3 * MaxHP )
+        {
+            spriteRenderer.sprite = statusList[2];
         }
     }
 
