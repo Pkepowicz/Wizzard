@@ -65,6 +65,8 @@ public class ChainLightning : MonoBehaviour
     public void HitTarget(GameObject target)
     {
         amountToChain -= 1;
+        damage *= 0.8f;
+        
         ani.enabled = true;
         Instantiate(chainLightningEffect, target.transform.position, Quaternion.identity);
 
