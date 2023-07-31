@@ -7,7 +7,6 @@ public class Interactable : Collidable
 {
     public GameObject hoverText;
     public SpriteRenderer box;
-    public TMPro.TextContainer text;
     private bool isFull = true;
     public Sprite emptyBox;
     //Just for debug 
@@ -17,13 +16,16 @@ public class Interactable : Collidable
     {
         if (coll.CompareTag("Player"))
         {
-            hoverText.SetActive(true);
+            if(hoverText)
+                hoverText.SetActive(true);
+            
             if (Input.GetKey(KeyCode.E)&&isFull)
             {
                 box.sprite = emptyBox;
                 isFull = false;
                 score += 10;
                 Destroy(hoverText);
+                
             }
             
         }
