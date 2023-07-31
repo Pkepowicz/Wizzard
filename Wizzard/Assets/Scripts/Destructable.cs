@@ -19,8 +19,7 @@ public class Destructable : Collidable
     
     public void TakeDamage(float dmg){
         HP = HP-dmg;
-        Debug.Log(dmg);
-        Debug.Log(HP);
+        
         ChangeSprite();
         if(HP <= 0){
             DestroyThis();

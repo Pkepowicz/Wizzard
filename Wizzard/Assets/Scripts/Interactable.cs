@@ -9,8 +9,8 @@ public class Interactable : Collidable
     public SpriteRenderer box;
     private bool isFull = true;
     public Sprite emptyBox;
-    //Just for debug 
-    public int score = 0;
+    
+    
 
     protected override void OnCollide(Collider2D coll)
     {
@@ -23,7 +23,7 @@ public class Interactable : Collidable
             {
                 box.sprite = emptyBox;
                 isFull = false;
-                score += 10;
+                
                 Destroy(hoverText);
                 
             }
