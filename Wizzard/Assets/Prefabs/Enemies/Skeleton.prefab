@@ -595,7 +595,8 @@ MonoBehaviour:
   startAttackRange: 1
   attackRange: 1.4
   attackSpeed: 2
-  damage: 1
+  damage: 3
+  knockback: 1
 --- !u!1 &786094244281971445
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,12 +809,15 @@ MonoBehaviour:
   anim: {fileID: 786094244658795521}
   sprite: {fileID: 0}
   speed: 400
-  maxVelocity: 0.8
-  hitPoint: 10
-  maxHitPoint: 10
-  immunityTime: 0.1
+  maxVelocity: 1.2
   canMove: 1
+  hitPoint: 8
+  maxHitPoint: 8
+  immunityTime: 0.1
   healthBar: {fileID: 786094243562128867}
+  hitSound: EnemyTakeDamage
+  deathSound: EnemyDeath
+  footstep: 0
   targetPosition: {fileID: 0}
   hand: {fileID: 786094243040799308}
   maxHandTurnSpeed: 0.2

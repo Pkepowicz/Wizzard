@@ -222,8 +222,8 @@ MonoBehaviour:
   speed: 400
   maxVelocity: 1
   canMove: 1
-  hitPoint: 2
-  maxHitPoint: 2
+  hitPoint: 4
+  maxHitPoint: 4
   immunityTime: 0.1
   healthBar: {fileID: 6840777145517709856}
   hitSound: SlimeTakeDamage

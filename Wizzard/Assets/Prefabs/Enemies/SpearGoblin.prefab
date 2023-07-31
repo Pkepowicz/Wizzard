@@ -577,12 +577,15 @@ MonoBehaviour:
   anim: {fileID: 6957094039793856057}
   sprite: {fileID: 0}
   speed: 400
-  maxVelocity: 0.8
-  hitPoint: 5
-  maxHitPoint: 5
-  immunityTime: 0.1
+  maxVelocity: 1.2
   canMove: 1
+  hitPoint: 10
+  maxHitPoint: 10
+  immunityTime: 0.1
   healthBar: {fileID: 7463510009596273285}
+  hitSound: EnemyTakeDamage
+  deathSound: EnemyDeath
+  footstep: 0
   targetPosition: {fileID: 0}
   hand: {fileID: 3637894530627707350}
   maxHandTurnSpeed: 0.3
@@ -660,8 +663,8 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  damage: 1
-  force: 2
+  damage: 6
+  force: 4
   rb: {fileID: 1815246163180321398}
   knockbackAfterHit: 2
 --- !u!1 &7136772944876104464

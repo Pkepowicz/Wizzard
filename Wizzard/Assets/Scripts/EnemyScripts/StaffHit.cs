@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class StaffHit : Explosion
 {
-    protected override void Start()
-    {
-        explosionDamage = 1;
-        knockback = 2;
-        base.Start();
-    }
-
     protected override void OnCollide(Collider2D coll)
     {
         // send damage to player if hit by explosion

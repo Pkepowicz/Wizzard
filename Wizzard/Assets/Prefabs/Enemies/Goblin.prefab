@@ -252,6 +252,7 @@ GameObject:
   - component: {fileID: 2421448535771146616}
   - component: {fileID: 5976547075058401396}
   - component: {fileID: 5976547075058401397}
+  - component: {fileID: 3238279863072814780}
   m_Layer: 10
   m_Name: Goblin
   m_TagString: Enemy
@@ -372,12 +373,15 @@ MonoBehaviour:
   anim: {fileID: 5976547075058401396}
   sprite: {fileID: 0}
   speed: 400
-  maxVelocity: 0.8
+  maxVelocity: 1.3
+  canMove: 1
   hitPoint: 10
   maxHitPoint: 10
   immunityTime: 0.1
-  canMove: 1
   healthBar: {fileID: 6192400018690346184}
+  hitSound: EnemyTakeDamage
+  deathSound: EnemyDeath
+  footstep: 0
   targetPosition: {fileID: 0}
   hand: {fileID: 0}
   maxHandTurnSpeed: 0
@@ -507,8 +511,8 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  damage: 1
-  force: 2
+  damage: 4
+  force: 3
   rb: {fileID: 3120265608489800763}
   knockbackAfterHit: 1
 --- !u!1 &6348283875942787991

@@ -746,11 +746,14 @@ MonoBehaviour:
   sprite: {fileID: 0}
   speed: 400
   maxVelocity: 0.8
-  hitPoint: 10
-  maxHitPoint: 10
-  immunityTime: 0.1
   canMove: 1
+  hitPoint: 16
+  maxHitPoint: 16
+  immunityTime: 0.1
   healthBar: {fileID: 4032218503752989198}
+  hitSound: EnemyTakeDamage
+  deathSound: EnemyDeath
+  footstep: 0
   targetPosition: {fileID: 0}
   hand: {fileID: 0}
   maxHandTurnSpeed: 0

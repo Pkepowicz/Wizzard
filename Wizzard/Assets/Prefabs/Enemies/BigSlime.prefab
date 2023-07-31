@@ -551,10 +551,10 @@ MonoBehaviour:
   anim: {fileID: 3970039955663417578}
   sprite: {fileID: 0}
   speed: 400
-  maxVelocity: 0.8
+  maxVelocity: 0.7
   canMove: 1
-  hitPoint: 10
-  maxHitPoint: 10
+  hitPoint: 20
+  maxHitPoint: 20
   immunityTime: 0.1
   healthBar: {fileID: 3970039955176748387}
   hitSound: SlimeTakeDamage
@@ -595,8 +595,8 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  damage: 1
-  force: 2
+  damage: 8
+  force: 6
   rb: {fileID: 3970039955663417582}
   knockbackAfterHit: 0.3
 --- !u!114 &3970039955663417579
