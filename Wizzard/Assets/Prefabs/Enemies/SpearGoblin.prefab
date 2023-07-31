@@ -360,8 +360,8 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  damage: 1
-  force: 2
+  damage: 6
+  force: 4
   rb: {fileID: 0}
   knockbackAfterHit: 0
 --- !u!1 &6402544192650572163
