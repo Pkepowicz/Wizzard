@@ -748,9 +748,9 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.519
+  m_FalloffIntensity: 0.514
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.81
+  m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000dd7b4ec3cb08ecb9
@@ -801,7 +801,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 2
+  m_PointLightOuterRadius: 3
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -1289,6 +1289,7 @@ GameObject:
   - component: {fileID: 8531277631707222262}
   - component: {fileID: 8531277631707222261}
   - component: {fileID: 780973857}
+  - component: {fileID: 1955724834}
   m_Layer: 0
   m_Name: Hand
   m_TagString: Untagged
@@ -1320,7 +1321,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8531277631707222263}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af53f97773367e54bb49f446d41087f6, type: 3}
   m_Name: 
@@ -1342,14 +1343,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8531277631707222263}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c027f700e6817a45af5a898b5a95fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   AttackSound: LightningAttack
-  damage: 4
-  reloadTime: 0.75
+  damage: 6
+  reloadTime: 0.7
   bulletPrefab: {fileID: 6217438178683426616, guid: 83c00c23a4bd5294fa9f1bb78ea968ae, type: 3}
   projectileAmount: 1
   shootArc: 30
@@ -1362,6 +1363,25 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   chainLightningEffect: {fileID: 6787774124076390188, guid: 08118fe56d59bd744a6a0b7e576a6105, type: 3}
+--- !u!114 &1955724834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8531277631707222263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1fee82ca9f4614c804f30e6747c2b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackSound: Swing
+  damage: 2
+  reloadTime: 0.5
+  bulletPrefab: {fileID: 5260940602609668264, guid: 94b106fbc67801241b0ce7ac2160589c, type: 3}
+  projectileAmount: 1
+  shootArc: 30
+  projectileSpawnPoint: {fileID: 8531277632828162910}
 --- !u!1 &8531277632754169917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,8 +1456,8 @@ MonoBehaviour:
   speed: 600
   maxVelocity: 1
   canMove: 1
-  hitPoint: 20
-  maxHitPoint: 20
+  hitPoint: 40
+  maxHitPoint: 40
   immunityTime: 0.2
   healthBar: {fileID: 1862513268}
   hitSound: PlayerTakeDamage

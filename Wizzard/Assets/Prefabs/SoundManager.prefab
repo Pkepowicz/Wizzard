@@ -49,6 +49,8 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: c62e2eb966872574388f133087f5a9fc, type: 3}
   - sound: LightningAttack
     audioClip: {fileID: 8300000, guid: 8d3a0b6bdea013e4fa0a5c4c46e129f6, type: 3}
+  - sound: Swing
+    audioClip: {fileID: 8300000, guid: a8c391b658c1f084bbc861668db31feb, type: 3}
   - sound: FireballHit
     audioClip: {fileID: 8300000, guid: 96963b93a5da14b4ea822033b0fc344b, type: 3}
   - sound: PlayerTakeDamage

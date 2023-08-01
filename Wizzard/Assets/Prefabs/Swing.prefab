@@ -136,7 +136,7 @@ MonoBehaviour:
     maxNormalAngle: 0
   animClip: {fileID: 7400000, guid: e279af69f9665ca43a0e12a22c75fe06, type: 2}
   explosionDamage: 2
-  knockback: 4
+  knockback: 2
 --- !u!61 &5260940602609668265
 BoxCollider2D:
   m_ObjectHideFlags: 0

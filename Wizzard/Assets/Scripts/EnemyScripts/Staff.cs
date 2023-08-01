@@ -57,4 +57,9 @@ public class Staff : MonoBehaviour
     {
         SoundManager.PlaySound("SatyrAttack", transform.position);
     }
+
+    private void OnDestroy()
+    {
+        onCooldown = false;
+    }
 }

@@ -594,7 +594,7 @@ MonoBehaviour:
   offset: {fileID: 786094243963421122}
   startAttackRange: 1
   attackRange: 1.4
-  attackSpeed: 2
+  attackSpeed: 1
   damage: 3
   knockback: 1
 --- !u!1 &786094244281971445
