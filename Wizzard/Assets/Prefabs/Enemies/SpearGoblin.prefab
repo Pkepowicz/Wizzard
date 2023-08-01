@@ -314,9 +314,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyAi: {fileID: 8529508276861775698}
   anim: {fileID: 3637894530789958916}
-  attackSpeed: 0
-  attackRange: 1
-  chargeForce: 300
+  attackSpeed: 1
+  attackRange: 0.5
+  chargeForce: 350
 --- !u!58 &8837634072916547640
 CircleCollider2D:
   m_ObjectHideFlags: 0
