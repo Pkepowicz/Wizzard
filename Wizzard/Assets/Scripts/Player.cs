@@ -25,7 +25,13 @@ public class Player : Fighter
     public GameObject endDashParticle;
 
     public DashCooldown dashCDManager;
+    
+    
 
+    
+    
+
+    
     protected override void Update()
     {
         base.Update();
@@ -33,6 +39,7 @@ public class Player : Fighter
         {
             StartCoroutine(Dash());
         }
+        
     }
 
     private void FixedUpdate()
@@ -58,7 +65,7 @@ public class Player : Fighter
 
         UpdateMotor(new Vector2(x, y).normalized);
     }
-
+    
     private IEnumerator Dash()
     {
         Vector2 targetPosition = rb.velocity.normalized != Vector2.zero ? rb.velocity.normalized : mainCam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
