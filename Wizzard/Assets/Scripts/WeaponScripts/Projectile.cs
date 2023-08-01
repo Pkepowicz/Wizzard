@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using UnityEditor;
 using UnityEngine;
 
@@ -34,7 +35,10 @@ public class Projectile : Collidable
         {
             OnProjectileEnemyHit(coll);
         }
-        
+        else if (coll.CompareTag("DestructiveStructure"))
+        {
+            OnProjectileStructureHit(coll);
+        }
         else if (coll.CompareTag("Structure"))
         {
             OnProjectileWallHit(coll);
@@ -57,6 +61,12 @@ public class Projectile : Collidable
         };
         
         coll.SendMessage("ReceiveDamage", dmg);
+        Destroy(gameObject);
+    }
+    protected virtual void OnProjectileStructureHit(Collider2D coll)
+    {
+        
+        coll.SendMessage("TakeDamage", damage);
         Destroy(gameObject);
     }
 
