@@ -38,8 +38,9 @@ public class Projectile : Collidable
         else if (coll.CompareTag("DestructiveStructure"))
         {
             OnProjectileStructureHit(coll);
+            OnProjectileWallHit(coll);
         }
-        else if (coll.CompareTag("Structure"))
+        else if (coll.CompareTag("Structure") )
         {
             OnProjectileWallHit(coll);
         }
