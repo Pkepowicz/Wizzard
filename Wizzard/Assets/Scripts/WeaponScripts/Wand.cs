@@ -21,7 +21,7 @@ public class Wand : MonoBehaviour
     public float shootArc = 30; // maximum angle at which additional projectile will be spawned, 
                                 // 30 means 30deg shooting arc, so 15deg deviation on each side
                                 
-    private float lastShot = 0;
+    protected float lastShot = 0;
     
     // List of bullets, useful when firing many projectiles
     protected List<GameObject> currentBullets;

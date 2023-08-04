@@ -147,14 +147,15 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  speed: 1.7
-  lifetime: 5
+  damage: 0
   knockbackForce: 1
+  speed: 2
+  lifetime: 5
   burn: {fileID: 7899300245987635454, guid: c740d967feb9ecf4eae284a973c251af, type: 3}
   igniteEfficieny: 0.5
-  explosionDamage: 3
+  explosionDamage: 2
   explosionRadius: 1
-  explosionKnockbackForce: 2
+  explosionKnockbackForce: 1
   explosionPrefab: {fileID: 3168637059819119676, guid: 09d60184a03bb2c40854ee9493016e0e, type: 3}
   hitWallEffect: {fileID: 3514729623580635874, guid: 91b6d0b381b4ac34cbcdfc6014ca1ac7, type: 3}
   effectSpawnPoint: {fileID: 3101844359942965799}

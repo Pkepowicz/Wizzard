@@ -153,6 +153,8 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   animClip: {fileID: 7400000, guid: 12f2aa10454e57b47aad83717f0624fe, type: 2}
+  explosionDamage: 6
+  knockback: 4
 --- !u!1 &5963634795844527096
 GameObject:
   m_ObjectHideFlags: 0

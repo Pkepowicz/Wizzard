@@ -8,8 +8,8 @@ public class Explosion : Collidable
     // animation clip of explosion
     public AnimationClip animClip;
     
-    protected float explosionDamage;
-    protected float knockback;
+    public float explosionDamage;
+    public float knockback;
 
    
     
