@@ -14,7 +14,7 @@ public class Destructable : Collidable
     public GameObject gameObject;
     public int MaxHP;
     public float  HP;
-    public Projectile projectile;
+    
     
     
     public void TakeDamage(float dmg){

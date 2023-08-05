@@ -25,11 +25,16 @@ public class Player : Fighter
     public GameObject endDashParticle;
 
     public DashCooldown dashCDManager;
-    
-    
+    public GameObject deadScreen;
+    public GameObject spritePlayer;
 
     
-    
+      protected override  void Destroy()
+      {
+          Time.timeScale = 0f;
+          deadScreen.SetActive(true);
+          spritePlayer.SetActive(false);
+      }
 
     
     protected override void Update()
