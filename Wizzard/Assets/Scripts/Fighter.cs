@@ -170,6 +170,7 @@ public class Fighter : Collidable
 
     protected virtual void Destroy()
     {
+        
         Destroy(gameObject);
     }
 
