@@ -1,0 +1,9 @@
+Boss ideas: 
+- Drakonidia, Matka Smoczych Łupieżców: Pół-smok, pół-kobieta, który kontroluje grupę smoków łupieżców. Gracze będą musieli zmierzyć się z nią oraz odparować ataki jej bestialskich towarzyszy.
+	4 smoki, każdy z innym atakiem, żeby zabić Bossa trzeba zajebać smoki. Boss nakurwia mieczem, smoki zieją ogniem 
+- Górotwórca, Strażnik Kopalni Kryształów: Gigantyczny humanoid wydrążony ze skał, zasilający się energią kryształów. Walka to mieszanka uników przed jego twardymi ciosami oraz osłabiania go poprzez niszczenie kryształów.
+	Duży skalniak, ma 3 różne ataki związane ze skałami. Coś a'la Daisy Iverna ale stworzony z kryształu i skał. w sali jest kilka kryształów które trzeba zbić żeby dojebać golemowi
+- Banshee, Wyszeptująca Upiórka: Straszliwa duchowa istota, której śpiew i płacz mogą sparaliżować i zaszkodzić bohaterom. Jest w stanie kontrolować duchy zmarłych w swoim otoczeniu.
+	Baba-demon, nakurwia turbomocne magiczne ataki i sumonuje mini duszki
+-Hydra z Kwaszącymi Łbami: Potwór z wieloma głowami, z których każda wypluwa żrący kwas. Głowy mogą się regenerować, więc aby go pokonać, trzeba zdobyć perfekcyjną koordynację.
+	Każda głowa ma wlasny HP Bar + cooldown po ilu się odrodzi. Żeby ubić hydre wszystkie głowy muszą byc zbite
