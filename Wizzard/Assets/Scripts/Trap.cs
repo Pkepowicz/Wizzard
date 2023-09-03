@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trap : MonoBehaviour
+public class Trap : MeleeEnemy
 {
     
     public Sprite[] daggers;
@@ -11,7 +11,7 @@ public class Trap : MonoBehaviour
 
     public float changeInterval = 1.0f;
     private float timer = 0.0f;
-
+    
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>(); 
@@ -24,6 +24,7 @@ public class Trap : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime; // Inkrementacja timera
+        
 
         if (timer >= 1)
         {
@@ -35,5 +36,27 @@ public class Trap : MonoBehaviour
             // Zmiana sprite'a na nowy
             spriteRenderer.sprite = daggers[currentSpriteIndex];
         }
+    }  
+    protected override void OnCollide(Collider2D coll)
+    {
+        if (coll.tag == "Player")
+        {
+            //if (currentSpriteIndex >= 3 && currentSpriteIndex <= 5)
+            //{
+                Damage dmg = new Damage
+                {
+                damageAmmount = damage,
+                knockBack = force,
+                origin = transform.position
+                };
+            coll.SendMessage("ReceiveDamage", dmg); // Knockback after attack
+            if (rb != null)
+            {
+                rb.AddForce((transform.position - coll.transform.position).normalized * knockbackAfterHit, ForceMode2D.Impulse);
+            } 
+            
+            //}
+        }
+        
     }
 }

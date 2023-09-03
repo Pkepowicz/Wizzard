@@ -11,8 +11,9 @@ public class MeleeEnemy : Collidable
     public float force = 2.0f; // knockback force
 
     [Header("Optional")]
-    [SerializeField] Rigidbody2D rb;
-    [SerializeField] float knockbackAfterHit;
+    [SerializeField]
+    protected Rigidbody2D rb;
+    [SerializeField] protected float knockbackAfterHit;
 
     protected override void OnCollide(Collider2D coll)
     {
