@@ -44,6 +44,7 @@ public class Player : Fighter
         {
             StartCoroutine(Dash());
         }
+
         
     }
 

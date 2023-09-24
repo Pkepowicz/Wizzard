@@ -166,6 +166,8 @@ public class Fighter : Collidable
     {
         hitPoint = 0;
         isAlive = false;
+      
+        
         SoundManager.PlaySound(deathSound, transform.position);
         anim.SetTrigger("death");
     }

@@ -8,7 +8,7 @@ public class EnemyAI : Fighter
 {
     
     
-    public int value;
+    public  int value;
     [Header("AI settings")] 
     public Transform targetPosition;
 
@@ -127,5 +127,12 @@ public class EnemyAI : Fighter
         {
             anim.SetBool("moving", false);
         }
+    }
+
+    protected override void Death()
+    {
+        base.Death();
+        ScoreManager.current.AddPoints(value);
+        
     }
 }
