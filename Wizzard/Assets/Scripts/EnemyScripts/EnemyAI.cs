@@ -7,8 +7,9 @@ using Pathfinding;
 public class EnemyAI : Fighter
 {
     
-    [Header("AI settings")]
-
+    
+    public int value;
+    [Header("AI settings")] 
     public Transform targetPosition;
 
     [SerializeField] public Transform hand;

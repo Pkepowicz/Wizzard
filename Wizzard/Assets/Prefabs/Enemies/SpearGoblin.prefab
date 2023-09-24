@@ -586,6 +586,7 @@ MonoBehaviour:
   hitSound: EnemyTakeDamage
   deathSound: EnemyDeath
   footstep: 0
+  value: 200
   targetPosition: {fileID: 0}
   hand: {fileID: 3637894530627707350}
   maxHandTurnSpeed: 0.3
