@@ -11,7 +11,8 @@ public class Fighter : Collidable
     public Animator anim;
     public Transform sprite;
     private Vector3 localScale;
-
+    private  Player player;
+    private EnemyAI enemyAI;
     [Header("Speed Settings")]
     public float speed = 0.8f;
     public float maxVelocity = 1.6f;
@@ -103,8 +104,10 @@ public class Fighter : Collidable
             StartCoroutine(StartImmunityPeriod(immunityTime));
             if (hitPoint <= 0)
             {
+               
                 hitPoint = 0;
                 Death();
+                
             }
             healthBar.SetHealth(hitPoint);
             if (isAlive && dmg.damageAmmount > 0)
@@ -163,6 +166,8 @@ public class Fighter : Collidable
     {
         hitPoint = 0;
         isAlive = false;
+      
+        
         SoundManager.PlaySound(deathSound, transform.position);
         anim.SetTrigger("death");
     }

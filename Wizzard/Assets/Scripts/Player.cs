@@ -12,7 +12,7 @@ public class Player : Fighter
     
     // For testing new effects
     public GameObject regen;
-
+    public int score;
     [Header("Dash settings")] 
     private bool canDash = true;
     private bool isDashing = false;
@@ -44,6 +44,7 @@ public class Player : Fighter
         {
             StartCoroutine(Dash());
         }
+
         
     }
 
