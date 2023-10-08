@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,7 +28,8 @@ public class Player : Fighter
     public DashCooldown dashCDManager;
     public GameObject deadScreen;
     public GameObject spritePlayer;
-
+    public TMP_Text timer;
+    public float time = 60;
     
       protected override  void Destroy()
       {
@@ -44,7 +46,15 @@ public class Player : Fighter
         {
             StartCoroutine(Dash());
         }
-
+        else if (time > 0)
+        {
+            time -= Time.deltaTime;
+            timer.text = (int)(time/60)+":" + (int)(time%60);
+        }
+        else if(time<=0)
+        {
+            Death();
+        }
         
     }
 
@@ -89,5 +99,9 @@ public class Player : Fighter
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
+    }
+    private void Awake()
+    {
+        timer.text = "1:00";
     }
 }

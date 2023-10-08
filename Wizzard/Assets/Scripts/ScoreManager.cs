@@ -9,6 +9,7 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text output;
     
     public static ScoreManager current;
+    
 
     
 
@@ -21,12 +22,13 @@ public class ScoreManager : MonoBehaviour
 
     public void UpdateScore()
     {
-        output.text = "Score: " + score;
+        output.text = "Score:" + score;
         
     }
     private void Awake()
     {
         current = this;
-        output.text = "DO CHOROSZCZY";
+        output.text = "Score:0";
+       
     }
 }
