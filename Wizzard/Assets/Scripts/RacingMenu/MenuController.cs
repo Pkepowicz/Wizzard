@@ -58,8 +58,8 @@ namespace RacingMenu {
             RegisterButton_login.onClick.AddListener(OnRegisterButtonClicked);
             RegisterButton_register.onClick.AddListener(OnCreateAccountButtonClicked);
             GoBackButton.onClick.AddListener(OnGoBackButtonClicked);
-            SoundOffButton.onClick.AddListener(OnSoundOffButtonClicked);
-            SoundOnButton.onClick.AddListener(OnSoundOnButtonClicked);
+            // SoundOffButton.onClick.AddListener(OnSoundOffButtonClicked);
+            // SoundOnButton.onClick.AddListener(OnSoundOnButtonClicked);
             ExitButton.onClick.AddListener(OnExitButtonClicked);
             
             // if (audioManager.IsMuted())
@@ -100,7 +100,7 @@ namespace RacingMenu {
             NetworkPlayer.LogIn(loginInput_login.text, passwordInput_login.text, () =>
             {
                 NetworkServices.Settings.FetchTitleData(() => {
-                    SceneManager.LoadSceneAsync("PlayerMenu");
+                    SceneManager.LoadSceneAsync("Arena_Targi");
                     ErrorMessage_login.SetText("");
                 }, error => {
                     ErrorMessage_login.SetText(error.ErrorMessage);
@@ -119,7 +119,7 @@ namespace RacingMenu {
             LoadingScreen.SetActive(true);
             NetworkPlayer.Register(emailInput.text, loginInput_register.text, passwordInput_register.text, () => {
                 NetworkServices.Settings.FetchTitleData(() => {
-                    SceneManager.LoadSceneAsync("PlayerMenu");
+                    SceneManager.LoadSceneAsync("Arena_Targi");
                     ErrorMessage_register.SetText("");
                 }, error => {
                     ErrorMessage_register.SetText(error.ErrorMessage);

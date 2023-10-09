@@ -1,6 +1,7 @@
 ﻿using System;
 using PlayFab;
 using PlayFab.ClientModels;
+using UnityEngine;
 
 namespace NetworkServices {
     public static class NetworkPlayer {
@@ -36,7 +37,22 @@ namespace NetworkServices {
                     InfoRequestParameters = profileInfoParams
             },
                 (result) => {
-                    var displayName = result.InfoResultPayload.PlayerProfile.DisplayName;
+                    var displayName = String.Empty;
+                    try {
+                        displayName = result.InfoResultPayload.PlayerProfile.DisplayName;
+                    }
+                    catch (Exception e) {
+                        Debug.Log("User does not have displayName set (probably logged in to account from other Coin game). Updating...");
+                        PlayFabClientAPI.UpdateUserTitleDisplayName(new UpdateUserTitleDisplayNameRequest() {
+                            DisplayName = login
+                        },
+                            (nameResult => {
+                                displayName = nameResult.DisplayName;
+                            }),
+                            (error => {
+                                Debug.Log($"Could not update display name: {error.GenerateErrorReport()}");
+                            }));
+                    }
                     DisplayName = string.IsNullOrEmpty(displayName) ? login : displayName;
                     Login = login;
                     successCallback.Invoke();

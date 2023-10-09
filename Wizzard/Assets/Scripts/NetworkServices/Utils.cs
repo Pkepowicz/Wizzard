@@ -8,11 +8,14 @@ namespace NetworkServices {
     public static class Utils
     {
         public static int TimeToStat(float score) {
-            return 9_999_999 - (int)(Math.Round(score, 3) * 1000);
+            // return 9_999_999 - (int)(Math.Round(score, 3) * 1000);
+            return (int)score;
         }
+        
 
         public static float StatToTime(int score) {
-            return (9_999_999 - score) / 1000f;
+            // return (9_999_999 - score) / 1000f;
+            return score;
         }
 
         public static string IndexToGateName(int index) {

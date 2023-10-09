@@ -29,7 +29,9 @@ public class Player : Fighter
     public GameObject deadScreen;
     public GameObject spritePlayer;
     public TMP_Text timer;
-    public float time = 60;
+    public float time = 10;
+
+    private bool _isDead = false;
     
       protected override  void Destroy()
       {
@@ -51,9 +53,10 @@ public class Player : Fighter
             time -= Time.deltaTime;
             timer.text = (int)(time/60)+":" + (int)(time%60);
         }
-        else if(time<=0)
+        else if(time<=0 && !_isDead)
         {
             Death();
+            _isDead = true;
         }
         
     }
@@ -99,6 +102,23 @@ public class Player : Fighter
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
+    }
+
+    protected override void Death() {
+        hitPoint = 0;
+        isAlive = false;
+      
+        
+        SoundManager.PlaySound(deathSound, transform.position);
+        Debug.Log("Player is dead.");
+        anim.SetTrigger("death");
+        NetworkServices.Statistics.UpdateBestScore((float)ScoreManager.score,
+            (() => {
+                Debug.Log("UpdateBestScore successful.");
+            }),
+            (error => {
+                Debug.LogError(error.GenerateErrorMessage());
+            }));
     }
     private void Awake()
     {
