@@ -560,7 +560,7 @@ MonoBehaviour:
   hitSound: SlimeTakeDamage
   deathSound: SlimeDeath
   footstep: 0
-  value: 100
+  value: 25
   targetPosition: {fileID: 0}
   hand: {fileID: 3970039956135312175}
   maxHandTurnSpeed: 0.5
