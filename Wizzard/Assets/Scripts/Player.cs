@@ -119,6 +119,7 @@ public class Player : Fighter
             (error => {
                 Debug.LogError(error.GenerateErrorMessage());
             }));
+        ScoreManager.score = 0;
     }
     private void Awake()
     {
