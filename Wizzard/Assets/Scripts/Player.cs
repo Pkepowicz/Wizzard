@@ -123,5 +123,6 @@ public class Player : Fighter
     private void Awake()
     {
         timer.text = "1:00";
+        Time.timeScale = 1.0f;
     }
 }
