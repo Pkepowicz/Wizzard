@@ -6,9 +6,12 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     public static int score;
+    public static int bestScore;
     public TMP_Text output;
+    public TMP_Text bestScoreOutput;
     
     public static ScoreManager current;
+    private bool _isBestScoreLoaded = false;
 
     
 
@@ -21,12 +24,23 @@ public class ScoreManager : MonoBehaviour
 
     public void UpdateScore()
     {
-        output.text = "Score: " + score;
-        
+        output.text = "Score:" + score;
+        if (_isBestScoreLoaded) {
+            bestScoreOutput.text = "Your best score: " + bestScore;
+        }
     }
     private void Awake()
     {
         current = this;
-        output.text = "DO CHOROSZCZY";
+        output.text = "Score: 0";
+       
+        NetworkServices.Statistics.FetchBestScore(
+            (f => {
+                bestScore = (int)f;
+                _isBestScoreLoaded = true;
+            }),
+            (error => {
+                Debug.Log(error.GenerateErrorMessage());
+            }));
     }
 }
